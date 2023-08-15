@@ -16,7 +16,7 @@ tags:
 
 ## Numpy: Classic
 
-[NumPy热身](https://pytorch.apachecn.org/#/docs/1.7/08?id=numpy热身)
+[NumPy 热身](https://pytorch.apachecn.org/#/docs/1.7/08?id=numpy热身)
 
 ```python
 import numpy as np
@@ -142,7 +142,7 @@ d = torch.randn((), device=device, dtype=dtype, requires_grad=True)
 
 learning_rate = 1e-6
 for t in range(2000):
-    # Forward pass: 使用张量运算计算预测y。
+    # Forward pass: 使用张量运算计算预测 y。
     y_pred = a + b * x + c * x ** 2 + d * x ** 3
 
     # 使用张量运算计算并打印 loss 
@@ -156,11 +156,11 @@ for t in range(2000):
     # Use autograd 计算向后传递。这个调用将计算
     # 关于所有张量的损失梯度 with requires_grad=True.
     # After this call a.grad, b.grad. c.grad and d.grad 
-    # 将是张量分别相对于a，b，c，d的损失梯度
+    # 将是张量分别相对于 a，b，c，d 的损失梯度
     loss.backward()
 
-    # 使用梯度下降手动更新权重。 Wrap in torch.no_grad()
-    # 因为权重 requires_grad=True ，但我们不需要跟踪它 in autograd.
+    # 使用梯度下降手动更新权重。Wrap in torch.no_grad()
+    # 因为权重 requires_grad=True，但我们不需要跟踪它 in autograd.
     with torch.no_grad():
         a -= learning_rate * a.grad
         b -= learning_rate * b.grad
@@ -187,9 +187,9 @@ print(f'Result: y = {a.item()} + {b.item()} x + {c.item()} x^2 + {d.item()} x^3'
 
 这里我们不将多项式写为`y = a + bx + cx^2 + dx^3`，而是将多项式写为`y = a + bP_3(c + dx)`，其中`P_3(x) = 1/2 (5x ^ 3 - 3x)`是三次[勒让德多项式](https://en.wikipedia.org/wiki/Legendre_polynomials)。
 
-此实现使用了 PyTorch 张量(tensor)运算来实现前向传播，并使用 PyTorch Autograd 来计算梯度。
+此实现使用了 PyTorch 张量 (tensor) 运算来实现前向传播，并使用 PyTorch Autograd 来计算梯度。
 
-在此实现中，我们实现了自己的自定义 Autograd 函数来执行`P'_3(x)`。 从数学定义上讲，`P'_3(x) = 3/2 (5x ^ 2 - 1)`：
+在此实现中，我们实现了自己的自定义 Autograd 函数来执行`P'_3(x)`。从数学定义上讲，`P'_3(x) = 3/2 (5x ^ 2 - 1)`：
 
 ```python
 import torch
@@ -234,9 +234,9 @@ x = torch.linspace(-math.pi, math.pi, 2000, device=device, dtype=dtype)
 y = torch.sin(x)
 
 # 为权重创建随机张量。对于这个例子，我们需要
-# 4个权重：y=a+b*P3（c+d*x），这些权重需要初始化
+# 4 个权重：y=a+b*P3（c+d*x），这些权重需要初始化
 # 离正确的结果不太远，以确保收敛。
-# 设置requires_grad=True表示我们希望使用
+# 设置 requires_grad=True 表示我们希望使用
 # 关于这些张量，在 backward pass 时。
 a = torch.full((), 0.0, device=device, dtype=dtype, requires_grad=True)
 b = torch.full((), -1.0, device=device, dtype=dtype, requires_grad=True)
@@ -283,7 +283,7 @@ print(f'Result: y = {a.item()} + {b.item()} * P3({c.item()} + {d.item()} x)')
 
 [PYTHORCH: NN](https://pytorch.apachecn.org/#/docs/1.7/12?id=pythorch-nn)
 
-这个实现使用 PyTorch 的`nn`包来构建神经网络。 PyTorch Autograd 让我们定义计算图和计算梯度变得容易了，但是原始的 Autograd 对于定义复杂的神经网络来说可能太底层了。 这时候`nn`包就能帮上忙。 `nn`包定义了一组模块，你可以把它视作一层神经网络，该神经网络层接受输入，产生输出，并且可能有一些可训练的权重。
+这个实现使用 PyTorch 的`nn`包来构建神经网络。PyTorch Autograd 让我们定义计算图和计算梯度变得容易了，但是原始的 Autograd 对于定义复杂的神经网络来说可能太底层了。这时候`nn`包就能帮上忙。 `nn`包定义了一组模块，你可以把它视作一层神经网络，该神经网络层接受输入，产生输出，并且可能有一些可训练的权重。
 
 ```python
 import torch
@@ -293,7 +293,7 @@ import math
 x = torch.linspace(-math.pi, math.pi, 2000)
 y = torch.sin(x)
 
-# 在本例中，输出y是（x，x^2，x^3）的线性函数
+# 在本例中，输出 y 是（x，x^2，x^3）的线性函数
 # 我们可以把它看作一个线性层神经网络。让我们准备一下
 # 张量（x，x^2，x^3）。
 p = torch.tensor([1, 2, 3])
@@ -314,14 +314,14 @@ model = torch.nn.Sequential(
     torch.nn.Flatten(0, 1)
 )
 
-# nn包还包含常用的损失函数的定义；在这个
+# nn 包还包含常用的损失函数的定义；在这个
 # 在这种情况下，我们将使用均方误差（MSE）作为损失函数。
 loss_fn = torch.nn.MSELoss(reduction='sum')
 
 learning_rate = 1e-6
 for t in range(2000):
 
-    # 正向传递：通过将x传递给模型来计算预测的y。模块对象
+    # 正向传递：通过将 x 传递给模型来计算预测的 y。模块对象
     # 重写__call__运算符，以便可以像调用函数一样调用它们。
     # 这样你就可以把输入数据的张量传递给模块，它就会产生
     # 输出数据的张量。
@@ -375,17 +375,17 @@ y = torch.sin(x)
 p = torch.tensor([1, 2, 3])
 xx = x.unsqueeze(-1).pow(p)
 
-# 使用nn包定义我们的模型和损失函数。
+# 使用 nn 包定义我们的模型和损失函数。
 model = torch.nn.Sequential(
     torch.nn.Linear(3, 1),
     torch.nn.Flatten(0, 1)
 )
 loss_fn = torch.nn.MSELoss(reduction='sum')
 
-# 使用optim包定义一个优化器，该优化器将更新
-# 这是我们的模型。这里我们将使用RMSprop；
-# optim软件包包含许多其他优化算法。
-# RMSprop构造函数的第一个参数告诉
+# 使用 optim 包定义一个优化器，该优化器将更新
+# 这是我们的模型。这里我们将使用 RMSprop；
+# optim 软件包包含许多其他优化算法。
+# RMSprop 构造函数的第一个参数告诉
 # 优化它应该更新的张量。
 learning_rate = 1e-3
 optimizer = torch.optim.RMSprop(model.parameters(), lr=learning_rate)
@@ -408,7 +408,7 @@ for t in range(2000):
     # 反向传递：计算模型参数的损失梯度
     loss.backward()
 
-    # 在优化器上调用step函数会更新其参数
+    # 在优化器上调用 step 函数会更新其参数
     optimizer.step()
 
 linear_layer = model[0]
@@ -449,7 +449,7 @@ class Polynomial3(torch.nn.Module):
 
     def string(self):
         """
-        就像Python中的任何类一样，您也可以在PyTorch模块上定义自定义方法
+        就像 Python 中的任何类一样，您也可以在 PyTorch 模块上定义自定义方法
         """
         return f'y = {self.a.item()} + {self.b.item()} x + {self.c.item()} x^2 + {self.d.item()} x^3'
 
@@ -460,13 +460,13 @@ y = torch.sin(x)
 # 通过实例化上面定义的类来构建我们的模型
 model = Polynomial3()
 
-# 构造我们的损失函数和优化器. 
+# 构造我们的损失函数和优化器。
 # The call to model.parameters() in the SGD constructor 将会包含可学习的参数
 # of the nn.Linear module which is members of the model.
 criterion = torch.nn.MSELoss(reduction='sum')
 optimizer = torch.optim.SGD(model.parameters(), lr=1e-6)
 for t in range(2000):
-    # 向前传递：通过将x传递给模型来计算预测的y
+    # 向前传递：通过将 x 传递给模型来计算预测的 y
     y_pred = model(x)
 
     # Compute and print loss
@@ -524,7 +524,7 @@ class DynamicNet(torch.nn.Module):
 
     def string(self):
         """
-        就像Python中的任何类一样，您也可以在PyTorch模块上定义自定义方法
+        就像 Python 中的任何类一样，您也可以在 PyTorch 模块上定义自定义方法
         """
         return f'y = {self.a.item()} + {self.b.item()} x + {self.c.item()} x^2 + {self.d.item()} x^3 + {self.e.item()} x^4 ? + {self.e.item()} x^5 ?'
 

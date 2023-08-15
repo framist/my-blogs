@@ -47,7 +47,7 @@ TODO：
 
 ## L 画家
 
-对 [CS61a其中的一个示例（Sound）](https://cs61a.org/lecture/lec06/) 的拙劣模仿。原例子十分有趣，建议直接去看原视频而不是看下面这个模仿
+对 [CS61a 其中的一个示例（Sound）](https://cs61a.org/lecture/lec06/) 的拙劣模仿。原例子十分有趣，建议直接去看原视频而不是看下面这个模仿
 
 ```python
 import cv2

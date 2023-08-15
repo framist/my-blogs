@@ -1,5 +1,5 @@
 ---
-title: 【Java】Java期末考复习
+title: 【Java】Java 期末考复习
 categories: 
 - 计算机科学
 - 课业学习
@@ -8,7 +8,7 @@ tags:
 - Java
 - 学习
 ---
-# Java复习
+# Java 复习
 
 > 2020 秋学期高级语言程序设计复习要点 
 >
@@ -40,7 +40,7 @@ tags:
 
 
 
-| 修饰符      | 当前类 | 同一包内 | 子孙类(同一包) | 子孙类(不同包)                                               | 其他包 |
+| 修饰符      | 当前类 | 同一包内 | 子孙类 (同一包) | 子孙类 (不同包)                                               | 其他包 |
 | :---------- | :----- | :------- | :------------- | :----------------------------------------------------------- | :----- |
 | `public`    | Y      | Y        | Y              | Y                                                            | Y      |
 | `protected` | Y      | Y        | Y              | Y/N（[说明](https://www.runoob.com/java/java-modifier-types.html#protected-desc)） | N      |
@@ -50,31 +50,31 @@ tags:
 protected 需要从以下两个点来分析说明：
 
 - **子类与基类在同一包中**：被声明为 protected 的变量、方法和构造器能被同一个包中的任何其他类访问；
-- **子类与基类不在同一包中**：那么在子类中，子类实例可以访问其从基类继承而来的 protected 方法，而不能访问基类实例的protected方法。
+- **子类与基类不在同一包中**：那么在子类中，子类实例可以访问其从基类继承而来的 protected 方法，而不能访问基类实例的 protected 方法。
 
 ## 容器类
 
 ### 泛型的基本概念
 
-泛型: 又称为参数化类型, 通过定义含有一个或多个类型参数的
-类或接口, 对具有类似特征与行为的类进行抽象
+泛型：又称为参数化类型，通过定义含有一个或多个类型参数的
+类或接口，对具有类似特征与行为的类进行抽象
 
 类型参数：可以指代任何具体类型
-例: JDK中java.util.ArrayList\<E>的定义, ArrayList\<E>定义了
-一个泛型, E为类型参数, 它代表了能够放入ArrayList中的对象的
+例：JDK 中 java.util.ArrayList\<E>的定义，ArrayList\<E>定义了
+一个泛型，E 为类型参数，它代表了能够放入 ArrayList 中的对象的
 
 类型
 
 如何使用一个预定义的泛型？
 对泛型中的类型参数进行具体化，即可得到具体的类
 
-例: 如果希望创建一个能够存放String对象的ArrayList, 应使用
+例：如果希望创建一个能够存放 String 对象的 ArrayList, 应使用
 ArrayList\<String>进行声明。ArrayList\<String>总是可以被看作
-一个具体的类, 该类的实例作为容器可以存放String类型的对象  
+一个具体的类，该类的实例作为容器可以存放 String 类型的对象  
 
 ### 容器类
 
-一个容器类的实例（容器、容器对象）表示了一组对象,
+一个容器类的实例（容器、容器对象）表示了一组对象，
 容器对象存放指向其他对象的引用  
 
 ### Set
@@ -85,13 +85,13 @@ ArrayList\<String>进行声明。ArrayList\<String>总是可以被看作
 
 三种接口实现：HashSet, TreeSet, LinkedHashSet
 
-HashSet：采用Hash表实现Set接口，元素无固定顺序，对元素的
+HashSet：采用 Hash 表实现 Set 接口，元素无固定顺序，对元素的
 访问效率高
 
-TreeSet：实现了SortedSet接口，采用有序树结构存储集合元素，
+TreeSet：实现了 SortedSet 接口，采用有序树结构存储集合元素，
 元素按照比较结果的升序排列
 
-LinkedHashSet：采用Hash表和链表结合的方式实现Set接口，元
+LinkedHashSet：采用 Hash 表和链表结合的方式实现 Set 接口，元
 素按照被添加的先后顺序保存  
 
 ```java
@@ -127,7 +127,7 @@ public class TestSet {
 [28, 15, 39, 14, 16, 29, 24, 37, 6, 25, 2, 1, 32, 3, 36, 38, 5, 22, 23, 7, 8, 21, 33, 17, 18, 30, 31, 0, 27, 4, 19, 9, 12, 35, 34, 10, 26, 20, 13, 11]
 ```
 
-- [x] HashSet为什么最后输出又是有序的？[参考](https://www.zhihu.com/question/28414001)
+- [x] HashSet 为什么最后输出又是有序的？[参考](https://www.zhihu.com/question/28414001)
 
 当循环次数改小了之后，又是无序的了：
 
@@ -146,7 +146,7 @@ System.out.println(s);
 
 
 
-* equals()方法与对象等价性
+* equals() 方法与对象等价性
 
 如何测试对象的等价性？
 
@@ -154,9 +154,9 @@ System.out.println(s);
 
 （引用相等：指向同一块堆空间）
 
-所有对象都拥有从Object类继承的equals()方法,
+所有对象都拥有从 Object 类继承的 equals() 方法，
 
-equals()方法默认也是比较对象的引用  
+equals() 方法默认也是比较对象的引用  
 
 ```java
 class Value {
@@ -173,7 +173,7 @@ public class Equivalence {
         Integer n2 = new Integer(47);
         System.out.println("n1==n2: " + (n1 == n2)); // 对引用的比较
         System.out.println("n1!=n2: " + (n1 != n2));
-        System.out.println("n1.equals(n2): " + n1.equals(n2));// Integer已重写equals()
+        System.out.println("n1.equals(n2): " + n1.equals(n2));// Integer 已重写 equals()
         Value v1 = new Value();
         Value v2 = new Value();
         v1.i = v2.i = 10;
@@ -195,13 +195,13 @@ v1.equals(v2): true
 
 两种接口实现：ArrayList, LinkedList  
 
-ArrayList：采用可变大小的数组实现List接口
+ArrayList：采用可变大小的数组实现 List 接口
 无需声明上限，随着元素的增加，长度自动增加
 对元素的随机访问速度快，插入/移除元素较慢
-该类是非同步的，相对于Vector（legacy）效率高
+该类是非同步的，相对于 Vector（legacy）效率高
 
-LinkedList：采用链表结构实现List接口
-实际上实现了List接口、Queue接口和双端队列Deque接口，
+LinkedList：采用链表结构实现 List 接口
+实际上实现了 List 接口、Queue 接口和双端队列 Deque 接口，
 因此可用来实现堆栈、队列或双端队列
 插入/移除元素快，对元素的随机访问较慢
 该类是非同步的  
@@ -226,29 +226,29 @@ LinkedList：采用链表结构实现List接口
 把键映射到某个值
 一个键最多只能映射一个值
 一个值可对应多个键
-常用：HashMap（无序）和TreeMap（有序）
-HashMap：使用Hash表实现Map接口
+常用：HashMap（无序）和 TreeMap（有序）
+HashMap：使用 Hash 表实现 Map 接口
 无序，非同步且允许空的键与值
-相比Hashtable（legacy）效率高
-TreeMap：与TreeSet类似，使用有序树实现SortedMap接口
+相比 Hashtable（legacy）效率高
+TreeMap：与 TreeSet 类似，使用有序树实现 SortedMap 接口
 保证“键”始终处于排序状态  
 
 
 
-### 迭代器(Iterator)  
+### 迭代器 (Iterator)  
 
 
 
-Iterator是一个轻量级对象，用于遍历并选择序列中的对象
+Iterator 是一个轻量级对象，用于遍历并选择序列中的对象
 
 用法
 
-- 使用容器的iterator()方法返回容器的迭代器，该迭代器准备返回容器的第一个元素
+- 使用容器的 iterator() 方法返回容器的迭代器，该迭代器准备返回容器的第一个元素
 - 迭代器只能单向移动
 - next()：获得序列的下一个元素
 - hasNext()：检查序列中是否还有元素
-- remove()：将迭代器新近返回的元素（即由next()产生的最后一个
-- 元素）删除，因此在调用remove()之前必须先调用next()  
+- remove()：将迭代器新近返回的元素（即由 next() 产生的最后一个
+- 元素）删除，因此在调用 remove() 之前必须先调用 next()  
 
 ```java
 import java.util.*;
@@ -287,13 +287,13 @@ believe can fly, believe can touch the sky.
 
 ## Wrapper 类
 
-Wrapper类实例的构造：将基本数据类型值传递给Wrapper类的
+Wrapper 类实例的构造：将基本数据类型值传递给 Wrapper 类的
 构造方法
-Wrapper类的常用方法和常量
-数值型Wrapper类中的MIN_VALUE, MAX_VALUE
+Wrapper 类的常用方法和常量
+数值型 Wrapper 类中的 MIN_VALUE, MAX_VALUE
 byteValue()/shortValue()/longValue(), ... :
 将当前Wrapper类型的值作为byte/short/long/...返回
-valueOf()：将字符串转换为Wrapper类型的实例
+valueOf()：将字符串转换为 Wrapper 类型的实例
 toString()：将基本类型值转换为字符串
 parseByte()/parseShort()/parseInt(), ... :
 将字符串转换为byte/short/int/...类型值  
@@ -301,9 +301,9 @@ parseByte()/parseShort()/parseInt(), ... :
 
 
 Autoboxing：在应该使用对象的地方使用基本类型的数据时，
-编译器自动将该数据包装为对应的Wrapper类对象
-Autounboxing：在应该使用基本类型数据的地方使用Wrapper
-类的对象时，编译器自动从Wrapper类对象中取出所包含的基
+编译器自动将该数据包装为对应的 Wrapper 类对象
+Autounboxing：在应该使用基本类型数据的地方使用 Wrapper
+类的对象时，编译器自动从 Wrapper 类对象中取出所包含的基
 本类型数据  
 
 ![image-20201129164210111](http://framist-bucket-openread.oss-cn-shanghai.aliyuncs.com/img/2023/08/15/20230815202827-1.png)
@@ -312,18 +312,18 @@ Autounboxing：在应该使用基本类型数据的地方使用Wrapper
 
 ## 方法参数的传递
 
-将方法参数指明为final，则无法在方法中更改参数的值  
+将方法参数指明为 final，则无法在方法中更改参数的值  
 
-final的使用位置
+final 的使用位置
 在类声明中使用：表示类不能被继承
 在成员方法声明及方法参数中使用：成员方法不能被重写，
 参数变量值不能更改
 在成员变量和局部变量声明中使用：表示变量的值不能更改  
 
-被定义成final的成员变量，一旦被赋值就不能改变
+被定义成 final 的成员变量，一旦被赋值就不能改变
 对于基本类型的成员变量：
 数值不变
-用来定义常量：声明final变量并同时赋初值
+用来定义常量：声明 final 变量并同时赋初值
 对于引用类型的成员变量：
 引用不变，但被引用对象可被修改
 这一约定同样适用于数组  
@@ -331,22 +331,22 @@ final的使用位置
 ## 子类对象的创建与初始化
 
 子类构造方法调用父类构造方法
-通过显式的super()方法调用或编译器隐含插入的super()方法调用
-这一过程递归地进行, 直到根类Object的构造方法。在这一过程中,
-子类对象所需的所有内存空间被分配, 所有成员变量均使用默认值
+通过显式的 super() 方法调用或编译器隐含插入的 super() 方法调用
+这一过程递归地进行，直到根类 Object 的构造方法。在这一过程中，
+子类对象所需的所有内存空间被分配，所有成员变量均使用默认值
 初始化  
 
-从根类Object的构造方法开始, 自顶向下地对每个类依次执行如
-下两步:
+从根类 Object 的构造方法开始，自顶向下地对每个类依次执行如
+下两步：
 显式初始化及使用实例初始化程序块进行初始化
-执行构造方法的主体（不包括使用super()调用父类构造方法的语
+执行构造方法的主体（不包括使用 super() 调用父类构造方法的语
 句）  
 
 
 
 ## 动态绑定（非动态绑定的情况）
 
-Java中除了static方法和final方法（private方法属于final方
+Java 中除了 static 方法和 final 方法（private 方法属于 final 方
 法），其余方法都采用动态绑定  
 
 ```java
@@ -375,14 +375,14 @@ class Derived extends PrivOverride {
 
 
 动态绑定：绑定操作在程序运行时根据变量指向的对象实例的具体
-类型找到正确的方法体(而不是根据变量本身的类型)  
+类型找到正确的方法体 (而不是根据变量本身的类型)  
 
 ## 成员变量的隐藏
 
-- 概念: 父类中成员变量被子类中同名的成员变量隐藏
+- 概念：父类中成员变量被子类中同名的成员变量隐藏
 - 成员变量隐藏和成员方法重写的前提
   - 父类成员能够在子类中被访问到
-  - 父类中private成员，在子类中不能被隐藏（重写）  
+  - 父类中 private 成员，在子类中不能被隐藏（重写）  
 
 ```java
 public class Sub extends Super {
@@ -432,7 +432,7 @@ class Base {
 ## 静态变量的创建过程（与子类对象创建过程结合）
 
 静态变量的创建与实例对象无关
-只在系统加载其所在类时分配空间并初始化, 且在创建该类的
+只在系统加载其所在类时分配空间并初始化，且在创建该类的
 实例对象时不再分配空间
 
 什么时候加载其所在类？
@@ -484,11 +484,11 @@ T2(): 2
 
 > 静态块（static{}）
 >
-> （1） static关键字还有一个比较关键的作用，用来形成静态代码块（static{}(即static块)）以优化程序性能。
+> （1）static 关键字还有一个比较关键的作用，用来形成静态代码块（static{}(即 static 块)）以优化程序性能。
 >
-> （2） static块可以置于类中的任何地方，类中可以有多个static块。
+> （2）static 块可以置于类中的任何地方，类中可以有多个 static 块。
 >
-> （3） 在类初次被加载的时候执行且仅会被执行一次（这是优化性能的原因！！！），会按照static块的顺序来执行每个static块，一般用来初始化静态变量和调用静态方法。
+> （3）在类初次被加载的时候执行且仅会被执行一次（这是优化性能的原因！！！），会按照 static 块的顺序来执行每个 static 块，一般用来初始化静态变量和调用静态方法。
 
 https://www.cnblogs.com/ysocean/p/8194428.html
 
@@ -499,7 +499,7 @@ https://www.cnblogs.com/ysocean/p/8194428.html
 - 不改变方法的名称、参数列表和返回值，改变方法的内部实现
 - 子类中重写方法的访问权限不能缩小
 - 子类中重写方法不能抛出新的异常
-- 父类中private的成员，在子类中不能被隐藏（重写）
+- 父类中 private 的成员，在子类中不能被隐藏（重写）
 
 本节加入以下重写规则：
 
@@ -507,7 +507,7 @@ https://www.cnblogs.com/ysocean/p/8194428.html
 - 子类不能把父类的非静态方法重写为静态
 - 子类可以声明与父类静态方法相同的方法
 - 静态方法的重写不会导致多态性
-- 构造方法本质上是static方法，不具有多态性
+- 构造方法本质上是 static 方法，不具有多态性
 
 ```java
 public class StaticPolymorphism {
@@ -595,27 +595,27 @@ Sub.staticMethod
 外存中，能够在网络上传送，并能够在以后被完全恢复为原来
 的对象
 对象串行化机制的典型应用场景
-Java远程方法调用(Remote Method Invocation, RMI)
+Java 远程方法调用 (Remote Method Invocation, RMI)
 Java Bean / EJB  
 
 
 
 对象串行化的方法
 
-通过ObjectOutputStream的writeObject方法将一个对象写入到
+通过 ObjectOutputStream 的 writeObject 方法将一个对象写入到
 流中
 
 public final void writeObject(Object obj) throws IOException
-通过ObjectInputStream的readObject方法将一个对象从对象流
+通过 ObjectInputStream 的 readObject 方法将一个对象从对象流
 中读出
 
 public final Object readObject() throws IOException,
 
 ClassNotFoundException
 
-ObjectOutputStream实现了java.io.DataOutput接口
+ObjectOutputStream 实现了 java.io.DataOutput 接口
 
-ObjectInputStream实现了java.io.DataInput接口  
+ObjectInputStream 实现了 java.io.DataInput 接口  
 
 ```java
 import java.io.*;
@@ -657,7 +657,7 @@ class UnSerializeDate {
 
 来源：西安电子科技大学，2020
 
-一、简答题（每题5分，共20分）
+一、简答题（每题 5 分，共 20 分）
 1. 简述方法重载与方法重写的区别。
 
 
@@ -672,18 +672,18 @@ https://blog.csdn.net/tntzs666/article/details/80274526
 
 向下转型必须是在向上转型之后才能进行。
 
-instanceof用法： 
+instanceof 用法： 
  **对象名 instanceof 类名** ，判断这个对象是否是属于这个类或是其子类 
 
-3. 简述抽象类与接口的区别。（6分）
+3. 简述抽象类与接口的区别。（6 分）
 
 https://kb.cnblogs.com/page/42159/
 
 
 
-二、读程题（每空2分，共40分）
+二、读程题（每空 2 分，共 40 分）
 
-给出下列Java程序代码片段的运行结果
+给出下列 Java 程序代码片段的运行结果
 
 ```java
 String str1 = "first string";
@@ -826,7 +826,7 @@ class Base{
 102
 ```
 
-**假设下列程序中s1语句会抛出EType2异常**
+**假设下列程序中 s1 语句会抛出 EType2 异常**
 
 ```java
 try{
@@ -849,9 +849,9 @@ In Etype2 catch process.
 In finally process.
 ```
 
-三、改错题（共10分）
-键盘录入多个数据，以0结束，要求在控制台输出这多个数据中的最大值.
-下面Java程序中存在五处编译错误，指出错误位置，说明错误原因并更正。
+三、改错题（共 10 分）
+键盘录入多个数据，以 0 结束，要求在控制台输出这多个数据中的最大值。
+下面 Java 程序中存在五处编译错误，指出错误位置，说明错误原因并更正。
 
 ```java
 public class ArrayListDemo {
@@ -859,10 +859,10 @@ public class ArrayListDemo {
 		// 创建键盘录入数据对象
 		Scanner sc = new Scanner(System.out);
 
-		// 键盘录入多个数据,我们不知道多少个，所以用集合存储
+		// 键盘录入多个数据，我们不知道多少个，所以用集合存储
 		ArrayList<Object> array = new ArrayList<int>();
 
-		// 以0结束。这个简单，只要键盘录入的数据是0，我就
+		// 以 0 结束。这个简单，只要键盘录入的数据是 0，我就
 		// 跳出循环，不继续处理了
 		while (true) {
 			System.out.println("请输入数据：");
@@ -880,7 +880,7 @@ public class ArrayListDemo {
 		// 对数组排序
 		Arrays.sort(i);
 		// 获取该数组中的最大索引的值
-		System.out.println("数组最大值是:" + i[i.length()]);
+		System.out.println("数组最大值是：" + i[i.length()]);
 	}
 }
 

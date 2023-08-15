@@ -20,7 +20,7 @@ categories:
 
 ## 特性
 
-<iframe style="height: 300px;" src="//player.bilibili.com/player.html?aid=489702942&bvid=BV1MN411z7WU&cid=1232858697&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+<iframe src="//player.bilibili.com/player.html?aid=489702942&bvid=BV1MN411z7WU&cid=1232858697&page=1&autoplay=0&danmaku=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="100%"> </iframe>
 
 
 egg-language-server 包括一个语言服务器及一个 Visual Studio Code 插件。它是一个在代码编写时环境的代码静态分析工具，借助 [egg](https://egraphs-good.github.io/) 从逻辑层面化简源码，能交互式地提供优化指导。目前支持 lisp、Python、JavaScript 语言的**子集**，未来预计会支持更多语言。目前，它在 Python 上工作最好。

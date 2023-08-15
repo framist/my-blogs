@@ -6,7 +6,7 @@ tags:
 - hello
 ---
 
-# 你好，我是框架主义者!
+# 你好，我是框架主义者！
 
 **Hi, I'm Framist!**
 
@@ -20,11 +20,11 @@ tags:
 
 与计算机有关的文章会将同时发布在这里和 [CSDN](https://blog.csdn.net/weixin_47102975) 中，啊还有已经不是我私有账号的 [知乎](https://www.zhihu.com/people/kuang-jia-zhu-yi-zhe) 中，当然这里也会放一些其他~~奇奇怪怪~~的东西..
 
-还在慢慢建设这里ing
+还在慢慢建设这里 ing
 
 ——from 2020-10-8
 
-![长中mc](http://framist-bucket-openread.oss-cn-shanghai.aliyuncs.com/img/2023/08/15/20230815202731-1.png)
+![长中 mc](http://framist-bucket-openread.oss-cn-shanghai.aliyuncs.com/img/2023/08/15/20230815202731-1.png)
 
 <p style="display:none;">1LTKvNaux7CjrNHJ09C0y87Eo7/Rrbu3zfm4tKOsus7Ksbb41rmjv9a5zqrWucv51rmjrLTLzsTT1rrOtOajvw==</p>
 
