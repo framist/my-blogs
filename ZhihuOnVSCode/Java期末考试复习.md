@@ -77,10 +77,6 @@ ArrayList\<String>进行声明。ArrayList\<String>总是可以被看作
 
 三种接口实现：HashSet, TreeSet, LinkedHashSet  
 
-
-
-三种接口实现：HashSet, TreeSet, LinkedHashSet
-
 HashSet：采用 Hash 表实现 Set 接口，元素无固定顺序，对元素的
 访问效率高
 
