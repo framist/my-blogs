@@ -8,10 +8,10 @@ scatter(u,arrayfun(@limL,u),'k','filled','SizeData',1)
 alpha(0.1)
 
 function m = limL(u)
-m = 0.632;% 其实(0,1)随便啥都行
-for i=1:10000+randi(100)
-    m=u.*m.*(1-m);
-end
+    m = 0.632;% 其实(0,1)随便啥都行
+    for i=1:10000+randi(100)
+        m=u.*m.*(1-m);
+    end
 end
 
 ```
