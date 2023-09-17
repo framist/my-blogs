@@ -9,7 +9,7 @@ categories:
 
 # 补遗：CS61a
 
-![请添加图片描述](https://img-blog.csdnimg.cn/4c0421d86cf84b69abb1064e0a4d49a2.png)
+![请添加图片描述](http://framist-bucket-openread.oss-cn-shanghai.aliyuncs.com/img/2023/09/16/20230916224339.png)
 
 
 通过“圣经”《SICP》了解到这门课。SCIP 读着有点困难，想通过课程的引导。但是这个课程要比书基础很多，就当对计科学习的回顾和补遗了。本笔记也会在我读完 SICP 后更新。
@@ -96,7 +96,7 @@ def absolute_value(x):
         return x
 ```
 
-![image](https://img-blog.csdnimg.cn/img_convert/7b5eaa3cd4f46fd5e7b9f9a32661b5cf.png)​
+![image](http://framist-bucket-openread.oss-cn-shanghai.aliyuncs.com/img/2023/09/16/20230916224402.png)​
 
 ‍
 
@@ -106,9 +106,9 @@ statements：
 
 ‍
 
-![image](https://img-blog.csdnimg.cn/img_convert/2eb3fdb4b7d438d61137c75506b976a0.png)​
+![image](http://framist-bucket-openread.oss-cn-shanghai.aliyuncs.com/img/2023/09/16/20230916224408.png)​
 
-![image](https://img-blog.csdnimg.cn/img_convert/dcd26683345ba8c9674ec12ce9b5dbe6.png)​
+![image](http://framist-bucket-openread.oss-cn-shanghai.aliyuncs.com/img/2023/09/16/20230916224410.png)​
 
 ‍
 
@@ -126,7 +126,7 @@ statements：
 
 lambda 表达式
 
-![image](https://img-blog.csdnimg.cn/img_convert/e0e8035b140b7f981e7eb096b06a55a4.png)​
+![image](http://framist-bucket-openread.oss-cn-shanghai.aliyuncs.com/img/2023/09/16/20230916224413.png)​
 
 Function Currying （[柯里化_百度百科 (baidu.com)](https://baike.baidu.com/item/%E6%9F%AF%E9%87%8C%E5%8C%96/10350525)）
 
@@ -204,7 +204,7 @@ def real_sqrt(x):
 
 [Tree Recursion](https://cs61a.org/lecture/lec10/)
 
-![image](https://img-blog.csdnimg.cn/img_convert/8491791bb778785721775338f6e229d5.png)​
+![image](http://framist-bucket-openread.oss-cn-shanghai.aliyuncs.com/img/2023/09/16/20230916224417.png)​
 
 ```python
 def i_c(n):
@@ -241,7 +241,7 @@ Box-and-Pointer Notation
 
 Slicing
 
-![image](https://img-blog.csdnimg.cn/img_convert/495d434b19ec8ac3bcb99f756102ab14.png)​
+![image](http://framist-bucket-openread.oss-cn-shanghai.aliyuncs.com/img/2023/09/16/20230916224421.png)​
 
 ```python
 # Aggregation
@@ -268,7 +268,7 @@ any([perfect_square(x) for x in range(50, 60)]) # Try ,65)
 
 [Data Abstraction](https://cs61a.org/lecture/lec13/)
 
-![image](https://img-blog.csdnimg.cn/img_convert/80157222f0af1186d5bad7f25c266113.png)​
+![image](http://framist-bucket-openread.oss-cn-shanghai.aliyuncs.com/img/2023/09/16/20230916224423.png)​
 
 数据抽象
 
@@ -319,7 +319,7 @@ String
 
 ASCII 的设计
 
-![image](https://img-blog.csdnimg.cn/img_convert/bbf21ac053af20a07f9bf4769482c33a.png)​
+![image](http://framist-bucket-openread.oss-cn-shanghai.aliyuncs.com/img/2023/09/16/20230916224427.png)​
 
 ‍
 
@@ -356,7 +356,7 @@ def tuple_demos():
     {tuple([1, 2]): 3}
 ```
 
-![image](https://img-blog.csdnimg.cn/img_convert/32805646bf890f984c29df911fe643ff.png)​
+![image](http://framist-bucket-openread.oss-cn-shanghai.aliyuncs.com/img/2023/09/16/20230916224430.png)​
 
 ```python
 Identity
@@ -370,7 +370,7 @@ Identical objects are always equal values
 
 Mutable Default Arguments are Dangerous
 
-![image](https://img-blog.csdnimg.cn/img_convert/33969c2799e3ec203d90795d72dc433a.png)​
+![image](http://framist-bucket-openread.oss-cn-shanghai.aliyuncs.com/img/2023/09/16/20230916224434.png)​
 
 可以达到 C 语言中函数类似静态变量的作用
 
@@ -391,7 +391,7 @@ def make_withdraw_list(balance):
 
 [Syntax](https://cs61a.org/lecture/lec16/)
 
-![image](https://img-blog.csdnimg.cn/img_convert/94cd7c4246d6daf50cbaa881166c8a21.png)​
+![image](http://framist-bucket-openread.oss-cn-shanghai.aliyuncs.com/img/2023/09/16/20230916224435.png)​
 
 ‍
 
@@ -418,9 +418,9 @@ Useful string methods for processing the contents of a file:
 
 ‍
 
-![image](https://img-blog.csdnimg.cn/img_convert/f299a37ce53911cbc09094fe635c4fe7.png)​
+![image](http://framist-bucket-openread.oss-cn-shanghai.aliyuncs.com/img/2023/09/16/20230916224437.png)​
 
-![image](https://img-blog.csdnimg.cn/img_convert/426bbc8958fdf886295fe3efe8227eb2.png)​
+![image](http://framist-bucket-openread.oss-cn-shanghai.aliyuncs.com/img/2023/09/16/20230916224441.png)​
 
 字典能在迭代中改变值，而不能改变结构
 
@@ -434,15 +434,15 @@ Useful string methods for processing the contents of a file:
 
 ‍
 
-![image](https://img-blog.csdnimg.cn/img_convert/102a9e449970178b62ed58d575f6a84f.png)​
+![image](http://framist-bucket-openread.oss-cn-shanghai.aliyuncs.com/img/2023/09/16/20230916224451.png)​
 
 ‍
 
 lazily：懒惰执行
 
-![image](https://img-blog.csdnimg.cn/img_convert/16935072c732b5df37c052d52f3c6d65.png)​
+![image](http://framist-bucket-openread.oss-cn-shanghai.aliyuncs.com/img/2023/09/16/20230916224453.png)​
 
-![image](https://img-blog.csdnimg.cn/img_convert/14a8356e9dcf5d561770536f095e5a26.png)​
+![image](http://framist-bucket-openread.oss-cn-shanghai.aliyuncs.com/img/2023/09/16/20230916224455.png)​
 
 ‍
 
@@ -454,13 +454,13 @@ lazily：懒惰执行
 
 Generators and Generator Functions
 
-![image](https://img-blog.csdnimg.cn/img_convert/2efaf83c5de0186730225c4f7154dabd.png)​
+![image](http://framist-bucket-openread.oss-cn-shanghai.aliyuncs.com/img/2023/09/16/20230916224519.png)​
 
 ‍
 
 `yield from`​​
 
-![image](https://img-blog.csdnimg.cn/img_convert/11f2392d4e5af79fd531d99aaf20068d.png)​
+![image](http://framist-bucket-openread.oss-cn-shanghai.aliyuncs.com/img/2023/09/16/20230916224517.png)​
 
 ```python
 def yield_partitions(n, m):
@@ -505,7 +505,7 @@ Binding an object to a new name using assignment does not create a new object:
 True
 ```
 
-![image](https://img-blog.csdnimg.cn/img_convert/42b3fe83b98fd3e99d50428bdaf557ef.png)​
+![image](http://framist-bucket-openread.oss-cn-shanghai.aliyuncs.com/img/2023/09/16/20230916224521.png)​
 
 ‍
 
@@ -561,7 +561,7 @@ String Interpolation
 
 注意实现细节：
 
-![image](https://img-blog.csdnimg.cn/img_convert/b39364dc9ac426a424f9e516bd96dc22.png)​
+![image](http://framist-bucket-openread.oss-cn-shanghai.aliyuncs.com/img/2023/09/16/20230916224524.png)​
 
 ‍
 

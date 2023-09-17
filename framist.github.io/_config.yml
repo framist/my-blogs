@@ -114,7 +114,6 @@ hide_posts:
 
 
 
-
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 # 本地博客部署到 github 上 配置这里
@@ -122,5 +121,4 @@ deploy:
   type: git # 使用 Git 提交
   # repository: https://github.com/framist/framist.github.io # 就是存放博客的仓库地址
   repository: git@github.com:framist/framist.github.io.git
-
 
