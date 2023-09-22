@@ -1,12 +1,14 @@
 ---
 title: 【MATLAB】多目标优化算法 NSGA-II(gamultiobj) 的使用精解
-categories: 
-- 数学
-- MATLAB
-tags: 
-- 数学建模
-- 蚁群算法
-- MATLAB
+date: 2022-8-26
+categories:
+  - 数学
+  - MATLAB
+tags:
+  - 数学建模
+  - 蚁群算法
+  - MATLAB
+abbrlink: 52515
 ---
 
 # 【MATLAB】多目标优化算法 NSGA-II(gamultiobj) 的使用精解

@@ -1,9 +1,11 @@
 ---
 title: Hello World
-categories: 
-- 杂项
-tags: 
-- hello
+categories:
+  - 杂项
+tags:
+  - hello
+abbrlink: 16107
+date: 2020-10-08 00:00:00
 ---
 
 # 你好，我是框架主义者！

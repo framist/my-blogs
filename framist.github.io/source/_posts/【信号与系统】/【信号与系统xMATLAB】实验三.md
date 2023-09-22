@@ -1,13 +1,15 @@
 ---
 title: 【信号与系统 x MATLAB】实验三
-categories: 
-- 通信
-- 课业学习
-- 信号与系统
-tags: 
-- 信号与系统
-- 作业
-- MATLAB
+date: 2021-5-21
+categories:
+  - 通信
+  - 课业学习
+  - 信号与系统
+tags:
+  - 信号与系统
+  - 作业
+  - MATLAB
+abbrlink: 32997
 ---
 
 # 【信号与系统 x MATLAB】实验三

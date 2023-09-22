@@ -1,15 +1,17 @@
 ---
-title: 【moeCTF题解-0x03】Algorithm
-categories: 
-- 计算机科学
-- 网络安全
-- CTF
-- moeCTF
-tags: 
-- CTF
+title: 【moeCTF 题解 -0x03】Algorithm
+categories:
+  - 计算机科学
+  - 网络安全
+  - CTF
+  - moeCTF
+tags:
+  - CTF
+abbrlink: moeCTF-03
+date: 2020-10-09 00:00:00
 ---
 
-# 【moeCTF题解-0x03】Algorithm
+# 【moeCTF 题解 -0x03】Algorithm
 
 ***计算是宇宙的本质***
 
@@ -27,16 +29,16 @@ tags:
 
 <br/>
 
-> **【moeCTF题解】总目录如下：**
+> **【moeCTF 题解】总目录如下：**
 >
-> * [【moeCTF题解-0x00】序				（包括Sign in）](https://framist.github.io/2020/10/09/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x00%E3%80%91%E5%BA%8F/)
+> * [【moeCTF 题解 -0x00】序				（包括 Sign in）](https://framist.github.io/2020/10/09/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x00%E3%80%91%E5%BA%8F/)
 >
-> * [【moeCTF题解-0x01】Reverse      （包括Android、IoT）](https://framist.github.io/2020/10/09/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x01%E3%80%91Reverse/)
-> * [【moeCTF题解-0x02】Pwn](https://framist.github.io/2020/10/09/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x02%E3%80%91Pwn/)
-> * [【moeCTF题解-0x03】Algorithm](https://framist.github.io/2020/10/12/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x03%E3%80%91Algorithm/)
-> * [【moeCTF题解-0x04】Crypto          （包括 Classic Crypto）](https://framist.github.io/2020/10/12/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x04%E3%80%91Crypto/)
-> * [【moeCTF题解-0x05】Misc](https://framist.github.io/2020/10/15/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x05%E3%80%91Misc/)
-> * [【moeCTF题解-0x06】Web](https://framist.github.io/2020/10/25/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x06%E3%80%91Web/)
+> * [【moeCTF 题解 -0x01】Reverse（包括 Android、IoT）](https://framist.github.io/2020/10/09/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x01%E3%80%91Reverse/)
+> * [【moeCTF 题解 -0x02】Pwn](https://framist.github.io/2020/10/09/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x02%E3%80%91Pwn/)
+> * [【moeCTF 题解 -0x03】Algorithm](https://framist.github.io/2020/10/12/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x03%E3%80%91Algorithm/)
+> * [【moeCTF 题解 -0x04】Crypto（包括 Classic Crypto）](https://framist.github.io/2020/10/12/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x04%E3%80%91Crypto/)
+> * [【moeCTF 题解 -0x05】Misc](https://framist.github.io/2020/10/15/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x05%E3%80%91Misc/)
+> * [【moeCTF 题解 -0x06】Web](https://framist.github.io/2020/10/25/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x06%E3%80%91Web/)
 
 <br/>
 
@@ -51,9 +53,9 @@ tags:
 >
 > what a mess!
 >
-> flag请准确提交.
+> flag 请准确提交。
 >
-> 本题请锻炼自己的编程能力, 当然工具人解法也可以拿到`flag`.
+> 本题请锻炼自己的编程能力，当然工具人解法也可以拿到`flag`.
 
 题目所给附件的内容如下：
 
@@ -97,7 +99,7 @@ for i in outflag:
     if i.isnumeric():
         d = d + i
 print(d)
-# 手撕部分，这里当时觉得手撕比较快就手撕了，得dl
+# 手撕部分，这里当时觉得手撕比较快就手撕了，得 dl
 dd = ''
 dl = [109, 111, 101 ,99 ,116, 102 ,123, 112 ,121 ,116 ,104 ,48, 110, 95 ,49 ,115, 95, 115 ,48 ,95 ,115 ,49 ,109 ,112, 108 ,101 ,125]
 for i in dl:
@@ -105,7 +107,7 @@ for i in dl:
 print(dd)
 ```
 
-运行得到flag：`moectf{pyth0n_1s_s0_s1mple}`
+运行得到 flag：`moectf{pyth0n_1s_s0_s1mple}`
 
 
 
@@ -115,14 +117,14 @@ print(dd)
 
 > 100points
 >
-> 数 据 统 计, 在题目的压缩包中有一些文件, 请统计所有文件中`FrankNB!`字符串出现了多少次, 统计得到的数字使用`base64`编码后包裹上`moectf{}`提交.
+> 数 据 统 计，在题目的压缩包中有一些文件，请统计所有文件中`FrankNB!`字符串出现了多少次，统计得到的数字使用`base64`编码后包裹上`moectf{}`提交。
 >
-> 例如: 我统计结果为`6324`, 那么`flag`为: `moectf{NjMyNA==}`
+> 例如：我统计结果为`6324`, 那么`flag`为：`moectf{NjMyNA==}`
 >
-> 如果你的答案一直不正确, 请联系管理员, 不要多次提交爆破`flag`.
+> 如果你的答案一直不正确，请联系管理员，不要多次提交爆破`flag`.
 >
 > 
->注:本题如果使用工具解出的话, 你下一题写起来会比较困难哦~
+>注：本题如果使用工具解出的话，你下一题写起来会比较困难哦~
 
 题目所附的出题脚本如下：
 
@@ -184,7 +186,7 @@ print(b'moectf{' + base64.b64encode(bytes(str(SUM),encoding='utf-8')) + b'}')
 
 运行后`SUM = 205232`
 
-得到flag：`moectf{MjA1MjMy}`
+得到 flag：`moectf{MjA1MjMy}`
 
 <br/>
 
@@ -194,25 +196,25 @@ print(b'moectf{' + base64.b64encode(bytes(str(SUM),encoding='utf-8')) + b'}')
 
 > 200points
 >
-> 题目的压缩包中有一些文件, 每个文件均以`EqqieNB`开头, 请你统计一下由`EqqieNB!`开头, 而不是以`EqqieNB?`开头的文件中, 连续字母数字的子符串一共有多少个, 开头的`EqqieNB`不计入总数.
+> 题目的压缩包中有一些文件，每个文件均以`EqqieNB`开头，请你统计一下由`EqqieNB!`开头，而不是以`EqqieNB?`开头的文件中，连续字母数字的子符串一共有多少个，开头的`EqqieNB`不计入总数。
 >
-> 例如: 文件内容为
+> 例如：文件内容为
 >
 > ```
 > EqqieNB!Dp6```!]PJa4xaLzgC5TDzf'Ze@FF'WH&J6{QnoBpBzV&j?Q;hs22So*y)Ses&MOuB7*8]3*4[0'en
 > ```
 >
-> 那么符合要求的字符串有:
+> 那么符合要求的字符串有：
 >
 > ```
 > ['Dp6', 'PJa4xaLzgC5TDzf', 'Ze', 'FF', 'WH', 'J6', 'QnoBpBzV', 'j', 'Q', 'hs22So', 'y', 'Ses', 'MOuB7', '8', '3', '4', '0', 'en']
 > ```
 >
-> 一共18个. 如果文件开头为`EqqieNB?`, 那么忽略文件中所有内容, 继续处理其他文件.
+> 一共 18 个。如果文件开头为`EqqieNB?`, 那么忽略文件中所有内容，继续处理其他文件。
 >
-> 请统计所有文件中符合要求的字符串个数, 总数使用`Base64`编码后, 包裹上`moectf{}`进行提交. 例如我的统计结果为`6324`, 那么`flag`为: `moectf{NjMyNA==}`
+> 请统计所有文件中符合要求的字符串个数，总数使用`Base64`编码后，包裹上`moectf{}`进行提交。例如我的统计结果为`6324`, 那么`flag`为：`moectf{NjMyNA==}`
 >
-> 如果提交多次答案都不正确, 请检查你的算法是否正确, 请勿爆破`flag`. 如果实在感觉题目有问题, 请戳管理员. `flag`提交次数限制为15次, 且每分钟只能提交5次.
+> 如果提交多次答案都不正确，请检查你的算法是否正确，请勿爆破`flag`. 如果实在感觉题目有问题，请戳管理员。`flag`提交次数限制为 15 次，且每分钟只能提交 5 次。
 
 
 
@@ -401,24 +403,24 @@ with open(r'Algorithm\千层饼\puzzle0.txt', 'rb') as f:
 > acwetadf
 > ```
 >
-> 输出示例:
+> 输出示例：
 >
 > ```
 > 7
 > ```
 >
-> 输出解释:
+> 输出解释：
 >
 > 最长的一串为`cwetadf`
 >
-> 数据范围: `1 <= input.length() <= 10000000`
+> 数据范围：`1 <= input.length() <= 10000000`
 >
 > ```
-> update: 题目数据中字符范围为所有可打印ASCII字符: 32<=ord(ch)<=126
+> update: 题目数据中字符范围为所有可打印 ASCII 字符：32<=ord(ch)<=126
 > ```
 >
 > ```
-> 注: 仅支持C++评测.
+> 注：仅支持 C++ 评测。
 > ```
 
 
@@ -430,27 +432,27 @@ with open(r'Algorithm\千层饼\puzzle0.txt', 'rb') as f:
 
 > 500points
 >
-> `luoqi@n`是一个MC资深玩家, 他不管在哪个服务器都拥有着成箱成箱的钻石. 但是有一天, 他觉得自己的钻石实在是太多了, 想向村民拍卖掉一些, 换成绿宝石, 于是他就带着一背包的钻石块出发了.
+> `luoqi@n`是一个 MC 资深玩家，他不管在哪个服务器都拥有着成箱成箱的钻石。但是有一天，他觉得自己的钻石实在是太多了，想向村民拍卖掉一些，换成绿宝石，于是他就带着一背包的钻石块出发了。
 >
-> 到了村庄, 村民闻讯赶来. 每个村民手中都带了`9`块绿宝石, 他们排好队后从前往后依次出价. 由于前面村民出价的限制, 后出价的村民提出的价钱必须大于等于之前所有村民的出价.由于宝石实在太多了所以所有的村民都会出价.
+> 到了村庄，村民闻讯赶来。每个村民手中都带了`9`块绿宝石，他们排好队后从前往后依次出价。由于前面村民出价的限制，后出价的村民提出的价钱必须大于等于之前所有村民的出价。由于宝石实在太多了所以所有的村民都会出价。
 >
-> 在拍卖会上`luoqi@n`一眼看下去, 突然想到一个问题:
+> 在拍卖会上`luoqi@n`一眼看下去，突然想到一个问题：
 >
-> 如果把村民从前往后出的价钱拼接起来, 拼成一个超级大的整数, 那么在所有可能出现的情况中, 这个整数能整除**另一个给定整数**`p`的情况有多少种?
+> 如果把村民从前往后出的价钱拼接起来，拼成一个超级大的整数，那么在所有可能出现的情况中，这个整数能整除**另一个给定整数**`p`的情况有多少种？
 >
-> 由于答案可能非常的大, `luoqi@n`只希望知道结果`%999911659`就可以了.
+> 由于答案可能非常的大，`luoqi@n`只希望知道结果`%999911659`就可以了。
 >
-> luoqi@n的算法水平并不是很好, 你能帮他计算一下这个答案嘛?
+> luoqi@n 的算法水平并不是很好，你能帮他计算一下这个答案嘛？
 >
 > * 输入描述
 >
-> 输入只包含两个整数`n`,`p`, `n`为参与拍卖会的村民数量, `p`为要整除的目标整数.
+> 输入只包含两个整数`n`,`p`, `n`为参与拍卖会的村民数量，`p`为要整除的目标整数。
 >
-> 数据范围: `1 <= n <= 10^18, 1 <= p <= 500`
+> 数据范围：`1 <= n <= 10^18, 1 <= p <= 500`
 >
 > * 输出描述
 >
-> 输出一个整数, 为能够整除`p`的情况总数`%999911659`
+> 输出一个整数，为能够整除`p`的情况总数`%999911659`
 >
 > * 示例输入
 >
@@ -464,12 +466,12 @@ with open(r'Algorithm\千层饼\puzzle0.txt', 'rb') as f:
 > 15
 > ```
 >
-> * 输出解释:
+> * 输出解释：
 >
 > 符合要求的出价有`12 15 18 24 27 33 36 39 45 48 57 66 69 78 99`
 >
 > ```
-> 注: 仅支持C++评测.
+> 注：仅支持 C++ 评测。
 > ```
 
 <br/>

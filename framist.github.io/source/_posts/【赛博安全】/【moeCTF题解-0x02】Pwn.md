@@ -1,15 +1,17 @@
 ---
-title: 【moeCTF题解-0x02】Pwn
-categories: 
-- 计算机科学
-- 网络安全
-- CTF
-- moeCTF
-tags: 
-- CTF
+title: 【moeCTF 题解 -0x02】Pwn
+categories:
+  - 计算机科学
+  - 网络安全
+  - CTF
+  - moeCTF
+tags:
+  - CTF
+abbrlink: moeCTF-02
+date: 2020-10-09 00:00:00
 ---
 
-# 【moeCTF题解-0x02】Pwn
+# 【moeCTF 题解 -0x02】Pwn
 
 
 
@@ -23,22 +25,22 @@ tags:
 
 ```
 
-pwn好像距离日常生活有一点遥远呢，学起来都是一些全新的知识，编程中防溢出倒是有关注过，但目的仅仅是为了防止程序不出错。当然“pwn！”的快感也是足够给力，可是tnl *tnl* ***tnl***，moeCTF我仅做出来前4道题，感觉到现在连门都没有入……（这里可能因为学习成本的原因，后面的题必要的知识储备还没来得及学）
+pwn 好像距离日常生活有一点遥远呢，学起来都是一些全新的知识，编程中防溢出倒是有关注过，但目的仅仅是为了防止程序不出错。当然“pwn！”的快感也是足够给力，可是 tnl *tnl* ***tnl***，moeCTF 我仅做出来前 4 道题，感觉到现在连门都没有入……（这里可能因为学习成本的原因，后面的题必要的知识储备还没来得及学）
 
 <!--more-->
 
 <br/>
 
-> **【moeCTF题解】总目录如下：**
+> **【moeCTF 题解】总目录如下：**
 >
-> * [【moeCTF题解-0x00】序				（包括Sign in）](https://framist.github.io/2020/10/09/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x00%E3%80%91%E5%BA%8F/)
+> * [【moeCTF 题解 -0x00】序				（包括 Sign in）](https://framist.github.io/2020/10/09/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x00%E3%80%91%E5%BA%8F/)
 >
-> * [【moeCTF题解-0x01】Reverse      （包括Android、IoT）](https://framist.github.io/2020/10/09/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x01%E3%80%91Reverse/)
-> * [【moeCTF题解-0x02】Pwn](https://framist.github.io/2020/10/09/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x02%E3%80%91Pwn/)
-> * [【moeCTF题解-0x03】Algorithm](https://framist.github.io/2020/10/12/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x03%E3%80%91Algorithm/)
-> * [【moeCTF题解-0x04】Crypto          （包括 Classic Crypto）](https://framist.github.io/2020/10/12/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x04%E3%80%91Crypto/)
-> * [【moeCTF题解-0x05】Misc](https://framist.github.io/2020/10/15/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x05%E3%80%91Misc/)
-> * [【moeCTF题解-0x06】Web](https://framist.github.io/2020/10/25/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x06%E3%80%91Web/)
+> * [【moeCTF 题解 -0x01】Reverse（包括 Android、IoT）](https://framist.github.io/2020/10/09/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x01%E3%80%91Reverse/)
+> * [【moeCTF 题解 -0x02】Pwn](https://framist.github.io/2020/10/09/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x02%E3%80%91Pwn/)
+> * [【moeCTF 题解 -0x03】Algorithm](https://framist.github.io/2020/10/12/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x03%E3%80%91Algorithm/)
+> * [【moeCTF 题解 -0x04】Crypto（包括 Classic Crypto）](https://framist.github.io/2020/10/12/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x04%E3%80%91Crypto/)
+> * [【moeCTF 题解 -0x05】Misc](https://framist.github.io/2020/10/15/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x05%E3%80%91Misc/)
+> * [【moeCTF 题解 -0x06】Web](https://framist.github.io/2020/10/25/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x06%E3%80%91Web/)
 
 <br/>
 
@@ -49,13 +51,13 @@ pwn好像距离日常生活有一点遥远呢，学起来都是一些全新的�
 
 > 50points
 >
-> ### 欢迎来到pwn世界~
+> ### 欢迎来到 pwn 世界~
 >
 > 题目地址：`nc sec.eqqie.cn 10006`
 >
 > ### Q&A
 >
-> #### Q1 什么是pwn？
+> #### Q1 什么是 pwn？
 >
 > - 看看 [百度百科 - Pwn](https://baike.baidu.com/item/Pwn/5321286?fr=aladdin) 上的解释。
 >
@@ -64,26 +66,26 @@ pwn好像距离日常生活有一点遥远呢，学起来都是一些全新的�
 > 1. 借助 [ctfwiki](https://wiki.x10sec.org/pwn/arm/environment/)，这是前辈们整理出来的纲要，针对性很强，但是对于入门而言可能有些不太友好。
 > 2. 使用搜索引擎，前人的理解和表达可能对你有很大的帮助。
 > 3. 在非比赛情况下，可以观摩他人的解题思路，但是在比赛情况下，这是违规行为！
-> 4. 市面上少量的出版书籍，但是这些书籍个人觉得对0基础新手并不友好。
+> 4. 市面上少量的出版书籍，但是这些书籍个人觉得对 0 基础新手并不友好。
 >
 > #### Q3 需要什么基础？
 >
-> 1. 基本的C语言
+> 1. 基本的 C 语言
 > 2. 一点编译原理
-> 3. 一点Linux基础
-> 4. 一点python
+> 3. 一点 Linux 基础
+> 4. 一点 python
 > 5. 都学得很好再玩不太现实，可以通过比赛来促进学习
 >
 > #### Q4 怎样解题？
 >
 > 1. 题目的二进制文件一般会被部署到服务器上，使用`nc xx.xx.xx.xx(ip) xxxx(端口)`命令可以与服务器进行交互。并且该二进制文件的副本（与服务器上的完全相同或者基本相同）将作为附件形式被提供给选手下载。
 > 2. 你需要逆向分析二进制文件副本中存在的可利用漏洞，针对其编写`Exploit`(漏洞利用脚本)，然后向服务器发起攻击，拿到服务器上保存的`flag文件或字符串`，将其提交至本平台。
-> 3. 注意命令行中的`nc`并不是做题工具，你需要在Linux下安装`pwntools`库（或者其它），用于编写可用性较高的`Exploit`。至于如何安装，如何使用，就需要聪明的你发挥自己的学习能力啦~
+> 3. 注意命令行中的`nc`并不是做题工具，你需要在 Linux 下安装`pwntools`库（或者其它），用于编写可用性较高的`Exploit`。至于如何安装，如何使用，就需要聪明的你发挥自己的学习能力啦~
 > 4. 本题作为示例，不提供二进制文件，只需要按照提示进行操作即可获得`flag`。
 >
 > #### Q5 我可以搅屎吗？
 >
-> - 拿到shell输入`escape`可以沙箱逃逸（×
+> - 拿到 shell 输入`escape`可以沙箱逃逸（×
 
 <br/>
 
@@ -91,27 +93,27 @@ pwn好像距离日常生活有一点遥远呢，学起来都是一些全新的�
 
 ![image-20201010002007625](http://framist-bucket-openread.oss-cn-shanghai.aliyuncs.com/img/2023/08/15/20230815210547.png)
 
-Great！好耶！ 获得flag：`moectf{W3lc0m3_t0_tH3_w0r1d_0f_PWN!}`
+Great！好耶！获得 flag：`moectf{W3lc0m3_t0_tH3_w0r1d_0f_PWN!}`
 
 
 
 <br/>
 
-## Pwn从入门到入狱
+## Pwn 从入门到入狱
 
 > 50points
 >
 > **网络安全为人民，网络安全靠人民**
 >
-> 学了PWN以后还请做一位守法的好公民（
+> 学了 PWN 以后还请做一位守法的好公民（
 
 
 
-开题，是一篇 [arttnba3](https://arttnba3.cn/) 大大写的Pwn从入门到入狱指南
+开题，是一篇 [arttnba3](https://arttnba3.cn/) 大大写的 Pwn 从入门到入狱指南
 
-通读全篇还是*感觉有yi丶丶头大*
+通读全篇还是*感觉有 yi 丶丶头大*
 
-先得到文章最后flag再说#(滑稽)：` moectf{0hhhhhhh_I_kn0w_hoW_t0_R3v3rs3!}`
+先得到文章最后 flag 再说#(滑稽)：` moectf{0hhhhhhh_I_kn0w_hoW_t0_R3v3rs3!}`
 
 
 
@@ -119,7 +121,7 @@ Great！好耶！ 获得flag：`moectf{W3lc0m3_t0_tH3_w0r1d_0f_PWN!}`
 
 
 
-> 为了拥有“能够getshell任意一台设备”的能力而努力吧！新生代的黑客们！
+> 为了拥有“能够 getshell 任意一台设备”的能力而努力吧！新生代的黑客们！
 
 <br/>
 
@@ -129,8 +131,8 @@ Great！好耶！ 获得flag：`moectf{W3lc0m3_t0_tH3_w0r1d_0f_PWN!}`
 >
 > 尝试实战一下
 >
-> - 第一个hint是小贴士
-> - 实在没头绪就看看第二个hint (分数减半)
+> - 第一个 hint 是小贴士
+> - 实在没头绪就看看第二个 hint (分数减半)
 >
 > 
 >
@@ -150,7 +152,7 @@ Hello arttnba3!
 
 ：3 你好呀~
 
-并没有flag相关的信息。
+并没有 flag 相关的信息。
 
 <br/>
 
@@ -167,7 +169,7 @@ Partial RELRO   No canary found   NX enabled    No PIE          No RPATH   No RU
 
 <br/>
 
-**上IDA64，找到一些关键信息**：
+**上 IDA64，找到一些关键信息**：
 
 ```asm
 .text:0000000000400676 ; __int64 backdoor(void)
@@ -267,7 +269,7 @@ int __cdecl main(int argc, const char **argv, const char **envp)
 
 这里发现`scanf("%s", &v4)`语句没有限制输入的长度，可以利用其进行溢出
 
-于是构造playload如下：
+于是构造 playload 如下：
 
 ```python
 # nc sec.eqqie.cn 10003
@@ -288,9 +290,9 @@ p.interactive()
 # 此处有疑问
 ```
 
-运行此脚本可以get flag：`moectf{a0e65c41-fe8a-4db9-a070-f6593a5858c3}`
+运行此脚本可以 get flag：`moectf{a0e65c41-fe8a-4db9-a070-f6593a5858c3}`
 
-- [ ] 注：这里我还有一些疑问：在上面这个脚本中如果getshell之后直接进入交互模式（`p.interactive()`），手动输入`ls`等指令，系统会自动在前面加上一个序号，如`1: ls`，导致指令不被执行，目前还不知道是什么原因。指望大佬相助。
+- [ ] 注：这里我还有一些疑问：在上面这个脚本中如果 getshell 之后直接进入交互模式（`p.interactive()`），手动输入`ls`等指令，系统会自动在前面加上一个序号，如`1: ls`，导致指令不被执行，目前还不知道是什么原因。指望大佬相助。
 
 <br/>
 
@@ -298,7 +300,7 @@ p.interactive()
 
 > 100poins
 >
-> 你知道什么是shellcode吗？ 题目地址：`nc sec.eqqie.cn 10000`
+> 你知道什么是 shellcode 吗？题目地址：`nc sec.eqqie.cn 10000`
 
 ```bash
 $ nc sec.eqqie.cn 10000
@@ -309,7 +311,7 @@ Show me your shellcode: I do not know what is shellcode
 
 
 
-- [ ] 用IDA64打开，提示是32位程序，于是用32位的IDA打开（这里好像有点不对……
+- [ ] 用 IDA64 打开，提示是 32 位程序，于是用 32 位的 IDA 打开（这里好像有点不对……
 
 ```asm
 .text:08048080 ; =============== S U B R O U T I N E =======================================
@@ -393,11 +395,11 @@ void start()
 
 遂百度`shellcode`：
 
-> shellcode是一段用于利用软件漏洞而执行的代码，shellcode为16进制的机器码，因为经常让攻击者获得shell而得名。shellcode常常使用机器语言编写。 可在暂存器eip溢出后，塞入一段可让CPU执行的shellcode机器码，让电脑可以执行攻击者的任意指令。
+> shellcode 是一段用于利用软件漏洞而执行的代码，shellcode 为 16 进制的机器码，因为经常让攻击者获得 shell 而得名。shellcode 常常使用机器语言编写。可在暂存器 eip 溢出后，塞入一段可让 CPU 执行的 shellcode 机器码，让电脑可以执行攻击者的任意指令。
 >
 > ——百度百科
 
-即`shellcode`就是一串可以返回shell的机器指令码，使得在没有写后门来getshell的程序中也能getshell，在linux上典型的有：
+即`shellcode`就是一串可以返回 shell 的机器指令码，使得在没有写后门来 getshell 的程序中也能 getshell，在 linux 上典型的有：
 [Linux/x86 - execve(/bin/sh) + Polymorphic Shellcode (48 bytes)](https://www.exploit-db.com/exploits/13312)
 
 直接抄答案就行：
@@ -423,9 +425,9 @@ p.sendline("cat flag.txt")
 p.interactive()
 ```
 
-运行得到flag：`moectf{D0_yoU_kN0w_she11c0d3?}`
+运行得到 flag：`moectf{D0_yoU_kN0w_she11c0d3?}`
 
-更多相关知识参考[从0开始CTF-PWN（三）没有system怎么办？构造你的shellcode](https://bbs.pediy.com/thread-259723.html)，写的非常详尽。
+更多相关知识参考[从 0 开始 CTF-PWN（三）没有 system 怎么办？构造你的 shellcode](https://bbs.pediy.com/thread-259723.html)，写的非常详尽。
 
 <br/>
 

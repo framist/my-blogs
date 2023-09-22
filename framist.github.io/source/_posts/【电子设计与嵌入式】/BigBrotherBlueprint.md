@@ -1,11 +1,13 @@
 ---
 title: 【IoT】BigBrotherBlueprint
-categories: 
-- 电子设计与嵌入式
-tags: 
-- BBB
-- 计画
-- IoT
+categories:
+  - 电子设计与嵌入式
+tags:
+  - BBB
+  - 计画
+  - IoT
+abbrlink: big-brother-blueprint
+date: 2021-3-29
 ---
 
 # 【IoT】BigBrotherBlueprint 老大哥计画

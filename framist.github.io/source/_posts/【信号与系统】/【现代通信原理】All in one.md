@@ -1,16 +1,18 @@
 ---
-title: 【现代通信原理】笔记 All in one
-categories: 
-- 计算机科学
-- 课业学习
-- 现代通信原理
-tags: 
-- 现代通信原理
+title: Notes on the principles of modern communication - All in one
+categories:
+  - 计算机科学
+  - 课业学习
+  - 现代通信原理
+tags:
+  - 现代通信原理
+abbrlink: notes-on-the-principles-of-modern-communication
+date: 2022-03-15 00:00:00
 ---
 
 ![题图](https://pic4.zhimg.com/80/v2-b5407396c2ff2b8d1e65b264d54d3946.png)
 
-# 【现代通信原理】笔记
+# 【现代通信原理】笔记 All in one
 
 *Personal notes on modern communication principles*
 
@@ -20,7 +22,7 @@ framist 2022 年 3 月 15 日
 
 <!-- more -->
 
-- [【现代通信原理】笔记](#现代通信原理笔记)
+- [【现代通信原理】笔记 All in one](#现代通信原理笔记-all-in-one)
 - [【现代通信原理】1 导论](#现代通信原理1-导论)
   - [通信系统的基本结构](#通信系统的基本结构)
   - [消息的传输](#消息的传输)
@@ -2711,7 +2713,7 @@ M 等于 2
 2. 数字方式传输
 3. D/A
 
-A/D转换（数字化编码）的技术
+A/D 转换（数字化编码）的技术
 
 * 波形编码
 * 参量编码 *参量编码又称为声源编码，是将信源信号在频率域或其它正交变换域提取特征参量，并将其变换成数字代码进行传输。*

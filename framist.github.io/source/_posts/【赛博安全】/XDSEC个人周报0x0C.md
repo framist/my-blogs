@@ -1,31 +1,33 @@
 ---
-title: XDSEC个人周报0x0C
-categories: 
-- 计算机科学
-- 网络安全
-- 个人周报
-tags: 
-- 信息安全
-- 周报
+title: XDSEC 个人周报 0x0C
+categories:
+  - 计算机科学
+  - 网络安全
+  - 个人周报
+tags:
+  - 信息安全
+  - 周报
+abbrlink: 8267
+date: 2022-01-10 00:00:00
 ---
 
 
-# XDSEC个人周报0x0C
+# XDSEC 个人周报 0x0C
 
 2021-8-30 ~ 2022-1-9
 
-2021秋季学期第一、二、三、四、五、六、七、八、九、十、十一、十二、十三、十四、十五、十六、十七、十八、十九、二十周
+2021 秋季学期第一、二、三、四、五、六、七、八、九、十、十一、十二、十三、十四、十五、十六、十七、十八、十九、二十周
 
 <!--more-->
 
 ## 第一周
 
 * Web
-  * 《Web之困：现代Web应用安全指南_迷你书》
+  * 《Web 之困：现代 Web 应用安全指南_迷你书》
 * 速成密码学
   * 《图解密码技术》
 * 其他
-  * 鸽了几个CTF
+  * 鸽了几个 CTF
   * [E-kit](https://github.com/framist/E-kit)项目，本应该暑假里就搞好的，鸽到现在...
 
 ## 第二周
@@ -43,7 +45,7 @@ E-Kit
 
 ## 第四周
 
-TCTF没有输出
+TCTF 没有输出
 
 L-Team 好强
 
@@ -116,15 +118,15 @@ copilot
 
 学了一点点 electron
 
-用docker在室友的服务器上配置了一个code-server
+用 docker 在室友的服务器上配置了一个 code-server
 
-用docker在室友的服务器上配置了一个思源笔记服务
+用 docker 在室友的服务器上配置了一个思源笔记服务
 
 ### HITCON CTF 2021
 
 学到的：
 
-- hashcash 与linux工具hashcash
+- hashcash 与 linux 工具 hashcash
 - docker 的细节配置
 
 ## 第十五周
@@ -138,7 +140,7 @@ copilot
 CET-6
 
 - qpdf
-  - linux pdf工具，可解密非完全加密pdf
+  - linux pdf 工具，可解密非完全加密 pdf
 
 
 ## 第十七周
@@ -154,7 +156,7 @@ CET-6
     - https://www.jianshu.com/p/5baf47e7c4cb
     - https://cloud.tencent.com/developer/article/1477390
   - ffmpeg -hwaccels 查看所有可用的硬件加速器
-  - -c:v hevc_nvenc nvenc硬件加速
+  - -c:v hevc_nvenc nvenc 硬件加速
 
 ## 第十八周
 

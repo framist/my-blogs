@@ -1,32 +1,33 @@
 ---
-
-title: 【moeCTF题解-0x01】Reverse
-categories: 
-- 计算机科学
-- 网络安全
-- CTF
-- moeCTF
-tags: 
-- CTF
+title: 【moeCTF 题解 -0x01】Reverse
+categories:
+  - 计算机科学
+  - 网络安全
+  - CTF
+  - moeCTF
+tags:
+  - CTF
+abbrlink: moeCTF-01
+date: 2020-10-09 00:00:00
 ---
 
-# 【moeCTF题解-0x01】Reverse
+# 【moeCTF 题解 -0x01】Reverse
 
 *一个全新的领域*
 
 <!--more-->
 <br/>
 
-> **【moeCTF题解】总目录如下：**
+> **【moeCTF 题解】总目录如下：**
 >
-> * [【moeCTF题解-0x00】序				（包括Sign in）](https://framist.github.io/2020/10/09/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x00%E3%80%91%E5%BA%8F/)
+> * [【moeCTF 题解 -0x00】序				（包括 Sign in）](https://framist.github.io/2020/10/09/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x00%E3%80%91%E5%BA%8F/)
 >
-> * [【moeCTF题解-0x01】Reverse      （包括Android、IoT）](https://framist.github.io/2020/10/09/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x01%E3%80%91Reverse/)
-> * [【moeCTF题解-0x02】Pwn](https://framist.github.io/2020/10/09/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x02%E3%80%91Pwn/)
-> * [【moeCTF题解-0x03】Algorithm](https://framist.github.io/2020/10/12/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x03%E3%80%91Algorithm/)
-> * [【moeCTF题解-0x04】Crypto          （包括 Classic Crypto）](https://framist.github.io/2020/10/12/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x04%E3%80%91Crypto/)
-> * [【moeCTF题解-0x05】Misc](https://framist.github.io/2020/10/15/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x05%E3%80%91Misc/)
-> * [【moeCTF题解-0x06】Web](https://framist.github.io/2020/10/25/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x06%E3%80%91Web/)
+> * [【moeCTF 题解 -0x01】Reverse（包括 Android、IoT）](https://framist.github.io/2020/10/09/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x01%E3%80%91Reverse/)
+> * [【moeCTF 题解 -0x02】Pwn](https://framist.github.io/2020/10/09/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x02%E3%80%91Pwn/)
+> * [【moeCTF 题解 -0x03】Algorithm](https://framist.github.io/2020/10/12/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x03%E3%80%91Algorithm/)
+> * [【moeCTF 题解 -0x04】Crypto（包括 Classic Crypto）](https://framist.github.io/2020/10/12/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x04%E3%80%91Crypto/)
+> * [【moeCTF 题解 -0x05】Misc](https://framist.github.io/2020/10/15/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x05%E3%80%91Misc/)
+> * [【moeCTF 题解 -0x06】Web](https://framist.github.io/2020/10/25/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x06%E3%80%91Web/)
 
 <br/>
 
@@ -41,7 +42,7 @@ tags:
 
 开题，是一篇 [Reverier](https://www.wootec.top/) 大大写的逆向工程指引
 
-阅读到reverse.pdf的最后得到flag：
+阅读到 reverse.pdf 的最后得到 flag：
 
 ` moectf{0hhhhhhh_I_kn0w_hoW_t0_R3v3rs3!}`
 
@@ -53,15 +54,15 @@ tags:
 
 > 50points
 >
-> 欢迎来到逆向工程的世界!
+> 欢迎来到逆向工程的世界！
 >
-> 注: 在题目的压缩包中你会发现两个二进制文件. 没有后缀的为`Linux x86_64`平台上的可执行程序, 有后缀的为`Windows x86_64`平台上的可执行程序. 两个程序的验证逻辑与解出的`flag`均相同, 你选择其中一个进行逆向分析即可. 多平台是考虑到使用不同系统的选手均能在自己的平台上执行题目程序. 部分题目程序可能存在一些系统操作, 如果引起了安全软件报毒请忽略或在虚拟机内进行逆向. 题目程序均不会对系统造成破坏, 请放心食用.
+> 注：在题目的压缩包中你会发现两个二进制文件。没有后缀的为`Linux x86_64`平台上的可执行程序，有后缀的为`Windows x86_64`平台上的可执行程序。两个程序的验证逻辑与解出的`flag`均相同，你选择其中一个进行逆向分析即可。多平台是考虑到使用不同系统的选手均能在自己的平台上执行题目程序。部分题目程序可能存在一些系统操作，如果引起了安全软件报毒请忽略或在虚拟机内进行逆向。题目程序均不会对系统造成破坏，请放心食用。
 >
-> 点击下方的`View Hint`可以查看出题人给出的解题提示哦~ 有时候hint也许能祝你一臂之力!
+> 点击下方的`View Hint`可以查看出题人给出的解题提示哦~ 有时候 hint 也许能祝你一臂之力！
 
-开了免费的Hint，提示用`IDA`
+开了免费的 Hint，提示用`IDA`
 
-用IDA64反汇编，直接F5反编译一下main：
+用 IDA64 反汇编，直接 F5 反编译一下 main：
 
 ```c
 int __cdecl main(int argc, const char **argv, const char **envp)
@@ -83,7 +84,7 @@ int __cdecl main(int argc, const char **argv, const char **envp)
 }
 ```
 
-就看到flag了：`moectf{W3lc0me-T0_th3-W0rld_Of_R3v3rsE!}`
+就看到 flag 了：`moectf{W3lc0me-T0_th3-W0rld_Of_R3v3rsE!}`
 
 <br/>
 
@@ -93,7 +94,7 @@ int __cdecl main(int argc, const char **argv, const char **envp)
 >
 > ![shashasha.jpg](https://i.loli.net/2020/07/25/rLTZdOaItNPgJnb.jpg) 
 >
-> flag请精确提交哦 格式: moectf{xxxx}
+> flag 请精确提交哦 格式：moectf{xxxx}
 
 下载后看到一个只有一行的奇奇怪怪程序：
 
@@ -101,11 +102,11 @@ int __cdecl main(int argc, const char **argv, const char **envp)
 eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('l 1=m(\'k-4-2\');i j 6(){1.2(\'q r p --n o b\');1.2(5 1.4());1.2(`a ${5 1.d(\'9 h e?\')}!`);f 3=g;F(!3){1.2(\'D E 7 B 8:\');3=5 1.4()===\'G{H\'+\'c\'+\'v\'+\'w\'+\'0\'+\'u-\'+\'s\'+\'t\'+\'z\'+\'A\'+\'!}\'}1.2(\'y! x C 7 8!\')}6();',44,44,'|io|write|saidHi|read|await|main|the|flag|Who|Hello|Reverier||ask|you|let|false|are|async|function|console|const|require|written|by|ThankYouJavaScript|MoeCTF|2020|Jav|aS||k_|Y|You|Congratulations|cr|ipt|true|find|Please|input|while|moectf|Fx'.split('|'),0,{}))
 ```
 
-啊啊啊啊啊这是什么鬼呀，格式化一下也没有用，还是一行语句，也看不懂哪里有输入输出，但node竟然能运行
+啊啊啊啊啊这是什么鬼呀，格式化一下也没有用，还是一行语句，也看不懂哪里有输入输出，但 node 竟然能运行
 
 尝试手动重构，失败*N
 
-观察程序的特征，发现`eval(function(p,a,c,k,e,d{...})`，于是上百度，发现原来是一个js代码混淆工具产生的特征，将原程序前的`eval` 换成 `console.log`再运行可以轻松反混淆：
+观察程序的特征，发现`eval(function(p,a,c,k,e,d{...})`，于是上百度，发现原来是一个 js 代码混淆工具产生的特征，将原程序前的`eval` 换成 `console.log`再运行可以轻松反混淆：
 
 ```js
 require('console-read-write'); 
@@ -122,13 +123,13 @@ async function main() {
 } 
 ```
 
-得到flag：`moectf{Fxck_Y0u-JavaScript!}`
+得到 flag：`moectf{Fxck_Y0u-JavaScript!}`
 
-> JavaScript真的是一门可he爱xie的语言呢~
+> JavaScript 真的是一门可 he 爱 xie 的语言呢~
 
 具体原理可参考：[密码学笔记——eval(function(p,a,c,k,e,d) 的加密破解](https://www.cnblogs.com/xdjun/p/7467981.html)
 
-> 其实这个eval(function(p,a,c,k,e,d){}))中自带解码函数e()，“while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p” while循环产生的每个p就是解码后的函数代码,我们删掉源码中的“return p”,不用将结果返回, 而是直接输出在一个文本区域中
+> 其实这个 eval(function(p,a,c,k,e,d){})) 中自带解码函数 e()，“while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p”while 循环产生的每个 p 就是解码后的函数代码，我们删掉源码中的“return p”,不用将结果返回，而是直接输出在一个文本区域中
 
 <br/>
 
@@ -138,13 +139,13 @@ async function main() {
 >
 > xor xor xor!!! 
 >
-> 异或真的是一种美妙的操作呢~ 注: 在题目的压缩包中你会发现两个二进制文件. 没有后缀的为`Linux x86_64`平台上的可执行程序, 有后缀的为`Windows x86_64`平台上的可执行程序. 两个程序的验证逻辑与解出的`flag`均相同, 你选择其中一个进行逆向分析即可. 多平台是考虑到使用不同系统的选手均能在自己的平台上执行题目程序. 部分题目程序可能存在一些系统操作, 如果引起了安全软件报毒请忽略或在虚拟机内进行逆向. 题目程序均不会对系统造成破坏, 请放心食用.
+> 异或真的是一种美妙的操作呢~ 注：在题目的压缩包中你会发现两个二进制文件。没有后缀的为`Linux x86_64`平台上的可执行程序，有后缀的为`Windows x86_64`平台上的可执行程序。两个程序的验证逻辑与解出的`flag`均相同，你选择其中一个进行逆向分析即可。多平台是考虑到使用不同系统的选手均能在自己的平台上执行题目程序。部分题目程序可能存在一些系统操作，如果引起了安全软件报毒请忽略或在虚拟机内进行逆向。题目程序均不会对系统造成破坏，请放心食用。
 
 IDA 反编译，发现关键函数`enc`：
 
 ![image-20201009134249123](http://framist-bucket-openread.oss-cn-shanghai.aliyuncs.com/img/2023/08/15/20230815210535.png)
 
-cpoy一下，稍作修改，并把另一个地方找到的
+cpoy 一下，稍作修改，并把另一个地方找到的
 
 ```asm
 .data:0000000000404040 aim             db 'rpz|kydKw^qTl@Y/m2f/J-@o^k.,qkb',0
@@ -213,7 +214,7 @@ int main()
 }
 ```
 
-因为异或加密与解密是对称的，所以我们可以直接用`gcc`编译出可执行文件，运行得到flag：
+因为异或加密与解密是对称的，所以我们可以直接用`gcc`编译出可执行文件，运行得到 flag：
 
 `moectf{ThAnKs_F0r-y0U2_pAt13nt}`
 
@@ -223,13 +224,13 @@ int main()
 
 > 100points
 >
-> 曾经Reverier写了个小软件, 结果很轻易的就被别人破解, 然后贴了个其他的标志就拿出去卖了. 从那以后, Reverier就开始四处寻找方法来保护自己的程序. 比如...给程序套一层衣服.
+> 曾经 Reverier 写了个小软件，结果很轻易的就被别人破解，然后贴了个其他的标志就拿出去卖了。从那以后，Reverier 就开始四处寻找方法来保护自己的程序。比如...给程序套一层衣服。
 
-先IDA一下，没头绪，于是百度……
+先 IDA 一下，没头绪，于是百度……
 
-得知Linux下的程序加壳的很少（开源精神嘛），常用的加壳也只有几种方法，比如`upx`
+得知 Linux 下的程序加壳的很少（开源精神嘛），常用的加壳也只有几种方法，比如`upx`
 
-观察原程序的hex，返现确实是使用upx加壳的
+观察原程序的 hex，返现确实是使用 upx 加壳的
 
 ```asm
 0004e6f0: 00 0A 00 24 49 6E 66 6F 3A 20 54 68 69 73 20 66    ...$Info:.This.f
@@ -244,9 +245,9 @@ int main()
 0004e780: 20 52 65 73 65 72 76 65 64 2E 20 24 0A 00 90 90    .Reserved..$....
 ```
 
-解铃还须系铃人，upx也可以用于脱壳，Linux环境下运行`upx -d`得到脱壳后的程序
+解铃还须系铃人，upx 也可以用于脱壳，Linux 环境下运行`upx -d`得到脱壳后的程序
 
-上IDA64分析源码：
+上 IDA64 分析源码：
 
 ```c
 int __cdecl main(int argc, const char **argv, const char **envp)
@@ -290,7 +291,7 @@ for i in range(28):
 print(flag)
 ```
 
-得到flag：`moectf{upx_1S_simp1e-t0_u3e}`
+得到 flag：`moectf{upx_1S_simp1e-t0_u3e}`
 
 <br/>
 
@@ -298,15 +299,15 @@ print(flag)
 
 > 100points
 >
-> 人生苦短, 我用`pyyyyyyyyyython`
+> 人生苦短，我用`pyyyyyyyyyython`
 >
-> 环境: `Python 3.7.8 x86_64`
+> 环境：`Python 3.7.8 x86_64`
 >
 > **Q&A**
 >
 > - 本题是什么？
 >
-> Python逆向。
+> Python 逆向。
 >
 > - 怎么逆？
 >
@@ -359,19 +360,19 @@ for i in key:
 print(out1)
 ```
 
-得到flag：
+得到 flag：
 
 ```python
 moectf{tH1s_1s_th3-R3a1ly_3asy_Python!}
 ```
 
-关于python编译的原理，参考：（*这个找不到最初的原创作者了..侵删*）
+关于 python 编译的原理，参考：（*这个找不到最初的原创作者了..侵删*）
 
-> **1. Python是一门解释型语言？**
+> **1. Python 是一门解释型语言？**
 >
-> 我初学Python时，听到的关于Python的第一句话就是，Python是一门解释性语言，我就这样一直相信下去，直到发现了.pyc文件的存在。如果是解释型语言，那么生成的.pyc文件是什么呢？c应该是compiled的缩写才对啊！
+> 我初学 Python 时，听到的关于 Python 的第一句话就是，Python 是一门解释性语言，我就这样一直相信下去，直到发现了.pyc 文件的存在。如果是解释型语言，那么生成的.pyc 文件是什么呢？c 应该是 compiled 的缩写才对啊！
 >
-> 为了防止其他学习Python的人也被这句话误解，那么我们就在文中来澄清下这个问题，并且把一些基础概念给理清。
+> 为了防止其他学习 Python 的人也被这句话误解，那么我们就在文中来澄清下这个问题，并且把一些基础概念给理清。
 >
 >  
 >
@@ -379,45 +380,45 @@ moectf{tH1s_1s_th3-R3a1ly_3asy_Python!}
 >
 > 计算机是不能够识别高级语言的，所以当我们运行一个高级语言程序的时候，就需要一个“翻译机”来从事把高级语言转变成计算机能读懂的机器语言的过程。这个过程分成两类，第一种是编译，第二种是解释。
 >
-> 编译型语言在程序执行之前，先会通过编译器对程序执行一个编译的过程，把程序转变成机器语言。运行时就不需要翻译，而直接执行就可以了。最典型的例子就是C语言。
+> 编译型语言在程序执行之前，先会通过编译器对程序执行一个编译的过程，把程序转变成机器语言。运行时就不需要翻译，而直接执行就可以了。最典型的例子就是 C 语言。
 >
-> 解释型语言就没有这个编译的过程，而是在程序运行的时候，通过解释器对程序逐行作出解释，然后直接运行，最典型的例子是Ruby。
+> 解释型语言就没有这个编译的过程，而是在程序运行的时候，通过解释器对程序逐行作出解释，然后直接运行，最典型的例子是 Ruby。
 >
 > 通过以上的例子，我们可以来总结一下解释型语言和编译型语言的优缺点，因为编译型语言在程序运行之前就已经对程序做出了“翻译”，所以在运行时就少掉了“翻译”的过程，所以效率比较高。但是我们也不能一概而论，一些解释型语言也可以通过解释器的优化来在对程序做出翻译时对整个程序做出优化，从而在效率上超过编译型语言。
 >
-> 此外，随着Java等基于虚拟机的语言的兴起，我们又不能把语言纯粹地分成解释型和编译型这两种。
+> 此外，随着 Java 等基于虚拟机的语言的兴起，我们又不能把语言纯粹地分成解释型和编译型这两种。
 >
-> 用Java来举例，Java首先是通过编译器编译成字节码文件，然后在运行时通过解释器给解释成机器文件。所以我们说Java是一种先编译后解释的语言。
+> 用 Java 来举例，Java 首先是通过编译器编译成字节码文件，然后在运行时通过解释器给解释成机器文件。所以我们说 Java 是一种先编译后解释的语言。
 >
 >  
 >
-> **3. Python到底是什么** 
+> **3. Python 到底是什么** 
 >
 > 其实Python和Java/C#一样，也是一门基于虚拟机的语言，我们先来从表面上简单地了解一下Python程序的运行过程吧。
 >
-> 当我们在命令行中输入python hello.py时，其实是激活了Python的“解释器”，告诉“解释器”：你要开始工作了。可是在“解释”之前，其实执行的第一项工作和Java一样，是编译。
+> 当我们在命令行中输入 python hello.py 时，其实是激活了 Python 的“解释器”，告诉“解释器”：你要开始工作了。可是在“解释”之前，其实执行的第一项工作和 Java 一样，是编译。
 >
-> 熟悉Java的同学可以想一下我们在命令行中如何执行一个Java的程序：
+> 熟悉 Java 的同学可以想一下我们在命令行中如何执行一个 Java 的程序：
 >
 > `javac hello.java`
 >
 > `java hello`
 >
->  只是我们在用Eclipse之类的IDE时，将这两部给融合成了一部而已。其实Python也一样，当我们执行python hello.py时，他也一样执行了这么一个过程，所以我们应该这样来描述Python，Python是一门先编译后解释的语言。
+>  只是我们在用 Eclipse 之类的 IDE 时，将这两部给融合成了一部而已。其实 Python 也一样，当我们执行 python hello.py 时，他也一样执行了这么一个过程，所以我们应该这样来描述 Python，Python 是一门先编译后解释的语言。
 >
 > 
 >
-> **4. 简述Python的运行过程**
+> **4. 简述 Python 的运行过程**
 >
-> 在说这个问题之前，我们先来说两个概念，PyCodeObject和pyc文件。
+> 在说这个问题之前，我们先来说两个概念，PyCodeObject 和 pyc 文件。
 >
-> 我们在硬盘上看到的pyc自然不必多说，而其实PyCodeObject则是Python编译器真正编译成的结果。我们先简单知道就可以了，继续向下看。
+> 我们在硬盘上看到的 pyc 自然不必多说，而其实 PyCodeObject 则是 Python 编译器真正编译成的结果。我们先简单知道就可以了，继续向下看。
 >
-> 当python程序运行时，编译的结果则是保存在位于内存中的PyCodeObject中，当Python程序运行结束时，Python解释器则将PyCodeObject写回到pyc文件中。
+> 当 python 程序运行时，编译的结果则是保存在位于内存中的 PyCodeObject 中，当 Python 程序运行结束时，Python 解释器则将 PyCodeObject 写回到 pyc 文件中。
 >
-> 当python程序第二次运行时，首先程序会在硬盘中寻找pyc文件，如果找到，则直接载入，否则就重复上面的过程。
+> 当 python 程序第二次运行时，首先程序会在硬盘中寻找 pyc 文件，如果找到，则直接载入，否则就重复上面的过程。
 >
-> 所以我们应该这样来定位PyCodeObject和pyc文件，我们说pyc文件其实是PyCodeObject的一种持久化保存方式。
+> 所以我们应该这样来定位 PyCodeObject 和 pyc 文件，我们说 pyc 文件其实是 PyCodeObject 的一种持久化保存方式。
 
 亦可参考[官方文档](https://docs.python.org/3/library/compileall.html)
 
@@ -429,7 +430,7 @@ moectf{tH1s_1s_th3-R3a1ly_3asy_Python!}
 
 > 150points
 >
-> Reverier为了防止软件被轻易破解, 就费尽心思写了一个密码验证程序. 可这么简单的程序真的有用嘛? 作为逆向大神的你应该可以很轻易的破解这个问题.
+> Reverier 为了防止软件被轻易破解，就费尽心思写了一个密码验证程序。可这么简单的程序真的有用嘛？作为逆向大神的你应该可以很轻易的破解这个问题。
 
 ~~不会做~~时间不够，没来得及做
 
@@ -445,13 +446,13 @@ moectf{tH1s_1s_th3-R3a1ly_3asy_Python!}
 
 > 150points
 >
-> Reverier买了两个脚踏板.
+> Reverier 买了两个脚踏板。
 >
-> 当luoqi@n问他要做什么的时候, 他回答道:  `"编程啊"`
+> 当 luoqi@n 问他要做什么的时候，他回答道： `"编程啊"`
 >
 > 
 >
-> * 如何运行:
+> * 如何运行：
 >
 > `Linux x86_64`环境下安装`clisp`, 运行命令
 >
@@ -471,7 +472,7 @@ moectf{tH1s_1s_th3-R3a1ly_3asy_Python!}
 
 ```
 
-errr又是一行的程序
+errr 又是一行的程序
 
 稍微格式化一下：
 
@@ -502,9 +503,9 @@ errr又是一行的程序
 ;;;; flag is "&Dx16Y!x3((xYDlShWbQ5hmzWf3EZly6h8UwD#d-1-&#WlDHJaxM5qAzlPP"
 ```
 
-errrrrrr果然是“上帝的语言”
+errrrrrr 果然是“上帝的语言”
 
-~~突然好想学lisp啊，其他语言的各种语法结构在lisp竟然用括号完成了大一统 (›´ω`‹ ) 真 是 太 美 妙 啦~~
+~~突然好想学 lisp 啊，其他语言的各种语法结构在 lisp 竟然用括号完成了大一统 (›´ω`‹ ) 真 是 太 美 妙 啦~~
 
 
 
@@ -555,11 +556,11 @@ for Ichr in range(35,127):
     print(i,oFlag)
 ```
 
-本来就是破方法就不详细讲吧，大概原理就是我运行lisp加密flag的时候返现密文是逐节加密的，但相邻的字符还是会对加密结果产生一点影响，（[雪崩效应](https://baike.baidu.com/item/雪崩效应/13135322)不明显）。于是可以通过深度优先/广度优先搜索的方法解出原文，但又懒，就稍微写一下，然后手撕深度优先搜索了，加上flag是有意义的字符串，手撕也蛮方便。
+本来就是破方法就不详细讲吧，大概原理就是我运行 lisp 加密 flag 的时候返现密文是逐节加密的，但相邻的字符还是会对加密结果产生一点影响，（[雪崩效应](https://baike.baidu.com/item/雪崩效应/13135322)不明显）。于是可以通过深度优先/广度优先搜索的方法解出原文，但又懒，就稍微写一下，然后手撕深度优先搜索了，加上 flag 是有意义的字符串，手撕也蛮方便。
 
 flag：`moectf{woO0Oow_Y0u-ar3_th3_g0D_0f_LIIIISP!}`
 
-*此部分官方writeup出来后还会更新*
+*此部分官方 writeup 出来后还会更新*
 
 
 
@@ -573,17 +574,17 @@ flag：`moectf{woO0Oow_Y0u-ar3_th3_g0D_0f_LIIIISP!}`
 >
 > 
 >
-> * 链接:
+> * 链接：
 >
-> Java是什么? 能喝嘛?
+> Java 是什么？能喝嘛？
 >
-> 能喝 不能喝. Java是一门编程语言, 参考: [链接](https://pingfangx.github.io/java-tutorials/index.html)
+> 能喝 不能喝。Java 是一门编程语言，参考：[链接](https://pingfangx.github.io/java-tutorials/index.html)
 >
-> [Java有什么专用的逆向工具?](https://www.baidu.com/)
+> [Java 有什么专用的逆向工具？](https://www.baidu.com/)
 
 
 
-最近在上Java课，老师要求我们用`Eclipse`作为IDE，于是我在其中安装了`JD-Eclipse`插件进行反编译，可参考[这个](https://blog.csdn.net/qq_31772441/article/details/80281328),当然其他的方法还有很多。
+最近在上 Java 课，老师要求我们用`Eclipse`作为 IDE，于是我在其中安装了`JD-Eclipse`插件进行反编译，可参考[这个](https://blog.csdn.net/qq_31772441/article/details/80281328),当然其他的方法还有很多。
 
 反编译得到源码如下：
 
@@ -692,9 +693,9 @@ print(findit(1,26))
 
 **注**：这里我还傻傻地写了一个巨丑无比的递归来解，列表的边界处理还有一点问题没修。写完了才发现根据异或的对称性是可以直接解密的`_(:τ」∠)_`
 
-不管啦，有flag就行：`moectf{Java_1s-N0t_a-CUP_0f-c0ff3e}`
+不管啦，有 flag 就行：`moectf{Java_1s-N0t_a-CUP_0f-c0ff3e}`
 
-> ohhhh我会[Jvav](https://jvav.top/)啦！
+> ohhhh 我会[Jvav](https://jvav.top/)啦！
 
 
 
@@ -704,17 +705,17 @@ print(findit(1,26))
 
 > 200points
 >
-> 有时候啊, 眼光不能拘泥于一点.
+> 有时候啊，眼光不能拘泥于一点。
 >
 > 在软件设置中把任意一个学生的性别改成`2`, 保存后重启软件即可获取`flag`.
 >
-> 如果你是通过逆向主程序得到了`flag`, 请务必联系管理员加分, 顺便接受膜拜.
+> 如果你是通过逆向主程序得到了`flag`, 请务必联系管理员加分，顺便接受膜拜。
 
 下载程序打开后是这样的：
 
 ![image-20201009152004496](http://framist-bucket-openread.oss-cn-shanghai.aliyuncs.com/img/2023/08/15/20230815210535-1.png)
 
-打开`软件设置`，可以修改性别，但只能输入0和1：
+打开`软件设置`，可以修改性别，但只能输入 0 和 1：
 
 ![image-20201009152254678](http://framist-bucket-openread.oss-cn-shanghai.aliyuncs.com/img/2023/08/15/20230815210535-2.png)
 
@@ -747,11 +748,11 @@ print(findit(1,26))
     └── SQLite.Interop.dll
 ```
 
-是sqlite数据库，Windows下有一个可视化的工具`SQLiteSpy`可以方便编辑它
+是 sqlite 数据库，Windows 下有一个可视化的工具`SQLiteSpy`可以方便编辑它
 
 ![屏幕截图 2020-10-09 153003](http://framist-bucket-openread.oss-cn-shanghai.aliyuncs.com/img/2023/08/15/20230815210535-3.png)
 
-随便修改一个用户的性别信息再打开，跳出flag
+随便修改一个用户的性别信息再打开，跳出 flag
 
 ![image-20201009153132456](http://framist-bucket-openread.oss-cn-shanghai.aliyuncs.com/img/2023/08/15/20230815210535-4.png)
 
@@ -775,15 +776,15 @@ print(findit(1,26))
 
 > 100points
 >
-> 被Rx大哥的逆向题整哭了？ 快来看看友好的android逆向！
+> 被 Rx 大哥的逆向题整哭了？快来看看友好的 android 逆向！
 
-用虚拟机打开发现是一个flag验证程序：
+用虚拟机打开发现是一个 flag 验证程序：
 
 ![image-20201009214539242](http://framist-bucket-openread.oss-cn-shanghai.aliyuncs.com/img/2023/08/15/20230815210535-5.png)
 
 
 
-使用JEB，定位到com-example-MainActivity，按`TAB`解析，得到下图：
+使用 JEB，定位到 com-example-MainActivity，按`TAB`解析，得到下图：
 
 ![image-20201009214722330](http://framist-bucket-openread.oss-cn-shanghai.aliyuncs.com/img/2023/08/15/20230815210535-6.png)
 
@@ -836,7 +837,7 @@ print(flag)
 
 *这里同样可以利用异或的对称性简化解密，我这里没有出。*
 
-运行脚本得到flag：`moectf{Y0u_kn0w_@Ndro1d_b3tt3r_Th3n_Me!}`
+运行脚本得到 flag：`moectf{Y0u_kn0w_@Ndro1d_b3tt3r_Th3n_Me!}`
 
 <br/>
 
@@ -847,13 +848,13 @@ print(flag)
 > 动次~打次~
 > 
 
-### 解法1 - 内存修改
+### 解法 1 - 内存修改
 
 
 
-这里使用[GameGuardian](https://gameguardian.net/download)（俗称GG修改器，注意访问国外的官网下载，谨防盗版无良APP）来查找并修改内存。
+这里使用[GameGuardian](https://gameguardian.net/download)（俗称 GG 修改器，注意访问国外的官网下载，谨防盗版无良 APP）来查找并修改内存。
 
-#### 0x1 打开 GameGuardian 与题所附APK
+#### 0x1 打开 GameGuardian 与题所附 APK
 
 （注意需要 root 环境）
 
@@ -905,7 +906,7 @@ print(flag)
 
 
 
-#### 0x5 得到flag！
+#### 0x5 得到 flag！
 
 
 
@@ -917,13 +918,13 @@ print(flag)
 
 <br/>
 
-### 解法2 - 传统步骤
+### 解法 2 - 传统步骤
 
 #### 0x1 在虚拟机里打开：
 
 ![image-20201009220237608](http://framist-bucket-openread.oss-cn-shanghai.aliyuncs.com/img/2023/08/15/20230815210535-17.png)
 
-得点1919810下啊（这个数字好奇怪：3
+得点 1919810 下啊（这个数字好奇怪：3
 
 用连点器试一下，突然发现虚拟机变得巨卡无比，放弃
 
@@ -931,59 +932,59 @@ print(flag)
 
 
 
-参考[安卓apk反编译、修改、重新打包、签名全过程](https://blog.csdn.net/dreamer2020/article/details/52761606)再次进行尝试，发现在逆向出的源码里很难找关键信息，在汇编程序smali文件中倒是能找到1919810相关的代码，于是尝试直接修改汇编程序中的1919810为1，再打包运行程序获取flag。
+参考[安卓 apk 反编译、修改、重新打包、签名全过程](https://blog.csdn.net/dreamer2020/article/details/52761606)再次进行尝试，发现在逆向出的源码里很难找关键信息，在汇编程序 smali 文件中倒是能找到 1919810 相关的代码，于是尝试直接修改汇编程序中的 1919810 为 1，再打包运行程序获取 flag。
 
 **具体过程如下：**
 
-#### 0x2 用`apktool`解包apk文件
+#### 0x2 用`apktool`解包 apk 文件
 
 ```shell
 java -jar .\apktool_2.4.1.jar -r d .\click.apk -o out
 ```
 
-*这里参考了[这篇文章](https://blog.csdn.net/shahuhu000/article/details/82599134)以解决apktool重打包失败的问题*
+*这里参考了[这篇文章](https://blog.csdn.net/shahuhu000/article/details/82599134)以解决 apktool 重打包失败的问题*
 
-#### 0x3 在smali文件里查找
+#### 0x3 在 smali 文件里查找
 
-在smali文件里查找1919810的16进制0x1d4b42，定位到如下位置：
+在 smali 文件里查找 1919810 的 16 进制 0x1d4b42，定位到如下位置：
 
 ![image-20201009223728371](http://framist-bucket-openread.oss-cn-shanghai.aliyuncs.com/img/2023/08/15/20230815210535-18.png)
 
-#### 0x4修改0x1d4b42为0x1
+#### 0x4 修改 0x1d4b42 为 0x1
 
-这亚只要点一次就可以获取到flag啦
+这亚只要点一次就可以获取到 flag 啦
 
 
 
-#### 0x5用`apktool`重新打包
+#### 0x5 用`apktool`重新打包
 
 ```shell
 java -jar .\apktool_2.4.1.jar b out
 ```
 
-打包的apk生成在out文件夹下的dist文件夹里
+打包的 apk 生成在 out 文件夹下的 dist 文件夹里
 
 
 
 #### 0x6 获取一个签名
 
-如果在安卓虚拟机中安装，则提示缺少签名安装失败，于是需要对apk进行签名
+如果在安卓虚拟机中安装，则提示缺少签名安装失败，于是需要对 apk 进行签名
 
-> 签名是对要发布的apk文件作标记，确保你的apk文件有唯一的身份归属认证，只有相同签名和相同包名的文件才可以覆盖安装并保留用户信息。
+> 签名是对要发布的 apk 文件作标记，确保你的 apk 文件有唯一的身份归属认证，只有相同签名和相同包名的文件才可以覆盖安装并保留用户信息。
 
-`JDK`自带的签名工具`keytool`和`jarsigner`可以很方便的对apk进行签名
+`JDK`自带的签名工具`keytool`和`jarsigner`可以很方便的对 apk 进行签名
 
-> 首先，签名需要keystore文件，可以使用keytool工具生成，一般Java环境都带有keytool命令，可以在命令行测试。
+> 首先，签名需要 keystore 文件，可以使用 keytool 工具生成，一般 Java 环境都带有 keytool 命令，可以在命令行测试。
 >
 > 各个参数解释如下：
 >
 >  -genkey 产生证书文件 
 >  -alias 产生别名 
->  -keystore 指定密钥库的.keystore文件中 
->  -keyalg 指定密钥的算法,这里指定为RSA(非对称密钥算法) 
->  -validity 为证书有效天数，这里我们写的是40000天
+>  -keystore 指定密钥库的.keystore 文件中 
+>  -keyalg 指定密钥的算法，这里指定为 RSA(非对称密钥算法) 
+>  -validity 为证书有效天数，这里我们写的是 40000 天
 
-shell中执行
+shell 中执行
 
 ```shell
 keytool -genkey -alias demo.keystore -keyalg RSA -validity 40000 -keystore demo.keystore
@@ -1017,16 +1018,16 @@ CN=test, OU=test, O=test, L=test, ST=test, C=test是否正确?
 
 
 
-#### 0x7 对apk签上签名
+#### 0x7 对 apk 签上签名
 
-> `jarsigner`也存在于Java JDK的安装包当中，所以安装好了Java环境的话，可以直接在命令行使用。
+> `jarsigner`也存在于 Java JDK 的安装包当中，所以安装好了 Java 环境的话，可以直接在命令行使用。
 >
 >  `-verbose` 指定生成详细输出 
 >  `-keystore` 指定数字证书存储路径
 >
-> 这样，就完成了对一个apk的签名过程，然后就可以安装使用了。注意如果你的手机上原来就有这个apk，需要卸载掉。因为新apk的签名已经改变了。
+> 这样，就完成了对一个 apk 的签名过程，然后就可以安装使用了。注意如果你的手机上原来就有这个 apk，需要卸载掉。因为新 apk 的签名已经改变了。
 
-shell运行：
+shell 运行：
 
 ```shell
 jarsigner -verbose -keystore demo.keystore .\out\dist\click.apk demo.keystore
@@ -1049,13 +1050,13 @@ jar 已签名。
 
 
 
-#### 0x8 重新运行修改过的APK！
+#### 0x8 重新运行修改过的 APK！
 
 现在就可以安装运行啦：
 
 ![image-20201009220934604](http://framist-bucket-openread.oss-cn-shanghai.aliyuncs.com/img/2023/08/15/20230815210535-19.png)
 
-得到flag：`moectf{y0U_w1n!}`
+得到 flag：`moectf{y0U_w1n!}`
 
 <br/>
 

@@ -1,10 +1,10 @@
 ---
 title: TZSL：XKCD
-categories: 
-- 杂项
-tags: 
-- 杂项
-
+categories:
+  - 杂项
+tags:
+  - 杂项
+abbrlink: 40405
 ---
 
 XKCD 一些有趣的收集

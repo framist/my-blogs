@@ -1,13 +1,16 @@
 ---
 title: 【Java】Java 期末考复习
-categories: 
-- 计算机科学
-- 课业学习
-- Java
-tags: 
-- Java
-- 学习
+data: '2020-11-29 20:48'
+categories:
+  - 计算机科学
+  - 课业学习
+  - Java
+tags:
+  - Java
+  - 学习
+abbrlink: 29552
 ---
+
 # Java 复习
 
 > 2020 秋学期高级语言程序设计复习要点 
@@ -292,11 +295,11 @@ Wrapper 类实例的构造：将基本数据类型值传递给 Wrapper 类的
 Wrapper 类的常用方法和常量
 数值型 Wrapper 类中的 MIN_VALUE, MAX_VALUE
 byteValue()/shortValue()/longValue(), ... :
-将当前Wrapper类型的值作为byte/short/long/...返回
+将当前 Wrapper 类型的值作为 byte/short/long/...返回
 valueOf()：将字符串转换为 Wrapper 类型的实例
 toString()：将基本类型值转换为字符串
 parseByte()/parseShort()/parseInt(), ... :
-将字符串转换为byte/short/int/...类型值  
+将字符串转换为 byte/short/int/...类型值  
 
 
 

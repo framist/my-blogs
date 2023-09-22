@@ -1,48 +1,50 @@
 ---
-title: 【Python程序设计】上机作业 - 人类高质量代码
-categories: 
-- 计算机科学
-- 课业学习
-- Python
-tags: 
-- Python
-- 学习
+title: 【Python 程序设计】上机作业 - 人类高质量代码
+date: 2021-6-2
+categories:
+  - 计算机科学
+  - 课业学习
+  - Python
+tags:
+  - Python
+  - 学习
+abbrlink: 12455
 ---
 
 
 
-# 【Python程序设计】上机作业
+# 【Python 程序设计】上机作业
 
 有些代码是嫖的，但大部分代码尽自己可能尝试以最简单或是最有趣的方式实现。
 
-~~Python课自然是没有听的，肯定有更好更规范的写法，欢迎讨论~~
+~~Python 课自然是没有听的，肯定有更好更规范的写法，欢迎讨论~~
 
 目录：
 
-- [【Python程序设计】上机作业](#python程序设计上机作业)
+- [【Python 程序设计】上机作业](#python-程序设计上机作业)
 - [【Python】第一次上机报告](#python第一次上机报告)
   - [1）安装 Python，使用 Python 解释器。](#1安装-python使用-python-解释器)
   - [2）简单的加减乘除运算，调用标准模块 math 中的数学函数。](#2简单的加减乘除运算调用标准模块-math-中的数学函数)
   - [3）编写和运行 Python 脚本。](#3编写和运行-python-脚本)
   - [4）编写程序，生成包含 1000 个 0 到 100 之间的随机整数，并统计每个元素的出现次数。](#4编写程序生成包含-1000-个-0-到-100-之间的随机整数并统计每个元素的出现次数)
   - [5）编写程序，生成包含 20 个随机数的列表，然后将前 10 个元素升序排列，后 10 个元素降序排列，并输出结果。](#5编写程序生成包含-20-个随机数的列表然后将前-10-个元素升序排列后-10-个元素降序排列并输出结果)
-  - [6）编写程序，运行后用户输入 4 位整数作为年份，判断其是否为闰年。如果年份能被400 整除，则为闰年；如果年份能被 4 整除但不能被 100 整除也为闰年。](#6编写程序运行后用户输入-4-位整数作为年份判断其是否为闰年如果年份能被400-整除则为闰年如果年份能被-4-整除但不能被-100-整除也为闰年)
+  - [6）编写程序，运行后用户输入 4 位整数作为年份，判断其是否为闰年。如果年份能被 400 整除，则为闰年；如果年份能被 4 整除但不能被 100 整除也为闰年。](#6编写程序运行后用户输入-4-位整数作为年份判断其是否为闰年如果年份能被-400-整除则为闰年如果年份能被-4-整除但不能被-100-整除也为闰年)
 - [【Python】第二次上机报告](#python第二次上机报告)
-  - [例4-1 编写函数实现字符串加密和解密，循环使用指定密钥，采用简单的异或算法](#例4-1-编写函数实现字符串加密和解密循环使用指定密钥采用简单的异或算法)
+  - [例 4-1 编写函数实现字符串加密和解密，循环使用指定密钥，采用简单的异或算法](#例-4-1-编写函数实现字符串加密和解密循环使用指定密钥采用简单的异或算法)
     - [添加注释：](#添加注释)
-    - [使用zip()函数：](#使用zip函数)
+    - [使用 zip() 函数：](#使用-zip-函数)
     - [函数式编程的写法：](#函数式编程的写法)
-    - [优化代码，使用base64，使不可见字符可见](#优化代码使用base64使不可见字符可见)
-  - [例4-2 编写程序，生成大量随机信息，这在需要获取大量数据来测试或演示软件功能的时候非常有用，不仅能真实展示软件功能或算法，还可以避免泄露真实数据或者引起不必要的争议。](#例4-2-编写程序生成大量随机信息这在需要获取大量数据来测试或演示软件功能的时候非常有用不仅能真实展示软件功能或算法还可以避免泄露真实数据或者引起不必要的争议)
-  - [例4-3 检查并判断密码字符串的安全强度。这实际上是一个分类问题。](#例4-3-检查并判断密码字符串的安全强度这实际上是一个分类问题)
-  - [例4-4 编写程序，把一个英文句子中的单词倒置，标点符号不倒置，例如 I like beijing. 经过函数后变为：beijing. like I](#例4-4-编写程序把一个英文句子中的单词倒置标点符号不倒置例如-i-like-beijing-经过函数后变为beijing-like-i)
-  - [例4-5 编写程序，查找一个字符串中最长的数字子串](#例4-5-编写程序查找一个字符串中最长的数字子串)
+    - [优化代码，使用 base64，使不可见字符可见](#优化代码使用-base64使不可见字符可见)
+  - [例 4-2 编写程序，生成大量随机信息，这在需要获取大量数据来测试或演示软件功能的时候非常有用，不仅能真实展示软件功能或算法，还可以避免泄露真实数据或者引起不必要的争议。](#例-4-2-编写程序生成大量随机信息这在需要获取大量数据来测试或演示软件功能的时候非常有用不仅能真实展示软件功能或算法还可以避免泄露真实数据或者引起不必要的争议)
+  - [例 4-3 检查并判断密码字符串的安全强度。这实际上是一个分类问题。](#例-4-3-检查并判断密码字符串的安全强度这实际上是一个分类问题)
+  - [例 4-4 编写程序，把一个英文句子中的单词倒置，标点符号不倒置，例如 I like beijing. 经过函数后变为：beijing. like I](#例-4-4-编写程序把一个英文句子中的单词倒置标点符号不倒置例如-i-like-beijing-经过函数后变为beijing-like-i)
+  - [例 4-5 编写程序，查找一个字符串中最长的数字子串](#例-4-5-编写程序查找一个字符串中最长的数字子串)
 - [【Python】第三次上机报告](#python第三次上机报告)
   - [1）编写函数，接收一个字符串，分别统计大写字母、小写字母、数字、其他字符的个数，并以元组的形式返回结果。](#1编写函数接收一个字符串分别统计大写字母小写字母数字其他字符的个数并以元组的形式返回结果)
   - [2）编写函数，可以接收任意多个整数并输出其中的最大值和所有整数之和。](#2编写函数可以接收任意多个整数并输出其中的最大值和所有整数之和)
   - [3）编写函数，模拟内置函数 sorted()。](#3编写函数模拟内置函数-sorted)
   - [4）用字典建立一个通讯录，向字典中添加和删除通讯人（名字、电话、邮箱、工作单位等），查询某个人的信息，然后输出通讯录中所有人的信息。](#4用字典建立一个通讯录向字典中添加和删除通讯人名字电话邮箱工作单位等查询某个人的信息然后输出通讯录中所有人的信息)
-  - [5）用生成器的方式计算任意起止范围内质数的和。质数,又称素数,是大于 1 的自然数，除了 1 和它本身外，不能被其他自然数整除。](#5用生成器的方式计算任意起止范围内质数的和质数又称素数是大于-1-的自然数除了-1-和它本身外不能被其他自然数整除)
+  - [5）用生成器的方式计算任意起止范围内质数的和。质数，又称素数，是大于 1 的自然数，除了 1 和它本身外，不能被其他自然数整除。](#5用生成器的方式计算任意起止范围内质数的和质数又称素数是大于-1-的自然数除了-1-和它本身外不能被其他自然数整除)
 - [【Python】第四次上机报告](#python第四次上机报告)
   - [实现一个栈（Stack）的类](#实现一个栈stack的类)
   - [形状的类](#形状的类)
@@ -105,9 +107,9 @@ x = [random.randint(1,100) for _ in range(20)]
 print(sorted(x[:10])+sorted(x[11:],reverse=True))
 ```
 
-## 6）编写程序，运行后用户输入 4 位整数作为年份，判断其是否为闰年。如果年份能被400 整除，则为闰年；如果年份能被 4 整除但不能被 100 整除也为闰年。
+## 6）编写程序，运行后用户输入 4 位整数作为年份，判断其是否为闰年。如果年份能被 400 整除，则为闰年；如果年份能被 4 整除但不能被 100 整除也为闰年。
 
-使用了海象运算符赋值，故需python版本>=3.8
+使用了海象运算符赋值，故需 python 版本>=3.8
 
 ```python
 print('闰年' if ((year:=int(input("请输入年份：")))%4==0 and year%100!=0) or year%400==0 else '平年')
@@ -126,11 +128,11 @@ print('闰年' if calendar.isleap(int(input("输入年份："))) else '平年')
 
 # 【Python】第二次上机报告
 
-> 5月6号上机后的作业是“字符串1”中的例题,因为**代码已给出**,所以要求同学们写注释,验证代码是否有问题,写有关程序的思考(如初始看到题目,你是准备怎么实现的)。
+> 5 月 6 号上机后的作业是“字符串 1”中的例题，因为**代码已给出**,所以要求同学们写注释，验证代码是否有问题，写有关程序的思考 (如初始看到题目，你是准备怎么实现的)。
 
 
 
-## 例4-1 编写函数实现字符串加密和解密，循环使用指定密钥，采用简单的异或算法
+## 例 4-1 编写函数实现字符串加密和解密，循环使用指定密钥，采用简单的异或算法
 
 ### 添加注释：
 
@@ -164,7 +166,7 @@ decrypted = crypt(encrypted, key)
 print('After Decrypted:'+decrypted)
 ```
 
-### 使用zip()函数：
+### 使用 zip() 函数：
 
 ```python
 def crypt(source, key):
@@ -211,7 +213,7 @@ print('After Decrypted:'+decrypted)
 
 ```
 
-### 优化代码，使用base64，使不可见字符可见
+### 优化代码，使用 base64，使不可见字符可见
 
 ```python
 from base64 import b64encode
@@ -227,21 +229,21 @@ key = 'Python'
 print('Before Encrypted:'+source)
 encrypted = crypt(source, key)
 print('After Encrypted (base64enc):')
-print(b64encode(bytes(encrypted,encoding='utf8'))) # base64编码
+print(b64encode(bytes(encrypted,encoding='utf8'))) # base64 编码
 decrypted = crypt(encrypted, key)
 print('After Decrypted:'+decrypted)
 ```
 
 
 
-## 例4-2 编写程序，生成大量随机信息，这在需要获取大量数据来测试或演示软件功能的时候非常有用，不仅能真实展示软件功能或算法，还可以避免泄露真实数据或者引起不必要的争议。
+## 例 4-2 编写程序，生成大量随机信息，这在需要获取大量数据来测试或演示软件功能的时候非常有用，不仅能真实展示软件功能或算法，还可以避免泄露真实数据或者引起不必要的争议。
 
 ```python
 import random
 import string
 import codecs
 
-# 常用汉字Unicode编码表（部分），完整列表详见配套源代码
+# 常用汉字 Unicode 编码表（部分），完整列表详见配套源代码
 StringBase = '\u7684\u4e00\u4e86\u662f\u6211\u4e0d\u5728\u4eba'
 
 
@@ -261,13 +263,13 @@ def getTelNo():
 
 
 def getNameOrAddress(flag):
-    '''flag=1表示返回随机姓名，flag=0表示返回随机地址'''
+    '''flag=1 表示返回随机姓名，flag=0 表示返回随机地址'''
     result = ''
     if flag == 1:
-        # 大部分中国人姓名在2-4个汉字
+        # 大部分中国人姓名在 2-4 个汉字
         rangestart, rangeend = 2, 4
     elif flag == 0:
-        # 假设地址在10-30个汉字之间
+        # 假设地址在 10-30 个汉字之间
         rangestart, rangeend = 10, 30
     else:
         print('flag must be 1 or 0')
@@ -288,10 +290,10 @@ def getAge():
 def main(filename):
     with codecs.open(filename, 'w', 'utf-8') as fp:
         # 虽然内置的 open() 和相关联的 io 模块是操作已编码文本文件的推荐方式，
-        # 但codecs.open也提供了额外的工具函数和类，
+        # 但 codecs.open 也提供了额外的工具函数和类，
         # 允许在操作二进制文件时使用更多各类的编解码器：
         fp.write('Name,Sex,Age,TelNO,Address,Email\n')
-        # 随机生成200个人的信息
+        # 随机生成 200 个人的信息
         for i in range(200):
             name = getNameOrAddress(1)
             sex = getSex()
@@ -324,18 +326,18 @@ if __name__ == '__main__':
 
 
 
-## 例4-3 检查并判断密码字符串的安全强度。这实际上是一个分类问题。
+## 例 4-3 检查并判断密码字符串的安全强度。这实际上是一个分类问题。
 
 ```python
 import string
 
 def check(pwd):
-    # 密码必须至少包含6个字符
+    # 密码必须至少包含 6 个字符
     if not isinstance(pwd, str) or len(pwd) < 6:
         return 'not suitable for password'
     # 密码强度等级与包含字符种类的对应关系
     d = {1: 'weak', 2: 'below middle', 3: 'above middle', 4: 'strong'}
-    # 分别用来标记pwd是否含有数字、小写字母、大写字母和指定的标点符号
+    # 分别用来标记 pwd 是否含有数字、小写字母、大写字母和指定的标点符号
     r = [False] * 4
 
     for ch in pwd:
@@ -361,7 +363,7 @@ def check(pwd):
 print(check('a2C233d'))
 ```
 
-## 例4-4 编写程序，把一个英文句子中的单词倒置，标点符号不倒置，例如 I like beijing. 经过函数后变为：beijing. like I
+## 例 4-4 编写程序，把一个英文句子中的单词倒置，标点符号不倒置，例如 I like beijing. 经过函数后变为：beijing. like I
 
 添加了强制类型：
 
@@ -402,7 +404,7 @@ print(rev5(s))
 
 `beijing. like I`
 
-## 例4-5 编写程序，查找一个字符串中最长的数字子串
+## 例 4-5 编写程序，查找一个字符串中最长的数字子串
 
 ```python
 def longest(s):
@@ -440,7 +442,7 @@ for s in ss:
 选择法：
 
 ```python
-# 选择法def longest(s: str):    length = len(s)    start = 0    span = (0, 0)    for pos in range(length):        if s[pos].isdigit() and (pos == 0 or not s[pos-1].isdigit()):            start = pos        elif ((not s[pos].isdigit()) and s[pos-1].isdigit()              and pos-start > span[1]-span[0]):            span = (start, pos-1)    # 字符串以数字结束的情况    if s[pos].isdigit() and pos-start >= span[1]-span[0]:        span = (start, pos)    return s[span[0]:span[1]+1]ss = ('111abc2d3', 'abc111111d', 'a2bc11111111')for s in ss:    print(s, longest(s), sep=':')
+# 选择法 def longest(s: str):    length = len(s)    start = 0    span = (0, 0)    for pos in range(length):        if s[pos].isdigit() and (pos == 0 or not s[pos-1].isdigit()):            start = pos        elif ((not s[pos].isdigit()) and s[pos-1].isdigit()              and pos-start > span[1]-span[0]):            span = (start, pos-1)    # 字符串以数字结束的情况    if s[pos].isdigit() and pos-start >= span[1]-span[0]:        span = (start, pos)    return s[span[0]:span[1]+1]ss = ('111abc2d3', 'abc111111d', 'a2bc11111111')for s in ss:    print(s, longest(s), sep=':')
 ```
 
 # 【Python】第三次上机报告
@@ -455,7 +457,7 @@ for s in ss:
 >
 > 4）用字典建立一个通讯录，向字典中添加和删除通讯人（名字、电话、邮箱、工作单位等），查询某个人的信息，然后输出通讯录中所有人的信息。
 >
-> 5）用生成器的方式计算任意起止范围内质数的和。质数,又称素数,是大于 1 的自然数，除了 1 和它本身外，不能被其他自然数整除。
+> 5）用生成器的方式计算任意起止范围内质数的和。质数，又称素数，是大于 1 的自然数，除了 1 和它本身外，不能被其他自然数整除。
 
 
 
@@ -509,10 +511,10 @@ if __name__ == '__main__':
 ```python
 # timSort
 ''''
-timSort是python、Java等语言的内置排序函数。timSort将插入排序和归并排序结合，首先将
-原始无须列表分割成一个个run,run是将原始无需序列按照对应关系分割而成，一般这里的run
+timSort 是 python、Java 等语言的内置排序函数。timSort 将插入排序和归并排序结合，首先将
+原始无须列表分割成一个个 run,run 是将原始无需序列按照对应关系分割而成，一般这里的 run
 制的是原始序列里面存在的有序序列。任何无序序列可以被分割成有序序列的集合。
-说明：这里仅仅实现了timsort的雏形，没有考虑minrun。
+说明：这里仅仅实现了 timsort 的雏形，没有考虑 minrun。
 '''
 
 import random
@@ -565,7 +567,7 @@ def timSort(the_array):
     length = len(the_array)
     new_run = []
 
-    for i in range(1, length):  # 将序列分割成多个有序的run
+    for i in range(1, length):  # 将序列分割成多个有序的 run
         if i == length - 1:
             new_run.append(the_array[i])
             runs.append(new_run)
@@ -595,12 +597,12 @@ arr = [random.random() for _ in range(1000)]
 t0 = time.perf_counter()
 timSort(arr)
 t1 = time.perf_counter()
-print('共%.5f秒' % (t1-t0))
+print('共%.5f 秒' % (t1-t0))
 
 t0 = time.perf_counter()
 sorted(arr)
 t1 = time.perf_counter()
-print('共%.5f秒' % (t1-t0))
+print('共%.5f 秒' % (t1-t0))
 ```
 
 
@@ -610,14 +612,14 @@ print('共%.5f秒' % (t1-t0))
 `共0.43574秒`
 `共0.00009秒`
 
-参考：[TimSort（简易版）和堆排序的Python实现_Leahy000的博客-CSDN博客](https://blog.csdn.net/weixin_41954254/article/details/84573341)
+参考：[TimSort（简易版）和堆排序的 Python 实现_Leahy000 的博客-CSDN 博客](https://blog.csdn.net/weixin_41954254/article/details/84573341)
 
 ## 4）用字典建立一个通讯录，向字典中添加和删除通讯人（名字、电话、邮箱、工作单位等），查询某个人的信息，然后输出通讯录中所有人的信息。
 
 ```python
 def add():
     # 添加通讯人
-    name, tel, email, add = input('请输入您要添加的通讯人信息，以空格分开: ').split()
+    name, tel, email, add = input('请输入您要添加的通讯人信息，以空格分开：').split()
     contacts.append({'姓名': name, '电话': tel, '电子邮箱': email, '地址': add})
 
 def lookfor(name):
@@ -628,7 +630,7 @@ def lookfor(name):
 
 def delect():
     # 删除通讯人
-    name = input('请输入要删除人的姓名: ')
+    name = input('请输入要删除人的姓名：')
     d = lookfor(name)
     if(d == None):
         print('查无此人')
@@ -637,7 +639,7 @@ def delect():
 
 def inquire():
     # 查询某个人的信息
-    name = input('请输入需要查询的人的姓名: ')
+    name = input('请输入需要查询的人的姓名：')
     d = lookfor(name)
     if(d == None):
         print('查无此人')
@@ -675,7 +677,7 @@ if __name__ == '__main__':
 
 
 
-## 5）用生成器的方式计算任意起止范围内质数的和。质数,又称素数,是大于 1 的自然数，除了 1 和它本身外，不能被其他自然数整除。
+## 5）用生成器的方式计算任意起止范围内质数的和。质数，又称素数，是大于 1 的自然数，除了 1 和它本身外，不能被其他自然数整除。
 
 ```python
 def myprime(x):
@@ -709,7 +711,7 @@ print([x for x in myprimes(a, b)])
 >
 > 1）编写代码，实现一个栈（Stack）的类。栈是只能在一端插入和删除数据的序列。它按照先进后出的原则存储数据，先进入的数据被压入栈底，最后的数据在栈顶，需要读数据的时候从栈顶开始弹出数据（最后一个数据被第一个读出来）。
 >
-> 2）编写代码，定义一个形状基类，有 2 个属性：面积和周长，以及两个无返回值的方法：area()和 perimeter()，分别计算形状的面积和周长，从基类派生出三个子类：三角形、矩形、圆，重载基类的两个方法。
+> 2）编写代码，定义一个形状基类，有 2 个属性：面积和周长，以及两个无返回值的方法：area() 和 perimeter()，分别计算形状的面积和周长，从基类派生出三个子类：三角形、矩形、圆，重载基类的两个方法。
 
 
 
@@ -757,7 +759,7 @@ class Stack(object):
 # 有 2 个属性：
 #   面积和周长，
 # 以及两个无返回值的方法：
-#   area()和 perimeter()，分别计算形状的面积和周长
+#   area() 和 perimeter()，分别计算形状的面积和周长
 #
 # 从基类派生出三个子类：三角形、矩形、圆，
 #   重载基类的两个方法

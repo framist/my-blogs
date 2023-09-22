@@ -1,17 +1,19 @@
 ---
-title: 【moeCTF题解-0x04】Crypto
-categories: 
-- 计算机科学
-- 网络安全
-- CTF
-- moeCTF
-tags: 
-- CTF
-- Python
-- Crypto
+title: 【moeCTF 题解 -0x04】Crypto
+categories:
+  - 计算机科学
+  - 网络安全
+  - CTF
+  - moeCTF
+tags:
+  - CTF
+  - Python
+  - Crypto
+abbrlink: moeCTF-04
+date: 2020-10-09 00:00:00
 ---
 
-# 【moeCTF题解-0x04】Crypto
+# 【moeCTF 题解 -0x04】Crypto
 
 *有多少信息熵，就能还原出多少信息*
 
@@ -20,22 +22,22 @@ tags:
 
 <br/>
 
-现代密码学知识没学多少，倒是把Classic Crypto部分AK惹……
+现代密码学知识没学多少，倒是把 Classic Crypto 部分 AK 惹……
 
 <!--more-->
 
 <br/>
 
-> **【moeCTF题解】总目录如下：**
+> **【moeCTF 题解】总目录如下：**
 >
-> * [【moeCTF题解-0x00】序				（包括Sign in）](https://framist.github.io/2020/10/09/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x00%E3%80%91%E5%BA%8F/)
+> * [【moeCTF 题解 -0x00】序				（包括 Sign in）](https://framist.github.io/2020/10/09/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x00%E3%80%91%E5%BA%8F/)
 >
-> * [【moeCTF题解-0x01】Reverse      （包括Android、IoT）](https://framist.github.io/2020/10/09/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x01%E3%80%91Reverse/)
-> * [【moeCTF题解-0x02】Pwn](https://framist.github.io/2020/10/09/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x02%E3%80%91Pwn/)
-> * [【moeCTF题解-0x03】Algorithm](https://framist.github.io/2020/10/12/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x03%E3%80%91Algorithm/)
-> * [【moeCTF题解-0x04】Crypto          （包括 Classic Crypto）](https://framist.github.io/2020/10/12/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x04%E3%80%91Crypto/)
-> * [【moeCTF题解-0x05】Misc](https://framist.github.io/2020/10/15/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x05%E3%80%91Misc/)
-> * [【moeCTF题解-0x06】Web](https://framist.github.io/2020/10/25/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x06%E3%80%91Web/)
+> * [【moeCTF 题解 -0x01】Reverse（包括 Android、IoT）](https://framist.github.io/2020/10/09/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x01%E3%80%91Reverse/)
+> * [【moeCTF 题解 -0x02】Pwn](https://framist.github.io/2020/10/09/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x02%E3%80%91Pwn/)
+> * [【moeCTF 题解 -0x03】Algorithm](https://framist.github.io/2020/10/12/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x03%E3%80%91Algorithm/)
+> * [【moeCTF 题解 -0x04】Crypto（包括 Classic Crypto）](https://framist.github.io/2020/10/12/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x04%E3%80%91Crypto/)
+> * [【moeCTF 题解 -0x05】Misc](https://framist.github.io/2020/10/15/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x05%E3%80%91Misc/)
+> * [【moeCTF 题解 -0x06】Web](https://framist.github.io/2020/10/25/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x06%E3%80%91Web/)
 
 <br/>
 
@@ -60,7 +62,7 @@ tags:
 
 ```python
 def encrypt(plaintext):
-	# j即为key
+	# j 即为 key
     for j in range(26):
         str_list = list(plaintext)
         i = 0
@@ -111,7 +113,7 @@ yaqofr{o0zcg3d_ft3_i0dxp}
 
 
 
-得到flag：`moectf{c0nqu3r_th3_w0rld}`
+得到 flag：`moectf{c0nqu3r_th3_w0rld}`
 
 *Ps. 可检测字符是否含有字符串来抑制输出*
 
@@ -123,16 +125,16 @@ yaqofr{o0zcg3d_ft3_i0dxp}
 >
 > `mpgfxk{j8w05q4_8xk_d7mhqfht}`
 >
-> 免费hint：`table = 'abcdefghijklmnopqrstuvwxyz0123456789'`
+> 免费 hint：`table = 'abcdefghijklmnopqrstuvwxyz0123456789'`
 
-开了hint后就知道是凯撒密码的换表
+开了 hint 后就知道是凯撒密码的换表
 
 于是修改上面那个程序如下：
 
 ```python
 def encrypt(plaintext):
     symbols = 'abcdefghijklmnopqrstuvwxyz0123456789'
-	# j即为key
+	# j 即为 key
     for j in range(len(symbols)):
         str_list = list(plaintext)
         i = 0
@@ -154,7 +156,7 @@ if __name__ == '__main__':
 
 ```
 
-输出第一行就是flag：`moectf{c0nquer_th3_un1v3rs3}`
+输出第一行就是 flag：`moectf{c0nquer_th3_un1v3rs3}`
 
 
 
@@ -172,9 +174,9 @@ if __name__ == '__main__':
 > mc{i33ny_-n~otR1n_cp1FN}efaFc32Tsuy
 > ```
 >
-> flag请准确提交
+> flag 请准确提交
 
-这个就根据关键词moectf直接看出来了，手撕解密：
+这个就根据关键词 moectf 直接看出来了，手撕解密：
 
 ```
 mc{i33ny_-n~
@@ -182,7 +184,7 @@ otR1n_cp1FN}
 efaFc32Tsuy
 ```
 
-得到flag：`moectf{Rai1F3nc3_3nc2ypT_1s-FunNy~}`
+得到 flag：`moectf{Rai1F3nc3_3nc2ypT_1s-FunNy~}`
 
 
 
@@ -196,7 +198,7 @@ efaFc32Tsuy
 
 > `mc{i33ny_-n~otR1n_cp1FN}efaFc32Tsuy` 栅栏加密，栏数为 `12` ，注意需要使用正向加密算法
 >
-> 因此flag为 `moectf{Rai1F3nc3_3nc2ypT_1s-FunNy~}`
+> 因此 flag 为 `moectf{Rai1F3nc3_3nc2ypT_1s-FunNy~}`
 
 <br/>
 
@@ -206,7 +208,7 @@ efaFc32Tsuy
 >
 > `\>@64E7L4_?BF6C0E9b0)s$trN`
 
-猜测字符表是ASCII可打印字符，一试果然是：
+猜测字符表是 ASCII 可打印字符，一试果然是：
 
 ```python
 # >@64E7L4_?BF6C0E9b0)s$trN
@@ -235,11 +237,11 @@ if __name__ == '__main__':
     decrypt(plaintext)
 ```
 
-得到flag：`moectf{c0nquer_th3_XDSEC}`
+得到 flag：`moectf{c0nquer_th3_XDSEC}`
 
 更好的方法参考[吉吉](gitee.com/mmdjiji)的[WP](https://zhuanlan.zhihu.com/p/262761814)： 
 
-> `>@64E7L4_?BF6C0E9b0)s$trN` 前6位与 `moectf` 做比较，发现差为 `47` 于是编写代码
+> `>@64E7L4_?BF6C0E9b0)s$trN` 前 6 位与 `moectf` 做比较，发现差为 `47` 于是编写代码
 
 <br/>
 
@@ -249,9 +251,9 @@ if __name__ == '__main__':
 
 > 100points
 >
-> 接下来去哪里呢?
+> 接下来去哪里呢？
 >
-> flag请准确填写.
+> flag 请准确填写。
 >
 > ```
 >[Warning] Case Sensitive!
@@ -259,14 +261,14 @@ if __name__ == '__main__':
 
 
 
-看到附件文本中的`pgieqi{k0_ajxW_k-R3zq?}`，应该就是flag了，把`pgieqi`与`moectf`比较，可以大致确定秘钥是`xdesc`，所附解密脚本如下：
+看到附件文本中的`pgieqi{k0_ajxW_k-R3zq?}`，应该就是 flag 了，把`pgieqi`与`moectf`比较，可以大致确定秘钥是`xdesc`，所附解密脚本如下：
 
 
 
 ```python
 import string
 def encrypt(plaintext):
-	# j即为key
+	# j 即为 key
     for j in range(26):
         str_list = list(plaintext)
         i = 0
@@ -282,7 +284,7 @@ def encrypt(plaintext):
         print(chr(j+ord(a)),''.join(str_list))
 
 def decrypt(plaintext):
-	# j即为key
+	# j 即为 key
 
     for j in range(26):
         str_list = list(plaintext)
@@ -396,24 +398,24 @@ pgieqi{k0_ajxW_k-R3zq?}
 
 另外的方法参考[吉吉](gitee.com/mmdjiji)的[WP](https://zhuanlan.zhihu.com/p/262761814)： 
 
-> 根据 `A gcjh, A wct, L uspnxwvga.` 可能是凯撒大帝的名言 `I came, I saw, I conquered.` 因此根据密码矩阵对密码，对出来是 `secxd` ，也用以解密flag得 `I came, I saw, I conquered. moectf{s0_whaT_s-N3xt?}`
+> 根据 `A gcjh, A wct, L uspnxwvga.` 可能是凯撒大帝的名言 `I came, I saw, I conquered.` 因此根据密码矩阵对密码，对出来是 `secxd` ，也用以解密 flag 得 `I came, I saw, I conquered. moectf{s0_whaT_s-N3xt?}`
 >
-> 因此flag为 `moectf{s0_whaT_s-N3xt?}`
+> 因此 flag 为 `moectf{s0_whaT_s-N3xt?}`
 
 <br/>
 
-## 大帝的征程#维吉尼亚Ex
+## 大帝的征程#维吉尼亚 Ex
 
 > 250points
 >
 > 我听说有人觉得密钥很好猜？
 
-看到附件文本中的`ooukot{ig3_oqf1_Ymiedmms_BzVn3_s0w_w0_3csO}`字段，应该就是flag了，把`ooukot`与`moectf`比较，可以确定部分的密钥。根据文章特性和重复字符，可以确定秘钥长度。从而解出一些原文零星的句段，百度这些原文的句段可以明确此文是《终末之诗》，就可知道剩余部分明文，从而得到完整秘钥。附解密脚本如下：
+看到附件文本中的`ooukot{ig3_oqf1_Ymiedmms_BzVn3_s0w_w0_3csO}`字段，应该就是 flag 了，把`ooukot`与`moectf`比较，可以确定部分的密钥。根据文章特性和重复字符，可以确定秘钥长度。从而解出一些原文零星的句段，百度这些原文的句段可以明确此文是《终末之诗》，就可知道剩余部分明文，从而得到完整秘钥。附解密脚本如下：
 
 ```python
 import string
 def encrypt(plaintext):
-	# j即为key
+	# j 即为 key
     for j in range(26):
         str_list = list(plaintext)
         i = 0
@@ -429,7 +431,7 @@ def encrypt(plaintext):
         print(chr(j+ord(a)),''.join(str_list))
 
 def decrypt(plaintext):
-	# j即为key
+	# j 即为 key
 
     for j in range(26):
         str_list = list(plaintext)
@@ -661,7 +663,7 @@ Zeme kx."""
 
 
 
-得到flag：`moectf{th3_rea1_Vigenere_MaYb3_n0t_s0_3asY}`
+得到 flag：`moectf{th3_rea1_Vigenere_MaYb3_n0t_s0_3asY}`
 
 
 
@@ -678,46 +680,46 @@ Zeme kx."""
 
 6/10
 
-## crypto入门指北
+## crypto 入门指北
 
 > 50points
 >
-> 使用markdown可获得最佳观看体验（当然用记事本也能看）
+> 使用 markdown 可获得最佳观看体验（当然用记事本也能看）
 
 附件如下：
 
-> **Crypto入门指北**
+> **Crypto 入门指北**
 >
 > *关于密码学*
 >
-> 顾名思义就是研究加密的学科。比如要在Alice与Bob两人通信过程中，在有Eve窃听的情况下，依然保证消息不泄露，这就需要Alice用一个加密密钥（类似于开锁的钥匙）对信息加密，而Bob将收到的信息用解密密钥解密，这样Eve就无法得知通信内容。而凯撒密码就是十分著名的一种加密方式，将字母移位，从而达到加密的目的，凯撒密码属于古典密码，在平台的Classic Crypto分类中就有许多这样的密码。但是它们的安全性都基于对加密算法的保护，一旦加密算法暴露，哪怕没有密钥，也能够进行解密。因此，现代密码学要求在加密算法公开的情况下，只要不知道密钥，就无法对消息进行解密。这样的话，仅需要保护一个不算长的密钥即可保护一段信息；即使密钥泄露，换个密钥就能继续用同一个加密算法加密。所以，密码学就是要寻找一个在不知道密钥情况下无法破解的算法。因此，下面这些题目，都会有一个用python写的加密脚本，这些都是有漏洞的加密方式，你需要从中找出漏洞，并且在没有密钥的情况下恢复明文。
+> 顾名思义就是研究加密的学科。比如要在 Alice 与 Bob 两人通信过程中，在有 Eve 窃听的情况下，依然保证消息不泄露，这就需要 Alice 用一个加密密钥（类似于开锁的钥匙）对信息加密，而 Bob 将收到的信息用解密密钥解密，这样 Eve 就无法得知通信内容。而凯撒密码就是十分著名的一种加密方式，将字母移位，从而达到加密的目的，凯撒密码属于古典密码，在平台的 Classic Crypto 分类中就有许多这样的密码。但是它们的安全性都基于对加密算法的保护，一旦加密算法暴露，哪怕没有密钥，也能够进行解密。因此，现代密码学要求在加密算法公开的情况下，只要不知道密钥，就无法对消息进行解密。这样的话，仅需要保护一个不算长的密钥即可保护一段信息；即使密钥泄露，换个密钥就能继续用同一个加密算法加密。所以，密码学就是要寻找一个在不知道密钥情况下无法破解的算法。因此，下面这些题目，都会有一个用 python 写的加密脚本，这些都是有漏洞的加密方式，你需要从中找出漏洞，并且在没有密钥的情况下恢复明文。
 >
 > *密码学需要什么基础知识*
 >
-> - 数学基础： 密码学是数学的一个应用学科，最早的公钥密码算法RSA就是基于数论的，因此学习密码学通常还需要从数论开始学起，公钥密码往后发展的过程中，也逐步用到了线性代数与抽象代数的内容，那些东西由于过难在本次新生赛不会涉及，因此请先从数论开始（除了用于防大佬新生ak的Easy RSA有用到线性代数的复杂知识，想要钻研的这题的新生请慎重）。其次，最早不是基于数学的块密码，在发展的过程中，也被运用数学的语言来描述，从而更能够更清晰的找到攻击方法。因此，学习密码学会涉及到大量的数学知识，欢迎对数学感兴趣（至少不讨厌）的同学来钻研学习
-> - 编程基础： 现代密码学比古典密码复杂许多，它的加密解密算法不是人能够口算或者笔算出来的东西，因此也需要编程。而密码学由于经常要用到特别大的数字，远超c和c++的long long int的上限，因此一般使用python编写程序。python是一个较接近自然语言的编程语言，因此容易上手，灵活运用搜索引擎以及网上一些教程很容易学会。
-> - 英语基础： 你有可能会遇到一些需要阅读纯英文文章才能解决的题目，需要有一定的耐心才能看明白。
+> - 数学基础：密码学是数学的一个应用学科，最早的公钥密码算法 RSA 就是基于数论的，因此学习密码学通常还需要从数论开始学起，公钥密码往后发展的过程中，也逐步用到了线性代数与抽象代数的内容，那些东西由于过难在本次新生赛不会涉及，因此请先从数论开始（除了用于防大佬新生 ak 的 Easy RSA 有用到线性代数的复杂知识，想要钻研的这题的新生请慎重）。其次，最早不是基于数学的块密码，在发展的过程中，也被运用数学的语言来描述，从而更能够更清晰的找到攻击方法。因此，学习密码学会涉及到大量的数学知识，欢迎对数学感兴趣（至少不讨厌）的同学来钻研学习
+> - 编程基础：现代密码学比古典密码复杂许多，它的加密解密算法不是人能够口算或者笔算出来的东西，因此也需要编程。而密码学由于经常要用到特别大的数字，远超 c 和 c++ 的 long long int 的上限，因此一般使用 python 编写程序。python 是一个较接近自然语言的编程语言，因此容易上手，灵活运用搜索引擎以及网上一些教程很容易学会。
+> - 英语基础：你有可能会遇到一些需要阅读纯英文文章才能解决的题目，需要有一定的耐心才能看明白。
 >
 > *密码学需要哪些工具*
 >
 > - python
-> - 两个用的挺多的python库：pycryptodome，gmpy2（网上均有安装方法，使用方法也有，也可直接查文档）
+> - 两个用的挺多的 python 库：pycryptodome，gmpy2（网上均有安装方法，使用方法也有，也可直接查文档）
 > - （sagemath）对初学者来说用处不大
 >
 > *如何学习密码学*
 >
 > - 善用搜索引擎
-> - 在ctfwiki的crypto分区寻找一些crypto的基础知识
+> - 在 ctfwiki 的 crypto 分区寻找一些 crypto 的基础知识
 >
 > *我在做题时遇到困难怎么办*
 >
 > - 先去各大搜索引擎轮番搜一遍
 > - 阅读《提问的智慧》
-> - 寻找管理员里那个密码fw寻求帮助
+> - 寻找管理员里那个密码 fw 寻求帮助
 >
-> 当然，就算做题没遇到困难，只要对密码学感兴趣，也欢迎去找那个密码fw闲聊.并教教他密码学，他可菜了。
+> 当然，就算做题没遇到困难，只要对密码学感兴趣，也欢迎去找那个密码 fw 闲聊。并教教他密码学，他可菜了。
 >
-> crypto是个比较小众的方向，但也相当有趣。会有很硬核的数学让人想放弃，但坚持下来慢慢搞，一定会有很大收获。
+> crypto 是个比较小众的方向，但也相当有趣。会有很硬核的数学让人想放弃，但坚持下来慢慢搞，一定会有很大收获。
 >
 > moectf{I_L0Ve_M@th_AnD_CRypT0}
 
@@ -758,7 +760,7 @@ print(len(xor))
 print(base64.b64encode(("".join([chr(ord(i)^ord(xor)) for i in list(flag)])).encode("ASCII")))
 ```
 
-根据OutPut可知道xor就是一个字符
+根据 OutPut 可知道 xor 就是一个字符
 
 那么直接暴力搜索之：
 
@@ -781,7 +783,7 @@ for xor in range(512):
         pass
 ```
 
-运行脚本得到flag：`moectf{U_Kn0w_How_7o_Break_Stream_Ciphe2}`
+运行脚本得到 flag：`moectf{U_Kn0w_How_7o_Break_Stream_Ciphe2}`
 
 
 
@@ -841,7 +843,7 @@ print(denc(flagd))
 
 运行脚本，竟然直接对了
 
-得到flag：`moectf{Welcome_to_Crypto}`
+得到 flag：`moectf{Welcome_to_Crypto}`
 
 
 
@@ -965,7 +967,7 @@ if __name__ == "__main__":
 
 ```
 
-得到flag：`moectf{Integers_@re_W0nderful}`
+得到 flag：`moectf{Integers_@re_W0nderful}`
 
 <br/>
 
@@ -1009,7 +1011,7 @@ print('e =' , e)
 
 ```
 
-先学一学啥是RSA吧。虽久仰大名，但还不知道其具体原理……
+先学一学啥是 RSA 吧。虽久仰大名，但还不知道其具体原理……
 
 > RSA 加密算法是一种非对称加密算法。在公开密钥加密和电子商业中 RSA 被广泛使用。RSA 是 1977 年由罗纳德·李维斯特（Ron Rivest）、阿迪·萨莫尔（Adi Shamir）和伦纳德·阿德曼（Leonard Adleman）一起提出的。RSA 就是他们三人姓氏开头字母拼在一起组成的。
 >
@@ -1023,21 +1025,21 @@ print('e =' , e)
 >
 > 
 >
-> RSA算法的具体描述如下： [5] 
+> RSA 算法的具体描述如下： [5] 
 >
-> （1）任意选取两个不同的大素数p和q计算乘积
+> （1）任意选取两个不同的大素数 p 和 q 计算乘积
 >
 > ![img](https://bkimg.cdn.bcebos.com/formula/f0dac18152076624d87832b62709895c.svg)
 >
 > [5] ；
 >
-> （2）任意选取一个大整数e，满足
+> （2）任意选取一个大整数 e，满足
 >
 > ![img](https://bkimg.cdn.bcebos.com/formula/c33d8c66364a636b051d82f0ee202a36.svg)
 >
->  ，整数e用做加密钥（注意：e的选取是很容易的，例如，所有大于p和q的素数都可用） [5] ；
+>  ，整数 e 用做加密钥（注意：e 的选取是很容易的，例如，所有大于 p 和 q 的素数都可用） [5] ；
 >
-> （3）确定的解密钥d，满足
+> （3）确定的解密钥 d，满足
 >
 > ![img](https://bkimg.cdn.bcebos.com/formula/da8649c0078a0a842779394d64011776.svg)
 >
@@ -1045,23 +1047,23 @@ print('e =' , e)
 >
 > ![img](https://bkimg.cdn.bcebos.com/formula/4dee3f4df52a81983db0e3c619f96058.svg)
 >
->  是一个任意的整数；所以，若知道e和
+>  是一个任意的整数；所以，若知道 e 和
 >
 > ![img](https://bkimg.cdn.bcebos.com/formula/679e809a0d964785d0aa4cfcb4218742.svg)
 >
-> ，则很容易计算出d [5] ；
+> ，则很容易计算出 d [5] ；
 >
-> （4）公开整数n和e，秘密保存d [5] ；
+> （4）公开整数 n 和 e，秘密保存 d [5] ；
 >
-> （5）将明文m（m<n是一个整数）加密成密文c，加密算法为 [5] 
+> （5）将明文 m（m<n 是一个整数）加密成密文 c，加密算法为 [5] 
 >
 > ![img](https://bkimg.cdn.bcebos.com/formula/5947116555169dc6fe9e3f5cdf347706.svg)
 >
-> （6）将密文c解密为明文m，解密算法为 [5] 
+> （6）将密文 c 解密为明文 m，解密算法为 [5] 
 >
 > ![img](https://bkimg.cdn.bcebos.com/formula/1a8b337167e4d4b2c23855d88ec4c67f.svg)
 >
-> 然而只根据n和e（注意：不是p和q）要计算出d是不可能的。因此，任何人都可对明文进行加密，但只有授权用户（知道d）才可对密文解密 [5] 。
+> 然而只根据 n 和 e（注意：不是 p 和 q）要计算出 d 是不可能的。因此，任何人都可对明文进行加密，但只有授权用户（知道 d）才可对密文解密 [5] 。
 >
 > ——百度百科
 
@@ -1083,7 +1085,7 @@ dm = pow(c, d, n)
 print(long_to_bytes(dm))
 ```
 
-得到flag：`moectf{uLl_f1Nd_th@t_RsA_1s_1nte2eSt1nG}`
+得到 flag：`moectf{uLl_f1Nd_th@t_RsA_1s_1nte2eSt1nG}`
 
 *啊，神秘的非对称加密*
 
@@ -1095,11 +1097,11 @@ print(long_to_bytes(dm))
 
 ---
 
-## easy木大定理
+## easy 木大定理
 
 > 200points
 >
-> 听说欧拉定理是rsa的基础呢
+> 听说欧拉定理是 rsa 的基础呢
 
 附件中代码如下：
 
@@ -1157,13 +1159,13 @@ print(enc(flag , nlist , e))
 
 ```
 
-题目给出了 `dec(clist , nlist , e)` 的解密算法，但是运行起来特别慢，很难在短时间内得到结果，且主要耗时在`phi(p)`上，即计算1~p内与p互质数的个数，考虑优化这个算法。
+题目给出了 `dec(clist , nlist , e)` 的解密算法，但是运行起来特别慢，很难在短时间内得到结果，且主要耗时在`phi(p)`上，即计算 1~p 内与 p 互质数的个数，考虑优化这个算法。
 
 根据题目的提示“欧拉定理”，查到相应的知识如下：
 
 > **欧拉定理：**
 >
-> 在[数论](https://baike.baidu.com/item/数论)中，**欧拉定理,**（也称[**费马**](https://baike.baidu.com/item/费马)**-欧拉定理**）是一个关于同余的性质。欧拉定理表明，若n,a为[正整数](https://baike.baidu.com/item/正整数)，且n,a[互质](https://baike.baidu.com/item/互质)，则:
+> 在[数论](https://baike.baidu.com/item/数论)中，**欧拉定理，**（也称[**费马**](https://baike.baidu.com/item/费马)**-欧拉定理**）是一个关于同余的性质。欧拉定理表明，若 n,a 为[正整数](https://baike.baidu.com/item/正整数)，且 n,a[互质](https://baike.baidu.com/item/互质)，则：
 >
 > 
 >
@@ -1175,35 +1177,35 @@ print(enc(flag , nlist , e))
 >
 > ![img](https://bkimg.cdn.bcebos.com/formula/ba40ed514646510df8a1033ff30701aa.svg)
 >
->  (其中p1, p2……pn为x的所有[质因数](https://baike.baidu.com/item/质因数/6192269)，x是不为0的整数)
+>  (其中 p1, p2……pn 为 x 的所有[质因数](https://baike.baidu.com/item/质因数/6192269)，x 是不为 0 的整数)
 >
-> 定义 φ(1)=1（和1[互质](https://baike.baidu.com/item/互质)的数(小于等于1)就是1本身）。
+> 定义 φ(1)=1（和 1[互质](https://baike.baidu.com/item/互质)的数 (小于等于 1) 就是 1 本身）。
 >
 > 注意：每种质因数只有一个。
 >
-> 若n是质数p的k次幂，
+> 若 n 是质数 p 的 k 次幂，
 >
 > ![img](https://bkimg.cdn.bcebos.com/formula/b843a8b241f76d7068e96630fc384bb9.svg)
 >
-> ，因为除了p的倍数外，其他数都跟n互质。
+> ，因为除了 p 的倍数外，其他数都跟 n 互质。
 >
-> 比如12=2*2*3那么φ（12）=φ（4*3）=φ（2^2*3^1）=（2^2-2^1）*（3^1-3^0）=4
+> 比如 12=2*2*3 那么φ（12）=φ（4*3）=φ（2^2*3^1）=（2^2-2^1）*（3^1-3^0）=4
 >
-> 设n为正整数，以 φ(n)表示不超过n且与n互素的正整数的个数，称为n的欧拉函数值
+> 设 n 为正整数，以 φ(n) 表示不超过 n 且与 n 互素的正整数的个数，称为 n 的欧拉函数值
 >
-> φ：N→N，n→φ(n)称为欧拉函数。
+> φ：N→N，n→φ(n) 称为欧拉函数。
 >
-> 欧拉函数是[积性函数](https://baike.baidu.com/item/积性函数)——若m,n互质，
+> 欧拉函数是[积性函数](https://baike.baidu.com/item/积性函数)——若 m,n 互质，
 >
 > ![img](https://bkimg.cdn.bcebos.com/formula/312031d1a76fa578eb4ef166530937fa.svg)
 >
-> 特殊性质：当n为奇质数时，
+> 特殊性质：当 n 为奇质数时，
 >
 > ![img](https://bkimg.cdn.bcebos.com/formula/5047f2bc6e623027b7707e6c51adc92f.svg)
 >
 > , 证明与上述类似。
 >
-> 若n为质数则
+> 若 n 为质数则
 >
 > ![img](https://bkimg.cdn.bcebos.com/formula/25e9558d577009b1b8b56f9a103b2321.svg)
 
@@ -1216,7 +1218,7 @@ from Crypto.Util.number import *
 import numpy as np
 
 
-def get_(a, b):# 改进欧几里得算法求线性方程的x与y
+def get_(a, b):# 改进欧几里得算法求线性方程的 x 与 y
     if b == 0:
         return 1, 0
     else:
@@ -1226,16 +1228,16 @@ def get_(a, b):# 改进欧几里得算法求线性方程的x与y
         x, y = y1, x1 - k * y1
     return x, y
 def invert(a,b): 
-    # 将初始b的绝对值进行保存
+    # 将初始 b 的绝对值进行保存
     if b < 0:
         m = abs(b)
     else:
         m = b
     flag = np.gcd(a, b)
-    # 判断最大公约数是否为1，若不是则没有逆元
+    # 判断最大公约数是否为 1，若不是则没有逆元
     if flag == 1:
         x, y = get_(a, b)
-        return x % m  # 对于Python '%'就是求模运算，因此不需要'+m'
+        return x % m  # 对于 Python '%'就是求模运算，因此不需要'+m'
 
 def invert2(a,b): 
     m = 2
@@ -1333,7 +1335,7 @@ print(dec(c, nlist, e))
 
 - [ ] 注：`gmpy2`库不知道什么原因我装载不了，官方也好像弃用了，于是我用了`Crypto.Util.number`、`numpy`来代替它，然而`invert`好像还是没有，就搞了一个轮子……求助有没有更好的解决方法。
 
-运行得到flag：`moectf{EULEREu1erEule2Eu1erEulerEyoulerEU1e2Mud@MuDaMudamuDaMudaMUDA}`
+运行得到 flag：`moectf{EULEREu1erEule2Eu1erEulerEyoulerEU1e2Mud@MuDaMudamuDaMudaMUDA}`
 
 
 

@@ -1,10 +1,11 @@
 ---
 title: CS61a-Note
+tags:
+  - PL
+categories:
+  - 计算机科学
+abbrlink: CS61a-Note
 date: 2022-12-19 15:21:12
-tags: 
-- PL
-categories: 
-- 计算机科学
 ---
 
 # 补遗：CS61a

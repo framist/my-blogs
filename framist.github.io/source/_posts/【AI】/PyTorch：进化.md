@@ -1,11 +1,13 @@
 ---
 title: PyTorch：进化
-categories: 
-- 计算机科学
-- 机器学习
-tags: 
-- 机器学习
-- Python
+date: 2022-4-28
+categories:
+  - 计算机科学
+  - 机器学习
+tags:
+  - 机器学习
+  - Python
+abbrlink: 7919
 ---
 
 # PyTorch: Evolution

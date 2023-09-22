@@ -1,12 +1,14 @@
 ---
-title: 【MiniLCTF2021题解】Web&Crypto&Misc
-categories: 
-- 计算机科学
-- 网络安全
-- CTF
-- moeCTF
-tags: 
-- CTF
+title: 【MiniLCTF2021 题解】Web&Crypto&Misc
+categories:
+  - 计算机科学
+  - 网络安全
+  - CTF
+  - moeCTF
+tags:
+  - CTF
+abbrlink: 9475
+date: 2021-10-4
 ---
 
 # Mini-L CTF 2021 WP: qaq-TEAM
@@ -27,14 +29,14 @@ tags:
 
 | 时间              | 分类    | 题目           | 分值 |
 | ----------------- | ------- | -------------- | ---- |
-| 5月06日 下午10:40 | Misc    | 好白给的签到题 | 250  |
-| 5月06日 下午8:03  | Sign in | 签到！         | 250  |
-| 5月06日 下午8:57  | Misc    | 抓猫猫         | 250  |
-| 5月07日 下午12:35 | Web     | Java           | 250  |
-| 5月08日 下午5:45  | Web     | Template       | 730  |
-| 5月09日 上午1:21  | Crypto  | 土 块          | 880  |
-| 5月11日 下午11:43 | Crypto  | standardcbc    | 933  |
-| 5月12日 下午2:51  | Web     | protocol       | 880  |
+| 5 月 06 日 下午 10:40 | Misc    | 好白给的签到题 | 250  |
+| 5 月 06 日 下午 8:03  | Sign in | 签到！         | 250  |
+| 5 月 06 日 下午 8:57  | Misc    | 抓猫猫         | 250  |
+| 5 月 07 日 下午 12:35 | Web     | Java           | 250  |
+| 5 月 08 日 下午 5:45  | Web     | Template       | 730  |
+| 5 月 09 日 上午 1:21  | Crypto  | 土 块          | 880  |
+| 5 月 11 日 下午 11:43 | Crypto  | standardcbc    | 933  |
+| 5 月 12 日 下午 2:51  | Web     | protocol       | 880  |
 
 <!--more-->
 
@@ -42,7 +44,7 @@ tags:
 
 ### Java
 
-> 简单签到题，flag在“/flag”。
+> 简单签到题，flag 在“/flag”。
 
 下载下一个压缩包，是网站源码
 
@@ -329,13 +331,13 @@ https://blog.csdn.net/imotherboard/category_9968803.html
 
 > 国密即国家密码局认定的国产密码算法，即商用密码。
 >
-> 国密算法是国家密码局制定标准的一系列算法。其中包括了对称加密算法，椭圆曲线非对称加密算法，杂凑算法。具体包括SM1,SM2,SM3等，其中：
-> SM2为国家密码管理局公布的公钥算法，其加密强度为256位。其它几个重要的商用密码算法包括：
-> SM1，对称加密算法，加密强度为128位，采用硬件实现；
-> SM3，密码杂凑算法，杂凑值长度为32字节，和SM2算法同期公布，参见《国家密码管理局公告（第 22 号）》；
-> SMS4，对称加密算法，随WAPI标准一起公布，可使用软件实现，加密强度为128位。
+> 国密算法是国家密码局制定标准的一系列算法。其中包括了对称加密算法，椭圆曲线非对称加密算法，杂凑算法。具体包括 SM1,SM2,SM3 等，其中：
+> SM2 为国家密码管理局公布的公钥算法，其加密强度为 256 位。其它几个重要的商用密码算法包括：
+> SM1，对称加密算法，加密强度为 128 位，采用硬件实现；
+> SM3，密码杂凑算法，杂凑值长度为 32 字节，和 SM2 算法同期公布，参见《国家密码管理局公告（第 22 号）》；
+> SMS4，对称加密算法，随 WAPI 标准一起公布，可使用软件实现，加密强度为 128 位。
 > ————————————————
-> 版权声明：本文为CSDN博主「梦之归途」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+> 版权声明：本文为 CSDN 博主「梦之归途」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。
 > 原文链接：https://blog.csdn.net/lwzhang1101/article/details/78773700
 
 
@@ -344,7 +346,7 @@ https://blog.csdn.net/imotherboard/category_9968803.html
 import numpy as np
 from qiskit import *
 
-init_state = [0, 0, 1, 0] # 此中1的位置被修改
+init_state = [0, 0, 1, 0] # 此中 1 的位置被修改
 # 判断 是   [0, 1, 0, 0] [0, 0, 0, 1]  coin2 == 1 -> 1
 # 还是      [1, 0, 0, 0] [0, 0, 1, 0] coin2 == 0 -> 0
 
@@ -380,12 +382,12 @@ for i in Circuitlist:
     elif i[0] == 8:
         qc.rz(*i[1])
     elif i[0] == 9:
-        qc.cx(*i[1]) # 受控非操作（CX）在控制量子位0和目标量子位1上，将量子位置于纠缠状态。   
+        qc.cx(*i[1]) # 受控非操作（CX）在控制量子位 0 和目标量子位 1 上，将量子位置于纠缠状态。   
     # else:
     #     raise ValueError('operation not recognized')
 
-qc.measure(1 , 0) # 测量q0_1量子位
-# qc.measure(0 , 0) # 测量q0_0量子位 测试用
+qc.measure(1 , 0) # 测量 q0_1 量子位
+# qc.measure(0 , 0) # 测量 q0_0 量子位 测试用
 
 print(qc.draw(output='text'))
 
@@ -394,7 +396,7 @@ qobj = assemble(qc)
 job = sv_sim.run(qobj)
 
 # 测量结果： {’输出':次数}
-# 即测量q0_1量子位的输出
+# 即测量 q0_1 量子位的输出
 measurement_result = job.result().get_counts()
 
 print(measurement_result)
@@ -447,8 +449,8 @@ def SendRecv1(p, msg):
     iv_msg_secret = b64decode(iv_msg_secret)
     iv = iv_msg_secret[:16]
     msg_secret = iv_msg_secret[16:]
-    # print('获取到的iv',iv)
-    print('获取到msg+secret',len(msg_secret),':',msg_secret)
+    # print('获取到的 iv',iv)
+    print('获取到 msg+secret',len(msg_secret),':',msg_secret)
     return iv,msg_secret
 
 
@@ -460,7 +462,7 @@ while True:
     p = remote('pwn.woooo.tech',10161)
     p.recv()
 
-    # 1.1 得到secret长度
+    # 1.1 得到 secret 长度
     for i in range(16): # 0~15bytes
         # print('i ==',i)
         p.sendline(b'1')
@@ -481,7 +483,7 @@ while True:
         p.close()
 
 print('2===================')
-# 1.2 获取msg_secret从32位开始
+# 1.2 获取 msg_secret 从 32 位开始
 secret = b''
 
 for i in range(len_secret):
@@ -490,9 +492,9 @@ for i in range(len_secret):
     p.recv()
     iv, msg_secret = SendRecv1(p, (32-len_secret+i)*bytes([0]))
 
-    # 2 爆破P2最后一个字节
+    # 2 爆破 P2 最后一个字节
     
-    e = msg_secret[:32] # 取前16+16位
+    e = msg_secret[:32] # 取前 16+16 位
 
     f = 256 * [False]
     for a in range(256):
@@ -617,7 +619,7 @@ The number of cats you will catch is:
 
 ### 好硬的硬盘
 
-> “我硬盘里有一些好康的” “好康，是新游戏喔” “什么新游戏，比游戏还刺激，还可以教你拿 f l a g 喔” ...... “luoqian不要啊！！”
+> “我硬盘里有一些好康的” “好康，是新游戏喔” “什么新游戏，比游戏还刺激，还可以教你拿 f l a g 喔” ...... “luoqian 不要啊！！”
 
 
 

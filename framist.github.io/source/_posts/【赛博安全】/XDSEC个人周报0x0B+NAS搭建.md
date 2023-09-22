@@ -1,39 +1,41 @@
 ---
-title: XDSEC个人周报0x0B+NAS搭建
-categories: 
-- 计算机科学
-- 网络安全
-- 个人周报
-tags: 
-- 信息安全
-- 周报
+title: XDSEC 个人周报 0x0B+NAS 搭建
+categories:
+  - 计算机科学
+  - 网络安全
+  - 个人周报
+tags:
+  - 信息安全
+  - 周报
+abbrlink: 12845
+date: 2021-5-7
 ---
 
 
-# XDSEC个人周报0x0B+NAS搭建
+# XDSEC 个人周报 0x0B+NAS 搭建
 
 2021-5-31 ~ 2021-7-25
 
-2021春季学期第十四、十五、十七、十八、十九、二十、二十一周
+2021 春季学期第十四、十五、十七、十八、十九、二十、二十一周
 
 
 <!--more-->
 
-## 树莓派搭建寝室内网NAS
+## 树莓派搭建寝室内网 NAS
 
 ### 采用 OpenMediaVault
 
-> [树莓派4B与 OpenMediaVault 5 搭建 NAS（一）_苦走一口田-CSDN博客_树莓派omv](https://anhongning.blog.csdn.net/article/details/107376950)
+> [树莓派 4B 与 OpenMediaVault 5 搭建 NAS（一）_苦走一口田-CSDN 博客_树莓派 omv](https://anhongning.blog.csdn.net/article/details/107376950)
 >
-> [树莓派4B与 OpenMediaVault 5 搭建 NAS（二）_苦走一口田-CSDN博客](https://blog.csdn.net/anhongning123/article/details/107378787)
+> [树莓派 4B 与 OpenMediaVault 5 搭建 NAS（二）_苦走一口田-CSDN 博客](https://blog.csdn.net/anhongning123/article/details/107378787)
 
 
 
 ### 解决网速只有百兆
 
-不知道为什么。后来树莓派通过有线连接的方式连路由器，网速能上到600M作业
+不知道为什么。后来树莓派通过有线连接的方式连路由器，网速能上到 600M 作业
 
-### 内网NAS穿透
+### 内网 NAS 穿透
 
 
 ## 周报
@@ -46,7 +48,7 @@ tags:
 
 **Web**
 
-通过OpenMediaVault用树莓派搭建了一个内网NAS
+通过 OpenMediaVault 用树莓派搭建了一个内网 NAS
 
 
 ### 第十五周
@@ -87,7 +89,7 @@ TCTF&0CTF
 **web**
 
 * php
-  * php条件竞争
+  * php 条件竞争
   * 文件包含漏洞
   * PHP_SESSION_UPLOAD_PROGRESS 上传
 
@@ -99,7 +101,7 @@ TCTF&0CTF
 
 XCTF cybrics，终于能有一点输出了`_(:з」∠)_`
 
-另外学了microPython和一点C语言
+另外学了 microPython 和一点 C 语言
 
 完成板球控制系统
 
@@ -109,7 +111,7 @@ XCTF cybrics，终于能有一点输出了`_(:з」∠)_`
 
 ### 第二十三周
 
-* 重拾vim
+* 重拾 vim
   * `$ vimtutor`
   * vimuim
   * https://vim-adventures.com/
@@ -118,5 +120,5 @@ XCTF cybrics，终于能有一点输出了`_(:з」∠)_`
     * ["Directory not empty" error when reading existing distros](https://github.com/DDoSolitary/LxRunOffline/issues/150)
     * wslg
 * ~~在家躺尸~~
-* 新一年的moeCTF开始了，准备去玩玩
-* (今天好像有web组会来着...（
+* 新一年的 moeCTF 开始了，准备去玩玩
+* (今天好像有 web 组会来着...（

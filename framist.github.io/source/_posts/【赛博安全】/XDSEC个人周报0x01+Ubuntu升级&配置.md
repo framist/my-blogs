@@ -1,12 +1,14 @@
 ---
 title: XDSEC 个人周报 0x01+Ubuntu 升级&配置
-categories: 
-- 计算机科学
-- 网络安全
-- 个人周报
-tags: 
-- 信息安全
-- 周报
+categories:
+  - 计算机科学
+  - 网络安全
+  - 个人周报
+tags:
+  - 信息安全
+  - 周报
+abbrlink: 20804
+date: 2020-11-29
 ---
 
 # XDSEC 个人周报 0x01+Ubuntu 升级&配置

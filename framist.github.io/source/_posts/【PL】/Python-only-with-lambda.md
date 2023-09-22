@@ -1,13 +1,14 @@
 ---
 title: Python only with Lambda
-date: 2022-10-28 11:29:13
-categories: 
-- 计算机科学
-- 计算机理论
+categories:
+  - 计算机科学
+  - 计算机理论
 tags:
-- Python
-- SICP
+  - Python
+  - SICP
 hidden: true
+abbrlink: Python-only-with-lambda
+date: 2022-10-28 11:29:13
 ---
 
 # Python 但是只有 lambda

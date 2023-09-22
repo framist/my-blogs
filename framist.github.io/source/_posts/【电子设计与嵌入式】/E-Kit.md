@@ -1,9 +1,10 @@
 ---
 title: E-kit 一体化电子工具箱
-date: 2023-09-16 22:24:00
-categories: 
-- 电子设计与嵌入式
+categories:
+  - 电子设计与嵌入式
 tags: stm32
+abbrlink: e-kit
+date: 2023-09-16 22:24:00
 ---
 
 <div align="center">

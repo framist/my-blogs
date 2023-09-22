@@ -1,14 +1,16 @@
 ---
-title: 我身边的 IT 大佬们
-categories: 
-- 杂项
-tags: 
-- 杂项
-- 日常
-- 社工
+title: IT boss
+categories:
+  - 杂项
+tags:
+  - 杂项
+  - 日常
+  - 社工
+abbrlink: IT-boss
+date: 2020-10-11
 ---
 
-# 我身边的 IT 大佬们
+# 身边的大佬们
 
 ==此文不是社工报告==
 

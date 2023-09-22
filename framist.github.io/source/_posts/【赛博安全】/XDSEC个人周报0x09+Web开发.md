@@ -1,12 +1,14 @@
 ---
-title: XDSEC 个人周报 0x09 + Web 开发 & CodiMD
-categories: 
-- 计算机科学
-- 网络安全
-- 个人周报
-tags: 
-- 信息安全
-- 周报
+title: XDSEC 个人周报 0x09 + Web 开发 & CodiMD\
+categories:
+  - 计算机科学
+  - 网络安全
+  - 个人周报
+tags:
+  - 信息安全
+  - 周报
+abbrlink: 47834
+date: 2021-04-13
 ---
 
 

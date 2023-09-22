@@ -1,12 +1,14 @@
 ---
 title: 【Java】上机作业报告 3
-categories: 
-- 计算机科学
-- 课业学习
-- Java
-tags: 
-- Java
-- 学习
+date: 2020-9-22
+categories:
+  - 计算机科学
+  - 课业学习
+  - Java
+tags:
+  - Java
+  - 学习
+abbrlink: 33436
 ---
 
 

@@ -1,21 +1,23 @@
 ---
-title: 【moeCTF题解-0x06】Web
-categories: 
-- 计算机科学
-- 网络安全
-- CTF
-- moeCTF
-tags: 
-- CTF
-- Web
-- Python
+title: 【moeCTF 题解 -0x06】Web
+categories:
+  - 计算机科学
+  - 网络安全
+  - CTF
+  - moeCTF
+tags:
+  - CTF
+  - Web
+  - Python
+abbrlink: moeCTF-06
+date: 2020-10-09 00:00:00
 ---
 
-# 【moeCTF题解-0x06】Web
+# 【moeCTF 题解 -0x06】Web
 
-竟然AK了这部分，但也只是因为题目简单……
+竟然 AK 了这部分，但也只是因为题目简单……
 
-考虑到在XDSEC里选了web方向，也要好好学习web知识呀
+考虑到在 XDSEC 里选了 web 方向，也要好好学习 web 知识呀
 
 <br/>
 
@@ -25,16 +27,16 @@ tags:
 
 <br/>
 
-> **【moeCTF题解】总目录如下：**
+> **【moeCTF 题解】总目录如下：**
 >
-> * [【moeCTF题解-0x00】序				（包括Sign in）](https://framist.github.io/2020/10/09/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x00%E3%80%91%E5%BA%8F/)
+> * [【moeCTF 题解 -0x00】序				（包括 Sign in）](https://framist.github.io/2020/10/09/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x00%E3%80%91%E5%BA%8F/)
 >
-> * [【moeCTF题解-0x01】Reverse      （包括Android、IoT）](https://framist.github.io/2020/10/09/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x01%E3%80%91Reverse/)
-> * [【moeCTF题解-0x02】Pwn](https://framist.github.io/2020/10/09/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x02%E3%80%91Pwn/)
-> * [【moeCTF题解-0x03】Algorithm](https://framist.github.io/2020/10/12/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x03%E3%80%91Algorithm/)
-> * [【moeCTF题解-0x04】Crypto          （包括 Classic Crypto）](https://framist.github.io/2020/10/12/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x04%E3%80%91Crypto/)
-> * [【moeCTF题解-0x05】Misc](https://framist.github.io/2020/10/15/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x05%E3%80%91Misc/)
-> * [【moeCTF题解-0x06】Web](https://framist.github.io/2020/10/25/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x06%E3%80%91Web/)
+> * [【moeCTF 题解 -0x01】Reverse（包括 Android、IoT）](https://framist.github.io/2020/10/09/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x01%E3%80%91Reverse/)
+> * [【moeCTF 题解 -0x02】Pwn](https://framist.github.io/2020/10/09/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x02%E3%80%91Pwn/)
+> * [【moeCTF 题解 -0x03】Algorithm](https://framist.github.io/2020/10/12/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x03%E3%80%91Algorithm/)
+> * [【moeCTF 题解 -0x04】Crypto（包括 Classic Crypto）](https://framist.github.io/2020/10/12/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x04%E3%80%91Crypto/)
+> * [【moeCTF 题解 -0x05】Misc](https://framist.github.io/2020/10/15/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x05%E3%80%91Misc/)
+> * [【moeCTF 题解 -0x06】Web](https://framist.github.io/2020/10/25/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x06%E3%80%91Web/)
 
 <br/>
 
@@ -54,9 +56,9 @@ tags:
 >
 > **Hint**
 >
-> [什么是GET?](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Methods)
+> [什么是 GET?](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Methods)
 >
-> [如何GET?](https://www.wootec.top/2020/08/06/GET/)
+> [如何 GET?](https://www.wootec.top/2020/08/06/GET/)
 
 打开靶机地址
 
@@ -73,11 +75,11 @@ if($a==flag)
 die ($flag);
 ```
 
-URL后面加上`?a=flag`来GET传值
+URL 后面加上`?a=flag`来 GET 传值
 
 http://web.moectf.online/GET/?a=flag
 
-打开得到flag`moectf{Y0u_kn0w_G4T_n0w}`
+打开得到 flag`moectf{Y0u_kn0w_G4T_n0w}`
 
 <br/>
 
@@ -89,11 +91,11 @@ http://web.moectf.online/GET/?a=flag
 >
 > **Hints**
 >
-> 链接:
+> 链接：
 >
-> [什么是POST?](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Methods)
+> [什么是 POST?](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Methods)
 >
-> [如何POST?](https://www.wootec.top/2020/08/07/POST/)
+> [如何 POST?](https://www.wootec.top/2020/08/07/POST/)
 
 
 
@@ -110,13 +112,13 @@ if($a==flag)
 die ($flag); 
 ```
 
-POST一个`a=flag`上去：
+POST 一个`a=flag`上去：
 
-就得到flag：`moectf{Y0u_kn4w_p0st_n0w}`
+就得到 flag：`moectf{Y0u_kn4w_p0st_n0w}`
 
 
 
->  这里我使用的是火狐开发者版与插件[HackBar V2](https://addons.mozilla.org/zh-CN/firefox/addon/hackbar-free/)来进行post的，轻量且适合小白
+>  这里我使用的是火狐开发者版与插件[HackBar V2](https://addons.mozilla.org/zh-CN/firefox/addon/hackbar-free/)来进行 post 的，轻量且适合小白
 
 <br/>
 
@@ -126,17 +128,17 @@ POST一个`a=flag`上去：
 >
 > http://web.moectf.online/bis/
 
-小饼干，就是cookie啦
+小饼干，就是 cookie 啦
 
 
 
-浏览器-开发者工具栏-网络-Cookie 中可以查看cookie：
+浏览器 - 开发者工具栏 - 网络-Cookie 中可以查看 cookie：
 
 ```
 Cookie	"moectf{y0u_c4n't_e4t_thi3_c00k1e}"
 ```
 
-得到flag：`moectf{y0u_c4n't_e4t_thi3_c00k1e}`
+得到 flag：`moectf{y0u_c4n't_e4t_thi3_c00k1e}`
 
 （响应头里面也有）
 
@@ -146,21 +148,21 @@ Cookie	"moectf{y0u_c4n't_e4t_thi3_c00k1e}"
 
 > 50points
 >
-> 地址:
+> 地址：
 >
 > - https://moectf.online/introduction
 > - https://moectf.online/qa
 >
-> 你能找到flag嘛?
+> 你能找到 flag 嘛？
 
-查看HTML源码，分别找到如下注释
+查看 HTML 源码，分别找到如下注释
 
 ```html
 <!-- moectf{i_wAnt_2_ -->
 <!-- jo1n_XDSEC!} -->
 ```
 
-就是flag了。
+就是 flag 了。
 
 <br/>
 
@@ -170,7 +172,7 @@ Cookie	"moectf{y0u_c4n't_e4t_thi3_c00k1e}"
 >
 > http://39.98.86.109:10000/
 >
-> 拿到flag就别乱搞了哦
+> 拿到 flag 就别乱搞了哦
 
 打开网页：
 
@@ -184,7 +186,7 @@ eval($_POST['a']);
 
 发现里面已经内嵌了一句话木马`eval($_POST['a']);`
 
-上久闻大名的[中国菜刀(China chopper)](http://www.maicaidao.com/)
+上久闻大名的[中国菜刀 (China chopper)](http://www.maicaidao.com/)
 
 ![image-20201030212338263](http://framist-bucket-openread.oss-cn-shanghai.aliyuncs.com/img/2023/08/15/20230815210624.png)
 
@@ -216,7 +218,7 @@ drwxr-xr-x   1 root root 4096 Feb 15  2016 var
 moectf{0hhhh!!!y0u_know_h0w_to_u3e_eva1}
 ```
 
-于是得到flag：`moectf{0hhhh!!!y0u_know_h0w_to_u3e_eva1}`
+于是得到 flag：`moectf{0hhhh!!!y0u_know_h0w_to_u3e_eva1}`
 
 <br/>
 
@@ -251,9 +253,9 @@ for i in range(1):
     print(s.text)
 ```
 
-得到flag：`moectf{MA7H_1s_s0_ea5y!!r1ght?}`
+得到 flag：`moectf{MA7H_1s_s0_ea5y!!r1ght?}`
 
-> 听说直接禁用JavaScript也可以？
+> 听说直接禁用 JavaScript 也可以？
 
 <br/>
 
@@ -413,7 +415,7 @@ Cache-Control: no-cache
      <title> </title>
    </head>
    <body>
-     <!-- 你知道php伪协议吗-->
+     <!-- 你知道 php 伪协议吗-->
    </body>
  </html>
 
@@ -567,7 +569,7 @@ if __name__ == '__main__':
 print(base64.b64decode(b'PD9waHAgJGZsYWcyID0gJzRuZF9waHBfZjFsdDNyfSc7ID8+'))
 
 
-# <value>是必须的 ， 其他的得 echo $xml->from;
+# <value>是必须的，其他的得 echo $xml->from;
 # moectf{XXE_4nd_php_f1lt3r}
 ```
 

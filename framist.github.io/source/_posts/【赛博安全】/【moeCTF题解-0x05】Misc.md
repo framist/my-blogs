@@ -1,23 +1,25 @@
 ---
-title: 【moeCTF题解-0x05】Misc
-categories: 
-- 计算机科学
-- 网络安全
-- CTF
-- moeCTF
-tags: 
-- CTF
-- Misc
-- Python
+title: 【moeCTF 题解 -0x05】Misc
+categories:
+  - 计算机科学
+  - 网络安全
+  - CTF
+  - moeCTF
+tags:
+  - CTF
+  - Misc
+  - Python
+abbrlink: moeCTF-05
+date: 2020-10-09 00:00:00
 ---
 
-# 【moeCTF题解-0x05】Misc
+# 【moeCTF 题解 -0x05】Misc
 
-> 如果把Web安全、二进制安全、密码学等等方向的研究看成是你约会时候和你的 男/女朋友吃的主餐，Misc杂项就是餐后小甜点。虽然很好吃，越吃越上瘾，但是 最后往往很年轻的时候的了糖尿病。
+> 如果把 Web 安全、二进制安全、密码学等等方向的研究看成是你约会时候和你的 男/女朋友吃的主餐，Misc 杂项就是餐后小甜点。虽然很好吃，越吃越上瘾，但是 最后往往很年轻的时候的了糖尿病。
 >
 > ——XDSEC@EndCat
 
-可是我只会Misc呀`（o´・ェ・｀o）`
+可是我只会 Misc 呀`（o´・ェ・｀o）`
 
 <br/>
 
@@ -27,16 +29,16 @@ tags:
 
 <br/>
 
-> **【moeCTF题解】总目录如下：**
+> **【moeCTF 题解】总目录如下：**
 >
-> * [【moeCTF题解-0x00】序				（包括Sign in）](https://framist.github.io/2020/10/09/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x00%E3%80%91%E5%BA%8F/)
+> * [【moeCTF 题解 -0x00】序				（包括 Sign in）](https://framist.github.io/2020/10/09/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x00%E3%80%91%E5%BA%8F/)
 >
-> * [【moeCTF题解-0x01】Reverse      （包括Android、IoT）](https://framist.github.io/2020/10/09/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x01%E3%80%91Reverse/)
-> * [【moeCTF题解-0x02】Pwn](https://framist.github.io/2020/10/09/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x02%E3%80%91Pwn/)
-> * [【moeCTF题解-0x03】Algorithm](https://framist.github.io/2020/10/12/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x03%E3%80%91Algorithm/)
-> * [【moeCTF题解-0x04】Crypto          （包括 Classic Crypto）](https://framist.github.io/2020/10/12/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x04%E3%80%91Crypto/)
-> * [【moeCTF题解-0x05】Misc](https://framist.github.io/2020/10/15/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x05%E3%80%91Misc/)
-> * [【moeCTF题解-0x06】Web](https://framist.github.io/2020/10/25/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x06%E3%80%91Web/)
+> * [【moeCTF 题解 -0x01】Reverse（包括 Android、IoT）](https://framist.github.io/2020/10/09/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x01%E3%80%91Reverse/)
+> * [【moeCTF 题解 -0x02】Pwn](https://framist.github.io/2020/10/09/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x02%E3%80%91Pwn/)
+> * [【moeCTF 题解 -0x03】Algorithm](https://framist.github.io/2020/10/12/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x03%E3%80%91Algorithm/)
+> * [【moeCTF 题解 -0x04】Crypto（包括 Classic Crypto）](https://framist.github.io/2020/10/12/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x04%E3%80%91Crypto/)
+> * [【moeCTF 题解 -0x05】Misc](https://framist.github.io/2020/10/15/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x05%E3%80%91Misc/)
+> * [【moeCTF 题解 -0x06】Web](https://framist.github.io/2020/10/25/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x06%E3%80%91Web/)
 
 <br/>
 
@@ -49,15 +51,15 @@ tags:
 
 > 50points
 >
-> 本人表达能力太差，故放上Endcat学姐写的入门pdf。 本题考点为16进制编辑器的简单使用（真的超简单！
+> 本人表达能力太差，故放上 Endcat 学姐写的入门 pdf。本题考点为 16 进制编辑器的简单使用（真的超简单！
 
 
 
-这个PDF是EndCat写的一篇Misc入门指南，读罢指南，发现最后有一句话：
+这个 PDF 是 EndCat 写的一篇 Misc 入门指南，读罢指南，发现最后有一句话：
 
 > 对了，我在这个文件里面隐藏了一点信息，你能找出来嘛：)
 
-但是我用各种工具对这个PDF找来找去也没有发现什么，此时我发现题目还有另一个附件：
+但是我用各种工具对这个 PDF 找来找去也没有发现什么，此时我发现题目还有另一个附件：
 
 ![profession](http://framist-bucket-openread.oss-cn-shanghai.aliyuncs.com/img/2023/08/15/20230815210613.jpg)
 
@@ -72,13 +74,13 @@ tags:
 00007600: 14 1F FF D9                                        ...Y
 ```
 
-这不就是flag啦：`moectf{Jo1n_0ur_professional_group}`
+这不就是 flag 啦：`moectf{Jo1n_0ur_professional_group}`
 
-(っ °Д °;)っ
+(っ °Д °;) っ
 
 <br/>
 
-> Misc是什么意思？Misc的英文全写是Miscellaneous，意为大杂烩、杂项。从语 义来说，你可能会认为Misc涉及的是安全研究方向的方方面面，但实际上还是有 点偏差的。Misc分支在CTF赛事中也有较为明确的范围规定。举几个例子：社会 工程学（就是你们口口相传的“社 工”）、数字取证（Forensics，实训基地也有专门的电子取证分部是专门研究这个东西的）、隐写分析（Steganography）、编码 转换（Encode/Decode）等等。实际上Misc在一些较大的CTF赛事中，是作为 “穿插考点”而存在的。Misc也会涉及比较简单的古典密码学，通信传输协议，有的 时候甚至会让你分析一下从各种各样实际的硬件中扒下来的流量记录，单片机程序。
+> Misc 是什么意思？Misc 的英文全写是 Miscellaneous，意为大杂烩、杂项。从语 义来说，你可能会认为 Misc 涉及的是安全研究方向的方方面面，但实际上还是有 点偏差的。Misc 分支在 CTF 赛事中也有较为明确的范围规定。举几个例子：社会 工程学（就是你们口口相传的“社 工”）、数字取证（Forensics，实训基地也有专门的电子取证分部是专门研究这个东西的）、隐写分析（Steganography）、编码 转换（Encode/Decode）等等。实际上 Misc 在一些较大的 CTF 赛事中，是作为“穿插考点”而存在的。Misc 也会涉及比较简单的古典密码学，通信传输协议，有的 时候甚至会让你分析一下从各种各样实际的硬件中扒下来的流量记录，单片机程序。
 >
 > ——XDSEC@EndCat
 
@@ -92,21 +94,21 @@ tags:
 >
 > c4d038b4bed09fdb1471ef51ec3a32cd
 >
-> 请将得到的结果包上moectf{}进行提交
+> 请将得到的结果包上 moectf{}进行提交
 
-MD5是什么？
+MD5 是什么？
 
-> **MD5信息摘要算法**（英语：MD5 Message-Digest Algorithm），一种被广泛使用的[密码散列函数](https://baike.baidu.com/item/密码散列函数/14937715)，可以产生出一个128位（16[字节](https://baike.baidu.com/item/字节/1096318)）的散列值（hash value），用于确保信息传输完整一致。MD5由美国密码学家[罗纳德·李维斯特](https://baike.baidu.com/item/罗纳德·李维斯特/700199)（Ronald Linn Rivest）设计，于1992年公开，用以取代[MD4](https://baike.baidu.com/item/MD4/8090275)算法。这套算法的程序在 RFC 1321 标准中被加以规范。1996年后该算法被证实存在弱点，可以被加以破解，对于需要高度安全性的数据，专家一般建议改用其他算法，如[SHA-2](https://baike.baidu.com/item/SHA-2/22718180)。2004年，证实MD5算法无法防止碰撞（collision），因此不适用于安全性认证，如[SSL](https://baike.baidu.com/item/SSL/320778)公开密钥认证或是[数字签名](https://baike.baidu.com/item/数字签名/212550)等用途。
+> **MD5 信息摘要算法**（英语：MD5 Message-Digest Algorithm），一种被广泛使用的[密码散列函数](https://baike.baidu.com/item/密码散列函数/14937715)，可以产生出一个 128 位（16[字节](https://baike.baidu.com/item/字节/1096318)）的散列值（hash value），用于确保信息传输完整一致。MD5 由美国密码学家[罗纳德·李维斯特](https://baike.baidu.com/item/罗纳德·李维斯特/700199)（Ronald Linn Rivest）设计，于 1992 年公开，用以取代[MD4](https://baike.baidu.com/item/MD4/8090275)算法。这套算法的程序在 RFC 1321 标准中被加以规范。1996 年后该算法被证实存在弱点，可以被加以破解，对于需要高度安全性的数据，专家一般建议改用其他算法，如[SHA-2](https://baike.baidu.com/item/SHA-2/22718180)。2004 年，证实 MD5 算法无法防止碰撞（collision），因此不适用于安全性认证，如[SSL](https://baike.baidu.com/item/SSL/320778)公开密钥认证或是[数字签名](https://baike.baidu.com/item/数字签名/212550)等用途。
 >
 > ——百度百科
 
 - [ ] 🤔
 
-*既然MD5这么不安全了，为什么感觉现在还在大量地被使用。比如全国大学生数学建模竞赛，甚至之前我当其志愿者监考的届全国中学生网络安全竞赛都用MD5验证文件……*
+*既然 MD5 这么不安全了，为什么感觉现在还在大量地被使用。比如全国大学生数学建模竞赛，甚至之前我当其志愿者监考的届全国中学生网络安全竞赛都用 MD5 验证文件……*
 
 <br/>
 
-> 目前可以说md5已经基本被攻破了，一般的MD5的碰撞都可以在如下网上获取到
+> 目前可以说 md5 已经基本被攻破了，一般的 MD5 的碰撞都可以在如下网上获取到
 >
 > - http://www.cmd5.com/
 > - http://www.ttmd5.com/
@@ -120,9 +122,9 @@ MD5是什么？
 
 <br/>
 
-把题目中的c4d038b4bed09fdb1471ef51ec3a32cd解密得`114514`
+把题目中的 c4d038b4bed09fdb1471ef51ec3a32cd 解密得`114514`
 
-所以flag：`moectf{114514}`
+所以 flag：`moectf{114514}`
 
 
 
@@ -138,11 +140,11 @@ MD5是什么？
 >
 > 来点究极送分题
 
-送分：base64解密得：
+送分：base64 解密得：
 
 `moectf%7Bez_b64%21%7D`
 
-然后URL反转码得：
+然后 URL 反转码得：
 
 `moectf{ez_b64!}`
 
@@ -182,9 +184,9 @@ MD5是什么？
 
 
 
-> Müller的目标是创建一种简单的、可以用最小的[编译器](https://zh.wikipedia.org/wiki/编译器)来实现的、符合[图灵完全](https://zh.wikipedia.org/wiki/图灵完全)思想的编程语言。这种语言由八种[运算符](https://zh.wikipedia.org/wiki/运算符)构成，为[Amiga](https://zh.wikipedia.org/wiki/Amiga)机器编写的编译器（第二版）只有240个[字节](https://zh.wikipedia.org/wiki/字节)大小。[[1\]](https://zh.wikipedia.org/wiki/Brainfuck#cite_note-1)
+> Müller 的目标是创建一种简单的、可以用最小的[编译器](https://zh.wikipedia.org/wiki/编译器)来实现的、符合[图灵完全](https://zh.wikipedia.org/wiki/图灵完全)思想的编程语言。这种语言由八种[运算符](https://zh.wikipedia.org/wiki/运算符)构成，为[Amiga](https://zh.wikipedia.org/wiki/Amiga)机器编写的编译器（第二版）只有 240 个[字节](https://zh.wikipedia.org/wiki/字节)大小。[[1\]](https://zh.wikipedia.org/wiki/Brainfuck#cite_note-1)
 >
-> 就像它的名字所暗示的，Brainfuck[程序](https://zh.wikipedia.org/wiki/计算机程序)很难读懂。尽管如此，Brainfuck[图灵机](https://zh.wikipedia.org/wiki/图灵机)一样可以完成任何计算任务。虽然Brainfuck的计算方式如此与众不同，但它确实能够正确运行。
+> 就像它的名字所暗示的，Brainfuck[程序](https://zh.wikipedia.org/wiki/计算机程序)很难读懂。尽管如此，Brainfuck[图灵机](https://zh.wikipedia.org/wiki/图灵机)一样可以完成任何计算任务。虽然 Brainfuck 的计算方式如此与众不同，但它确实能够正确运行。
 >
 > 这种语言基于一个简单的机器模型，除了指令，这个机器还包括：一个以字节为单位、被初始化为零的[数组](https://zh.wikipedia.org/wiki/数组)、一个指向该数组的[指针](https://zh.wikipedia.org/wiki/指针)（初始时指向数组的第一个字节）、以及用于输入输出的两个[字节流](https://zh.wikipedia.org/wiki/字節流)。
 >
@@ -198,8 +200,8 @@ MD5是什么？
 > | `<`  |                           指针减一                           |
 > | `+`  |                    指针指向的字节的值加一                    |
 > | `-`  |                    指针指向的字节的值减一                    |
-> | `.`  | 输出指针指向的单元内容（[ASCII码](https://zh.wikipedia.org/wiki/ASCII码)） |
-> | `,`  |             输入内容到指针指向的单元（ASCII码）              |
+> | `.`  | 输出指针指向的单元内容（[ASCII 码](https://zh.wikipedia.org/wiki/ASCII码)） |
+> | `,`  |             输入内容到指针指向的单元（ASCII 码）              |
 > | `[`  | 如果指针指向的单元值为零，向后跳转到对应的`]`指令的次一指令处 |
 > | `]`  | 如果指针指向的单元值不为零，向前跳转到对应的`[`指令的次一指令处 |
 >
@@ -209,7 +211,7 @@ MD5是什么？
 >
 > 第三种同价的说法，`[`意思是“向后跳转到对应的`]`”，`]`意思是“向前跳转到对应的`[`指令的次一指令处，如果指针指向的字节非零。”
 >
-> Brainfuck程序可以用下面的替换方法翻译成[C语言](https://zh.wikipedia.org/wiki/C语言)（假设`ptr`是`char *`[类型](https://zh.wikipedia.org/wiki/資料類型)）：
+> Brainfuck 程序可以用下面的替换方法翻译成[C 语言](https://zh.wikipedia.org/wiki/C语言)（假设`ptr`是`char *`[类型](https://zh.wikipedia.org/wiki/資料類型)）：
 >
 > 
 >
@@ -228,7 +230,7 @@ MD5是什么？
 
 
 
-用[Brainfuck反汇编-高级版(Python2)](https://www.cnblogs.com/qintangtao/p/7117433.html)可以反汇编所给Brainfuck代码如下：
+用[Brainfuck 反汇编 - 高级版 (Python2)](https://www.cnblogs.com/qintangtao/p/7117433.html)可以反汇编所给 Brainfuck 代码如下：
 
 ```asm
 mem[0] += 8
@@ -291,11 +293,11 @@ mem[9] += 4
 cmp mem[9] data[data_ptr]
 ```
 
-呃，其实直接用[网上现成](http://ctf.ssleye.com/brain.html)的BF解释器运行一下就行了，得到flag：`moectf{yes!yes!fk_U_2!}`
+呃，其实直接用[网上现成](http://ctf.ssleye.com/brain.html)的 BF 解释器运行一下就行了，得到 flag：`moectf{yes!yes!fk_U_2!}`
 
 
 
-另，这是一个python写的BF解释器，https://github.com/pocmo/Python-Brainfuck
+另，这是一个 python 写的 BF 解释器，https://github.com/pocmo/Python-Brainfuck
 
 > Usage:
 >  `./brainfuck.py yourcode.bf`
@@ -303,7 +305,7 @@ cmp mem[9] data[data_ptr]
 > You can use it as a module as well:
 >   `import brainfuck`
 
-git clone 到本地后，同目录下运行如下脚本也可以解出flag：
+git clone 到本地后，同目录下运行如下脚本也可以解出 flag：
 
 ```python
 import brainfuck
@@ -327,9 +329,9 @@ brainfuck.evaluate(sourcecode)
 
 > 150points
 >
-> “这这这这这真的是base64？”
+> “这这这这这真的是 base64？”
 >
-> <p align="right">——被RX暴打的luoqian如是说道</p>
+> <p align="right">——被 RX 暴打的 luoqian 如是说道</p>
 >
 > `0H9MJjCNPiMgJHMQJNtfyEJgIjtS1Ig=`
 >
@@ -349,11 +351,11 @@ brainfuck.evaluate(sourcecode)
 
 > 150points
 >
-> 小萌新arttnba3藏着flag的压缩包被万恶的luoqian师傅给加密了！arttnba3现在连压缩包都打不开了，你能帮他找出压缩包中的flag吗？
+> 小萌新 arttnba3 藏着 flag 的压缩包被万恶的 luoqian 师傅给加密了！arttnba3 现在连压缩包都打不开了，你能帮他找出压缩包中的 flag 吗？
 >
 > 
 >
-> 注：flag因为出题人脑抽写错了一个词，不要在意（
+> 注：flag 因为出题人脑抽写错了一个词，不要在意（
 
 题目附件下载下来是一个压缩包，直接解压提示`无法作为压缩包……`
 
@@ -366,7 +368,7 @@ brainfuck.evaluate(sourcecode)
 00000020: 67 2E 6A 70 67 CC 5A 77 3C DB D1 16 4F FB 3A 75    g.jpgLZw<[Q.O{:u
 ```
 
-于是把他修改回zip的文件头（注意这里不是位对齐的，得再添加一字节。而且先猜测是伪加密）
+于是把他修改回 zip 的文件头（注意这里不是位对齐的，得再添加一字节。而且先猜测是伪加密）
 
 ```asm
   Offset: 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F 	
@@ -403,11 +405,11 @@ brainfuck.evaluate(sourcecode)
 
 `bW9lY3RmJTdCSnVzN19jNmFuOWVfQF9iMXQlMjElN0Q=`
 
-有base64的特征，解码得到
+有 base64 的特征，解码得到
 
 `moectf%7BJus7_c6an9e_@_b1t%21%7D`
 
-URL编码解码得到flag：
+URL 编码解码得到 flag：
 
 `moectf{Jus7_c6an9e_@_b1t!}`
 
@@ -415,17 +417,17 @@ URL编码解码得到flag：
 
 
 
-## 不 会 吧 ？ 就 这 ¿
+## 不 会 吧？就 这 ¿
 
 > 175points
 >
 > ![puzzle.jpg](https://i.loli.net/2020/08/01/6BOZPXgsjWi48DI.jpg) 
 >
-> FLAG形式：moectf{FLAG内容} 不 会 吧 ？ 就 这 ¿不 会 吧 ？ 就 这 ¿不 会 吧 ？ 就 这 ¿不 会 吧 ？ 就 这 ¿不 会 吧 ？ 就 这 ¿不 会 吧 ？ 就 这 ¿不 会 吧 ？ 就 这 ¿不 会 吧 ？ 就 这 ¿不 会 吧 ？ 就 这 ¿不 会 吧 ？ 就 这 ¿不 会 吧 ？ 就 这 ¿不 会 吧 ？ 就 这 ¿不 会 吧 ？ 就 这 ¿不 会 吧 ？ 就 这 ¿不 会 吧 ？ 就 这 ¿不 会 吧 ？ 就 这 ¿不 会 吧 ？ 就 这 ¿不 会 吧 ？ 就 这 ¿不 会 吧 ？ 就 这 ¿不 会 吧 ？ 就 这 ¿不 会 吧 ？ 就 这 ¿不 会 吧 ？ 就 这 ¿不 会 吧 ？ 就 这 ¿不 会 吧 ？ 就 这 ¿不 会 吧 ？ 就 这 ¿不 会 吧 ？ 就 这 ¿不 会 吧 ？ 就 这 ¿不 会 吧 ？ 就 这 ¿不 会 吧 ？ 就 这 ¿不 会 吧 ？ 就 这 ¿不 会 吧 ？ 就 这 ¿不 会 吧 ？ 就 这 ¿不 会 吧 ？ 就 这 ¿不 会 吧 ？ 就 这 ¿不 会 吧 ？ 就 这 ¿不 会 吧 ？ 就 这 ¿不 会 吧 ？ 就 这 ¿不 会 吧 ？ 就 这 ¿不 会 吧 ？ 就 这 ¿
+> FLAG 形式：moectf{FLAG 内容} 不 会 吧？就 这 ¿不 会 吧？就 这 ¿不 会 吧？就 这 ¿不 会 吧？就 这 ¿不 会 吧？就 这 ¿不 会 吧？就 这 ¿不 会 吧？就 这 ¿不 会 吧？就 这 ¿不 会 吧？就 这 ¿不 会 吧？就 这 ¿不 会 吧？就 这 ¿不 会 吧？就 这 ¿不 会 吧？就 这 ¿不 会 吧？就 这 ¿不 会 吧？就 这 ¿不 会 吧？就 这 ¿不 会 吧？就 这 ¿不 会 吧？就 这 ¿不 会 吧？就 这 ¿不 会 吧？就 这 ¿不 会 吧？就 这 ¿不 会 吧？就 这 ¿不 会 吧？就 这 ¿不 会 吧？就 这 ¿不 会 吧？就 这 ¿不 会 吧？就 这 ¿不 会 吧？就 这 ¿不 会 吧？就 这 ¿不 会 吧？就 这 ¿不 会 吧？就 这 ¿不 会 吧？就 这 ¿不 会 吧？就 这 ¿不 会 吧？就 这 ¿不 会 吧？就 这 ¿不 会 吧？就 这 ¿不 会 吧？就 这 ¿不 会 吧？就 这 ¿不 会 吧？就 这 ¿不 会 吧？就 这 ¿
 
 ？¿  ？¿  ？¿  ？¿  ？¿  ？¿  ？¿  ？¿  ？¿  ？¿  ？¿  ？¿  ？¿  ？¿  ？¿  
 
-先看一下题目，后面的一大段`不 会 吧 ？ 就 这 ¿`即有规律性，根据信息熵的原理，它只能蕴含很少量的信息，所以认为这个不是找到flag的重点，
+先看一下题目，后面的一大段`不 会 吧 ？ 就 这 ¿`即有规律性，根据信息熵的原理，它只能蕴含很少量的信息，所以认为这个不是找到 flag 的重点，
 
 下载题目附件图片如下：
 
@@ -435,13 +437,13 @@ URL编码解码得到flag：
 
 ？¿  ？¿  ？¿  ？¿  ？¿  ？¿  ？¿  ？¿  ？¿  ？¿  ？¿  ？¿  ？¿  ？¿  ？¿  
 
-binwalk它！
+binwalk 它！
 
 ```bash
 $ binwalk puzzle.jpg -e
 ```
 
-提取出puzzle.txt内容如下：
+提取出 puzzle.txt 内容如下：
 
 ```
 不会吧？ 就这¿ 就这¿ 不会吧？ 不会吧？ 就这¿ 不会吧？ 就这¿ 
@@ -493,7 +495,7 @@ $ binwalk puzzle.jpg -e
 
 ```
 
-发现每一行是8位，且最后都是0，根据ASCII码的特性（8位，且第一位都是0），猜测是倒序的ASCII，
+发现每一行是 8 位，且最后都是 0，根据 ASCII 码的特性（8 位，且第一位都是 0），猜测是倒序的 ASCII，
 
 建立解码脚本如下：
 
@@ -533,17 +535,17 @@ print(str1)
 
 运行输出：`Y0u_wh4t?-0n1y_th1S?`
 
-轻松得到flag：`moectf{Y0u_wh4t?-0n1y_th1S?}`
+轻松得到 flag：`moectf{Y0u_wh4t?-0n1y_th1S?}`
 
 ？¿  ？¿  ？¿  ？¿  ？¿  ？¿  ？¿  ？¿  ？¿  ？¿  ？¿  ？¿  ？¿  ？¿  ？¿  
 
 <br/>
 
-## Cor1e的支票
+## Cor1e 的支票
 
 > 200points
 >
-> `Cor1e`学姐给你发来一条消息, 这条消息据说每个句号价值`700`, 每个问号价值`2500`, 每个感叹号据说都是无价之宝.
+> `Cor1e`学姐给你发来一条消息，这条消息据说每个句号价值`700`, 每个问号价值`2500`, 每个感叹号据说都是无价之宝。
 >
 > **Hint：**
 >
@@ -555,7 +557,7 @@ print(str1)
 
 <br/>
 
-> [Ook!](http://www.dangermouse.net/esoteric/ook.html) 与Brainfuck类似, 但用单词`Ook！`，`Ook.` 和`Ook?`代替。
+> [Ook!](http://www.dangermouse.net/esoteric/ook.html) 与 Brainfuck 类似，但用单词`Ook！`，`Ook.` 和`Ook?`代替。
 
 <br/>
 
@@ -564,9 +566,9 @@ print(str1)
 > 200points
 > **本题不需要使用脚本对服务器进行爆破！**
 >
-> 简单的社工尝试！你能找到隐藏的**moectf**的flag吗？
+> 简单的社工尝试！你能找到隐藏的**moectf**的 flag 吗？
 >
->  提示：百度贴吧 使用手机版贴吧寻找第一步的信息 flag格式：moectf{flag内容}
+>  提示：百度贴吧 使用手机版贴吧寻找第一步的信息 flag 格式：moectf{flag 内容}
 >
 > **Hints：**
 >
@@ -574,21 +576,21 @@ print(str1)
 >
 > 
 >
-> 0x01.第一个hint请在获取奇怪的八+1个数据后再开
+> 0x01.第一个 hint 请在获取奇怪的八 +1 个数据后再开
 >
 > > 百度一下那两个英文单词拼出来的东西？
 >
-> 0x02.第二个hint请在获取神必链接后再开
+> 0x02.第二个 hint 请在获取神必链接后再开
 >
-> > 密码长度7位 后6位是一个常见弱口令
+> > 密码长度 7 位 后 6 位是一个常见弱口令
 > >
 > > *我做的时候只提示了“弱口令”，于是做是时候稍微违反了一下规则，详见后文*
 >
-> 0x03.第三个hint还请在获取到神必代码后不会使用再开
+> 0x03.第三个 hint 还请在获取到神必代码后不会使用再开
 >
-> > 没开这个hint
+> > 没开这个 hint
 >
-> 0x04.flag没有那么容易获得，不要在上面那几步你都没走过之前看到奇怪的长得像flag的东西就想当然
+> 0x04.flag 没有那么容易获得，不要在上面那几步你都没走过之前看到奇怪的长得像 flag 的东西就想当然
 
 
 
@@ -596,18 +598,18 @@ print(str1)
 
 ### 百度贴吧
 
-随便搜索一下，便可以发现在[moectf吧](https://tieba.baidu.com/f?kw=moectf&ie=utf-8)里有[moectf2020-简单的社工尝试！](https://tieba.baidu.com/p/6870157760)这个贴子，内容如下：
+随便搜索一下，便可以发现在[moectf 吧](https://tieba.baidu.com/f?kw=moectf&ie=utf-8)里有[moectf2020-简单的社工尝试！](https://tieba.baidu.com/p/6870157760)这个贴子，内容如下：
 
 > [玄影空灵星痕印](https://tieba.baidu.com/home/main?un=玄影空灵星痕印&ie=utf-8&id=tb.1.e1f236ee.tNGYXbOxOdntGStsKQrfBg&fr=pb)
 >
-> 猜猜flag在哪呢![img](https://gsp0.baidu.com/5aAHeD3nKhI2p27j8IqW0jdnxx1xbK/tb/editor/images/client/image_emoticon66.png)![img](https://gsp0.baidu.com/5aAHeD3nKhI2p27j8IqW0jdnxx1xbK/tb/editor/images/client/image_emoticon66.png)![img](https://gsp0.baidu.com/5aAHeD3nKhI2p27j8IqW0jdnxx1xbK/tb/editor/images/client/image_emoticon66.png)
+> 猜猜 flag 在哪呢![img](https://gsp0.baidu.com/5aAHeD3nKhI2p27j8IqW0jdnxx1xbK/tb/editor/images/client/image_emoticon66.png)![img](https://gsp0.baidu.com/5aAHeD3nKhI2p27j8IqW0jdnxx1xbK/tb/editor/images/client/image_emoticon66.png)![img](https://gsp0.baidu.com/5aAHeD3nKhI2p27j8IqW0jdnxx1xbK/tb/editor/images/client/image_emoticon66.png)
 > ![img](http://tiebapic.baidu.com/forum/w%3D580/sign=0876998a43e736d158138c00ab514ffc/ef31fe6134a85edf3dc929755e540923dd547525.jpg)
 >
-> 来自[Android客户端](http://c.tieba.baidu.com/c/s/download/pc?src=webtbGF)1楼2020-08-09 04:24
+> 来自[Android 客户端](http://c.tieba.baidu.com/c/s/download/pc?src=webtbGF)1 楼 2020-08-09 04:24
 
 <br/>
 
-### 奇怪的八+1个数据
+### 奇怪的八 +1 个数据
 
 
 观察这个贴子一些相关信息，注意到楼主只关注了一个人[arttnba](https://tieba.baidu.com/home/main?un=arttnba&fr=ihome&ie=utf-8&id=tb.1.ddc60c23.YtAkkTMCwe6OQ9KcB8Nfcw)，这个人很可疑，没有什么动态，而且没有`3`，但关注了一堆奇奇怪怪的吧：
@@ -616,11 +618,11 @@ print(str1)
 
 ![image-20201025165801884](http://framist-bucket-openread.oss-cn-shanghai.aliyuncs.com/img/2023/08/15/20230815210613-4.jpg)
 
-*这里就需要用手机版贴吧查看了，web版不知道为什么只能显示前8个吧*
+*这里就需要用手机版贴吧查看了，web 版不知道为什么只能显示前 8 个吧*
 
 
 
-吧名都很奇怪，这应该正是所谓的“奇怪的八+1个数据”了吧。
+吧名都很奇怪，这应该正是所谓的“奇怪的八 +1 个数据”了吧。
 
 <br/>
 
@@ -630,7 +632,7 @@ print(str1)
 
 `923431`、`ourmail.cn`
 
-于是在https://ourmail.cn/中进一步寻找信息
+于是在 https://ourmail.cn/中进一步寻找信息
 
 打开 https://ourmail.cn/ 
 
@@ -660,7 +662,7 @@ print(str1)
 
 ~~啊啊啊方向错了~~
 
-开hint，提示“弱口令”
+开 hint，提示“弱口令”
 
 
 
@@ -865,9 +867,9 @@ admin123
 >
 > /s
 >
-> 8月9日 07:18
+> 8 月 9 日 07:18
 >
-> 发给: 全部成员 (1人未读，24人已读)
+> 发给：全部成员 (1 人未读，24 人已读)
 >
 > address：1O9JFcsUyqQ7T85WXmHH6nQ
 
@@ -875,7 +877,7 @@ admin123
 
 > /s
 >
-> 8月9日 07:42
+> 8 月 9 日 07:42
 >
 > a3cj
 
@@ -889,11 +891,11 @@ https://pan.baidu.com/s/1O9JFcsUyqQ7T85WXmHH6nQ
 
 `bW9lY3RmJTdCdzB3X1kwdV9jNG5fZjFuZF9tM19vdVQlMjElN0Q=`
 
-base64特征，于是解码如下：
+base64 特征，于是解码如下：
 
 `moectf%7Bw0w_Y0u_c4n_f1nd_m3_ouT%21%7D`
 
-URL解码得到flag：
+URL 解码得到 flag：
 
 `moectf{w0w_Y0u_c4n_f1nd_m3_ouT!}`
 
@@ -907,7 +909,7 @@ URL解码得到flag：
 >
 > 
 >
-> "luoq1an向arttnba3推荐了世界上最优秀的语言Javascript，但对于实在是不精通编程的他来说，这无疑是一场灾难..."
+> "luoq1an 向 arttnba3 推荐了世界上最优秀的语言 Javascript，但对于实在是不精通编程的他来说，这无疑是一场灾难..."
 
 题目附件是一张图片：
 
@@ -915,7 +917,7 @@ URL解码得到flag：
 
 <br/>
 
-binwalk它！
+binwalk 它！
 
 得到一个`A3FXCK.txt`，内容很多，其开头如下
 
@@ -964,7 +966,7 @@ print(str1)
 
 
 
-得到JavaScript代码：
+得到 JavaScript 代码：
 
 ```javascript
 [][(![]+[])[+[]]+([![]]+[][[]  …… ……
@@ -972,7 +974,7 @@ print(str1)
 
 
 
-运行（比如直接输入到浏览器控制台里）便得flag：`moectf{J5Fxck_1s_1nt3res7in9!}`
+运行（比如直接输入到浏览器控制台里）便得 flag：`moectf{J5Fxck_1s_1nt3res7in9!}`
 
 
 
@@ -986,13 +988,13 @@ print(str1)
 >
 > 
 >
-> **不会的可以先看免费的hint**
+> **不会的可以先看免费的 hint**
 >
-> （みんなー！ チルノのさんすう教室（きょうしつ）はじまるよー！ あたいみたいな天才目指（てんさいめざ）して がんばっていってね！） キラキラ ダイヤモンド 辉（かがや）く星（ほし）のように 栄光（えいこう） 志望校（しぼうこう） なんとかして入（はい）ろう 天才 秀才（しゅうさい） トップ目指して GO GO （バーカバーカ バーカバーカ バーカバーカ） （ちょっ　ちがっ バカじゃないもん） （バーカバーカ バーカバーカ バーカバーカ） （バカっていうほうが バカなのよ） （バーカバーカ バーカバーカ バーカバーカ） （なによ うるさいわね このバカ！） （バーカバーカ バーカバーカ） （てれってれってれってれ ってってってっ てってってれ） 红魔馆（こうまかん）から バスが出（で）て 始（はじ）めに三人乗（さんにんの）りました 白玉楼（はくぎょくろう）で一人降（ひとりお）りて 半人（はんにん）だけ乗（の）りました 八云（やくも）さんちで二人降（ふたりお）りて 结局乗客合计何人（けっきょくじょうきゃくごうけいなんにん）だ 答（こた）えは答えは ゼロ人（にん）ゼロ人 なぜならなぜならそれは 幻想郷（げんそうぎょう）にバス无（な）い☆ 山落（やまお）ち意味（いみ）など无（な）いわ キャラクター 立（た）てばいいのよ 元気（げんき）があればなんでも ①（いち）・②（に）・⑨（きゅう） くるくる时计（とけい）の针（はり） ぐるぐる头回（あたままわ）る だってつぶら目玉（めだま） 二（ふた）つしかないのに 三本（さんぼん）の针（はり）なんて ちんぷんかん 次々问题出（つぎつぎもんだいで）る まだまだ授业続（じゅぎょうつづ）く 冻（こお）る部屋（へや）の中（なか） ひんやりとした 温度（おんど）も时间（じかん）も気（き）にせず ゆっくりしていってね！ （バーカバーカ バーカバーカ バーカバーカ） （だからバカじゃないって 言（い）ってるでしょ） （バーカバーカ バーカバーカ バーカバーカ） （いい加减（かげん）にしない と冷冻（れいとう）するわよ） （バーカバーカ バーカバーカ バーカバーカ） （そして粉々（こなごな）になって 死（し）ねばいいのよ） （バーカバーカ バーカバーカ） （てれってれって れってれって ってっ てってってってれ） 霊梦（れいむ）んとこの百万円（ひゃくまんえん）の 壷（つぼ）を谁（だれ）かが 割（わ）っちゃった （キャー） 永远亭（えいえんてい）のえーりん が弁偿（べんしょう）しに来（き）ましたよ 知（し）らんぷりの イタズラてゐ 结局赔偿金额（けっきょくばいしょうきんがく）いくら 答えは答えは ゼロ円（えん）ゼロ円 なぜならなぜならそれは そんな壷あるわけない 常识（じょうしき） 超（こ）えたところに 世界（せかい）の 真理（しんり）がある 秘密（ひみつ）の数字（すうじ） 目指して ①・②・⑨ ヘラヘラ ニヤけながら ゲラゲラ 笑（わら）いながら うっざー！ 因幡（いなば）ウサギ 可爱（かわい）げもないのに 新参（しんざん）の厨（ちゅう）どもは ホイ☆ホイ☆ホイ 再生（さいせい）百万回（ひゃくまんかい） もれなく 愚民（ぐみん）なんて どういうことなのよ どっちらかって言（い）うなら サーバー管理（かんり）も お疲（つか）れさんってとこね （わかった　アタイが あまりにも天才だから 嫉妬（しっと）してるんでしょ ほんと　しょうがないわね せっかくだからアタイの 天才の秘诀（ひけつ）を ちょっとだけ教（おし）えて あげてもいいわよ！） あらゆるあらゆる あらゆるあらゆるあらゆる あらゆる 叡智（えいち）を 集（あつ）めて集めて 集めて集めて 束（たば）ねても アタイのアタイのアタイの アタイのアタイのアタイの 丈夫（じょうぶ）な 头（あたま）に头に头に头に かなわない 朝饭（あさめし）朝饭朝饭朝饭朝饭朝饭 食（た）べたら 赤子（あかご）の赤子の赤子の赤子の 手（て）を捻（ひね）る アタイはアタイはアタイは アタイはアタイはアタイは カンペキ いわゆるいわゆるいわゆる いわゆる パーフェクト （ひゃ～ くおくちょうまんバッチリ☆） 山落ち意味など无いわ キャラクター 立てばいいのよ 元気があればなんでも ①・②・⑨！！ くるくる时计の针 ぐるぐる头回る だってつぶら目玉 二つしかないのに 三本の针なんて ちんぷんかん 次々问题出る まだまだ授业続く 冻る部屋の中 ひんやりとした 温度も时间も気にせず ゆっくりしていってね！ （バーカバーカ バーカバーカ） （バーカバーカ バーカバ－カ） （バーカバーカ バーカバーカ） （バーカバーカ バーカバ－カ） （バーカバーカ バーカバーカ） （もうバカでいいわよ 知（し）らない！） （バーカバーカ バーカバーカ） （てれってれってれってれっ てってっ てってってってれ）
+> （みんなー！チルノのさんすう教室（きょうしつ）はじまるよー！あたいみたいな天才目指（てんさいめざ）して がんばっていってね！）キラキラ ダイヤモンド 辉（かがや）く星（ほし）のように 栄光（えいこう）志望校（しぼうこう）なんとかして入（はい）ろう 天才 秀才（しゅうさい）トップ目指して GO GO（バーカバーカ バーカバーカ バーカバーカ） （ちょっ ちがっ バカじゃないもん） （バーカバーカ バーカバーカ バーカバーカ） （バカっていうほうが バカなのよ） （バーカバーカ バーカバーカ バーカバーカ） （なによ うるさいわね このバカ！） （バーカバーカ バーカバーカ） （てれってれってれってれ ってってってっ てってってれ）红魔馆（こうまかん）から バスが出（で）て 始（はじ）めに三人乗（さんにんの）りました 白玉楼（はくぎょくろう）で一人降（ひとりお）りて 半人（はんにん）だけ乗（の）りました 八云（やくも）さんちで二人降（ふたりお）りて 结局乗客合计何人（けっきょくじょうきゃくごうけいなんにん）だ 答（こた）えは答えは ゼロ人（にん）ゼロ人 なぜならなぜならそれは 幻想郷（げんそうぎょう）にバス无（な）い☆ 山落（やまお）ち意味（いみ）など无（な）いわ キャラクター 立（た）てばいいのよ 元気（げんき）があればなんでも ①（いち）・②（に）・⑨（きゅう）くるくる时计（とけい）の针（はり）ぐるぐる头回（あたままわ）る だってつぶら目玉（めだま）二（ふた）つしかないのに 三本（さんぼん）の针（はり）なんて ちんぷんかん 次々问题出（つぎつぎもんだいで）る まだまだ授业続（じゅぎょうつづ）く 冻（こお）る部屋（へや）の中（なか）ひんやりとした 温度（おんど）も时间（じかん）も気（き）にせず ゆっくりしていってね！ （バーカバーカ バーカバーカ バーカバーカ） （だからバカじゃないって 言（い）ってるでしょ） （バーカバーカ バーカバーカ バーカバーカ） （いい加减（かげん）にしない と冷冻（れいとう）するわよ） （バーカバーカ バーカバーカ バーカバーカ） （そして粉々（こなごな）になって 死（し）ねばいいのよ） （バーカバーカ バーカバーカ） （てれってれって れってれって ってっ てってってってれ）霊梦（れいむ）んとこの百万円（ひゃくまんえん）の 壷（つぼ）を谁（だれ）かが 割（わ）っちゃった（キャー）永远亭（えいえんてい）のえーりん が弁偿（べんしょう）しに来（き）ましたよ 知（し）らんぷりの イタズラてゐ 结局赔偿金额（けっきょくばいしょうきんがく）いくら 答えは答えは ゼロ円（えん）ゼロ円 なぜならなぜならそれは そんな壷あるわけない 常识（じょうしき）超（こ）えたところに 世界（せかい）の 真理（しんり）がある 秘密（ひみつ）の数字（すうじ）目指して ①・②・⑨ ヘラヘラ ニヤけながら ゲラゲラ 笑（わら）いながら うっざー！因幡（いなば）ウサギ 可爱（かわい）げもないのに 新参（しんざん）の厨（ちゅう）どもは ホイ☆ホイ☆ホイ 再生（さいせい）百万回（ひゃくまんかい）もれなく 愚民（ぐみん）なんて どういうことなのよ どっちらかって言（い）うなら サーバー管理（かんり）も お疲（つか）れさんってとこね（わかった アタイが あまりにも天才だから 嫉妬（しっと）してるんでしょ ほんと しょうがないわね せっかくだからアタイの 天才の秘诀（ひけつ）を ちょっとだけ教（おし）えて あげてもいいわよ！）あらゆるあらゆる あらゆるあらゆるあらゆる あらゆる 叡智（えいち）を 集（あつ）めて集めて 集めて集めて 束（たば）ねても アタイのアタイのアタイの アタイのアタイのアタイの 丈夫（じょうぶ）な 头（あたま）に头に头に头に かなわない 朝饭（あさめし）朝饭朝饭朝饭朝饭朝饭 食（た）べたら 赤子（あかご）の赤子の赤子の赤子の 手（て）を捻（ひね）る アタイはアタイはアタイは アタイはアタイはアタイは カンペキ いわゆるいわゆるいわゆる いわゆる パーフェクト（ひゃ～ くおくちょうまんバッチリ☆）山落ち意味など无いわ キャラクター 立てばいいのよ 元気があればなんでも ①・②・⑨！！くるくる时计の针 ぐるぐる头回る だってつぶら目玉 二つしかないのに 三本の针なんて ちんぷんかん 次々问题出る まだまだ授业続く 冻る部屋の中 ひんやりとした 温度も时间も気にせず ゆっくりしていってね！ （バーカバーカ バーカバーカ） （バーカバーカ バーカバ－カ） （バーカバーカ バーカバーカ） （バーカバーカ バーカバ－カ） （バーカバーカ バーカバーカ） （もうバカでいいわよ 知（し）らない！） （バーカバーカ バーカバーカ） （てれってれってれってれっ てってっ てってってってれ）
 >
-> **免费hint：**
+> **免费 hint：**
 >
-> 这道题需要你在单次连接下多次成功进行输入才能得到flag
+> 这道题需要你在单次连接下多次成功进行输入才能得到 flag
 >
 > 正确的答案不一定是算术正确的答案哟
 
@@ -1022,9 +1024,9 @@ print(str1)
 
 
 
-白开了50points的hint，提示“注意代码冗余”
+白开了 50points 的 hint，提示“注意代码冗余”
 
-不了解pyc隐写，没写出来……
+不了解 pyc 隐写，没写出来……
 
 
 
@@ -1038,11 +1040,11 @@ print(str1)
 >
 > 
 >
-> flag请精确填写.
+> flag 请精确填写。
 >
 > 
 >
-> 附件下载链接: [超星云盘](http://pan-yz.chaoxing.com/share/info/52876a078c6dbf37) 提取码 : `fl4pil`
+> 附件下载链接：[超星云盘](http://pan-yz.chaoxing.com/share/info/52876a078c6dbf37) 提取码 : `fl4pil`
 >
 > **hints：**
 >
@@ -1056,7 +1058,7 @@ print(str1)
 ffmpeg -loglevel info  -i ~/test.mp4  -vf blackframe=95:30 -f null -
 ```
 
-得出黑场帧位然后直接在播放器（如potplayer）里定位即可
+得出黑场帧位然后直接在播放器（如 potplayer）里定位即可
 
 
 
@@ -1070,7 +1072,7 @@ ffmpeg -loglevel info  -i ~/test.mp4  -vf blackframe=95:30 -f null -
 >
 > 星空真的很美，这道题真的很简单
 >
-> 一个付费250points的hint
+> 一个付费 250points 的 hint
 
 *这是一道社工题*
 
@@ -1154,7 +1156,7 @@ imwrite(Out_I,'out.png')
 
 
 
-moeCTF结束后开了巨贵hint，果然：
+moeCTF 结束后开了巨贵 hint，果然：
 
 > Do you know gaps?
 
@@ -1170,15 +1172,15 @@ moeCTF结束后开了巨贵hint，果然：
 >
 > 
 >
-> 链接: [ChaoXing](http://pan-yz.chaoxing.com/share/info/c31dc66b18510048) 提取码 : `x8ykvo`
+> 链接：[ChaoXing](http://pan-yz.chaoxing.com/share/info/c31dc66b18510048) 提取码 : `x8ykvo`
 >
 > 1, 请把背景暗化调低
 > 
->2, 请开启Storyboard
+>2, 请开启 Storyboard
 > 
->3, 虽然文件是zip格式, 你只需要简单的把下载得到的压缩包后缀改为osz然后用Osu!打开即可, 或者直接将压缩包拖动到Osu!窗口里.
+>3, 虽然文件是 zip 格式，你只需要简单的把下载得到的压缩包后缀改为 osz 然后用 Osu! 打开即可，或者直接将压缩包拖动到 Osu! 窗口里。
 > 
->4, Osu!的谱面只是给你一个提示而已.
+>4, Osu! 的谱面只是给你一个提示而已。
 
 ==TODU==
 
@@ -1236,7 +1238,7 @@ print(out)
 
 `youareosumastersosostrongthisflaggiveyoutorewardyoudonotafraidofitslengthitistherightflag`
 
-于是flag：
+于是 flag：
 
 `moectf{youareosumastersosostrongthisflaggiveyoutorewardyoudonotafraidofitslengthitistherightflag}`
 

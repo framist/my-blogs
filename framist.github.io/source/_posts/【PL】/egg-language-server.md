@@ -1,10 +1,11 @@
 ---
 title: egg language server on VSCode
-date: 2023-8-14 20:12:55
-tags: 
-- PL
-categories: 
-- 计算机科学
+tags:
+  - PL
+categories:
+  - 计算机科学
+abbrlink: egg-language-server
+date: 2023-08-14 20:12:55
 ---
 
 # 用蛋消灭魔鬼！编写时源码优化插件

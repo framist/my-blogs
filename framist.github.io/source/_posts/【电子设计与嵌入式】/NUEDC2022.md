@@ -1,9 +1,10 @@
 ---
 title: NUEDC 2022 E
-date: 2023-8-4 20:32:44
-categories: 
-- 电子设计与嵌入式
+categories:
+  - 电子设计与嵌入式
 tags: stm32
+abbrlink: nuedc-2022-e
+date: 2023-08-04 20:32:44
 ---
 
 ![show](http://framist-bucket-openread.oss-cn-shanghai.aliyuncs.com/img/show.png)
