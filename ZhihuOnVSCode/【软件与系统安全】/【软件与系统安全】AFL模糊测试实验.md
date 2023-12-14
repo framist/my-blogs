@@ -1,8 +1,9 @@
+
+
 # 软件与系统安全 - AFL 模糊测试实验
 
-*软件与系统安全的作业，写得不尽详尽，仍有问题未解决，欢迎反馈*
 
-> 对Coreutils 软件集合使用AFL 进行模糊测试，撰写测试报告
+> 对 Coreutils 软件集合使用 AFL 进行模糊测试，撰写测试报告
 >
 > 在报告中详述： 
 >
@@ -10,7 +11,7 @@
 >
 > （2）第“三、1（2）”步骤的两种输入种子构造方法，对于 fuzzing 结果的影响（是否有影响？如果有，对最终获得的路径数量、路径数增长的速度等方面的具体影响）。 
 >
-> （3）第“三、1”基于编译插桩的fuzzing 与第“三、2”的基于Qemu 动态插桩的fuzzing，从基本原理和实验效果两方面的差异。
+> （3）第“三、1”基于编译插桩的 fuzzing 与第“三、2”的基于 Qemu 动态插桩的 fuzzing，从基本原理和实验效果两方面的差异。
 
 <!-- more -->
 
@@ -30,7 +31,7 @@ RAM: 5155MiB / 15789MiB
 
 ## 二、实验准备
 
-### 下载并安装AFL
+### 下载并安装 AFL
 
 下载地址：https://github.com/google/AFL 
 
@@ -50,9 +51,9 @@ sudo make install # 在系统中安装 AFL
 ![Image](https://pic4.zhimg.com/80/v2-10b711cc70208930f7b5e82c0919c982.png)
 
 
-2）进入 qemu_mode 目录，使用build_qemu_support.sh 脚本构建FL-Qemu。
+2）进入 qemu_mode 目录，使用 build_qemu_support.sh 脚本构建 FL-Qemu。
 
-（可能需安装libtool,  libtool-bin 等依赖）。如AFL-Qemu 安装存在问题，可预先安装qemu
+（可能需安装 libtool,  libtool-bin 等依赖）。如 AFL-Qemu 安装存在问题，可预先安装 qemu
 
 ```shell
 sudo apt-get install libini-config-dev libtool-bin automake bison libglib2.0-dev qemu -y 
@@ -89,9 +90,9 @@ make[1]: *** [/home/hxn/桌面/AFL_studio/AFL/qemu_mode/qemu-2.10.0/rules.mak:66
 make: *** [Makefile:326：subdir-x86_64-linux-user] 错误 2
 ```
 
-参考这个 issue： https://github.com/google/AFL/issues/41
+参考这个 issue：https://github.com/google/AFL/issues/41
 
-使用这个项目代替：https://github.com/blurbdust/AFL （或者使用 google 更新的 patch 更好）
+使用这个项目代替：https://github.com/blurbdust/AFL（或者使用 google 更新的 patch 更好）
 
 ```shell
 get clone https://github.com/blurbdust/AFL.git
@@ -134,7 +135,7 @@ a）查看 coreutils 的 configure 选项，指定 `cc=afl-gcc`。
 
 
 
-> 这一步一般用来生成 Makefile，为下一步的编译做准备，你可以通过在 configure 后加上参数来对安装进行控制，比如代码:`./configure --prefix=/usr`上面的意思是将该软件安装在 /usr 下面，执行文件就会安装在 /usr/bin.同时一些软件的配置文件你可以通过指定 --sys-config= 参数进行设定。有一些软件还可以加上 --with、--enable、--without、--disable 等等参数对编译加以控制，你可以通过允许 ./configure --help 察看详细的说明帮助
+> 这一步一般用来生成 Makefile，为下一步的编译做准备，你可以通过在 configure 后加上参数来对安装进行控制，比如代码：`./configure --prefix=/usr`上面的意思是将该软件安装在 /usr 下面，执行文件就会安装在 /usr/bin.同时一些软件的配置文件你可以通过指定 --sys-config= 参数进行设定。有一些软件还可以加上 --with、--enable、--without、--disable 等等参数对编译加以控制，你可以通过允许 ./configure --help 察看详细的说明帮助
 
 
 
@@ -150,10 +151,10 @@ make
 
 coreutils 包含很多二进制程序，自己从中选择 3 个感兴趣的程序进行 fuzzing。
 
-构造输入种子列表，存放于coreutils-9.1/src/input 目录下，构造方法可以选择： 
+构造输入种子列表，存放于 coreutils-9.1/src/input 目录下，构造方法可以选择： 
 
 a）学习 coreutils 文档中这 3 个程序的命令行选项，用这些命令行选项构建
-（文档见https://www.gnu.org/software/coreutils/manual/coreutils.html  ）。 
+（文档见 https://www.gnu.org/software/coreutils/manual/coreutils.html）。 
 
 b）直接用随机构造的任意字符串作为输入种子。 
 
@@ -167,7 +168,7 @@ cp ../../AFL/dictionaries/* ./input # 将字典拷贝到input目录下
 
 
 
-#### （3）在coreutils-9.1/src 目录下，使用 `afl-fuzz -i input -o output ./[程序名] @@`进行fuzzing，一段时间后终止fuzzing 并在 `coreutils-9.1/src/output` 目录下查看测试结果。
+#### （3）在 coreutils-9.1/src 目录下，使用 `afl-fuzz -i input -o output ./[程序名] @@`进行 fuzzing，一段时间后终止 fuzzing 并在 `coreutils-9.1/src/output` 目录下查看测试结果。
 
 出现的问题大都可以按提示进行修复
 
@@ -215,7 +216,7 @@ echo performance | tee cpu*/cpufreq/scaling_governor
        OS message : Invalid argument
 ```
 
-推测是文件系统的问题，目前运行在NTFS中，复制整个工程到Linux系统盘上试试。
+推测是文件系统的问题，目前运行在 NTFS 中，复制整个工程到 Linux 系统盘上试试。
 
 ```shell
 afl-fuzz -i input -o output ./od -x @@
@@ -233,13 +234,13 @@ afl-fuzz -i input -o output ./od -x @@
 
 >https://www.cnblogs.com/unr4v31/p/15237728.html
 >
->什么时候可以停止fuzzer?其中一个指标可以参考`cycles done` 的数字颜色，依次会出现洋葱红色，黄色，蓝色，绿色，变成绿色时就很难产生新的crash文件了。
+>什么时候可以停止 fuzzer？其中一个指标可以参考`cycles done` 的数字颜色，依次会出现洋葱红色，黄色，蓝色，绿色，变成绿色时就很难产生新的 crash 文件了。
 
 
 
 ### 2.  基于 AFL-Qemu 的目标程序动态插桩 
 
-（1）重新生成coreutils 的每个二进制程序（不使用afl-gcc，而是用默认gcc进行configure/make）。 
+（1）重新生成 coreutils 的每个二进制程序（不使用 afl-gcc，而是用默认 gcc 进行 configure/make）。 
 
 ```shell
 ./configure
@@ -248,7 +249,7 @@ make
 
 
 
-（2）使用afl-fuzz 的 -Q 选项，对你的3 个coreutils 程序进行fuzzing。构造输入种子的方法同上。
+（2）使用 afl-fuzz 的 -Q 选项，对你的 3 个 coreutils 程序进行 fuzzing。构造输入种子的方法同上。
 
 ```shell
 afl-fuzz -Q  -i input -o output od -x @@
@@ -268,15 +269,15 @@ afl-fuzz -Q  -i input -o output od -x @@
 
 ### 第“三、1（2）”步骤的两种输入种子构造方法，对于 fuzzing 结果的影响（是否有影响？如果有，对最终获得的路径数量、路径数增长的速度等方面的具体影响）。 
 
-有影响：因为 AFL 可以通过启发式算法自动确定输入，但是如果直接用随机构造，最开始只能适应一般情况，而对特定程序的针对性不强。根据程序的输入构建一个高质量的语料库，能更好指导变异生成的随机输入，能发现更多路径数量，路径增长速度更快，就能获得更快的Fuzzing速度。
+有影响：因为 AFL 可以通过启发式算法自动确定输入，但是如果直接用随机构造，最开始只能适应一般情况，而对特定程序的针对性不强。根据程序的输入构建一个高质量的语料库，能更好指导变异生成的随机输入，能发现更多路径数量，路径增长速度更快，就能获得更快的 Fuzzing 速度。
 
 
 
 ### 第“三、1”基于编译插桩的 fuzzing 与第“三、2”的基于 Qemu 动态插桩的 fuzzing，从基本原理和实验效果两方面的差异。
 
-**基本原理：** 插桩分为动态插桩和静态插桩。*基于编译插桩的 fuzzing* 就是静态插桩，静态插桩发生在编译之前，PREPROCESS 这个阶段；*基于 Qemu 插桩的 fuzzing* 是动态插桩，在程序运行的时候发生，也就是每个 INPUTEVAL 阶段。因此，静态插桩相较于动态插桩有更优的开销，而动态插桩则更加容易对DLL进行插桩。除了基于源码的插桩，还有基于二进制文件的插桩，即未知源码的插桩技术。常见的动态插桩工具有DynInst 、Dynamo、RIOPIN、Valgrind、QEMU等。
+**基本原理：** 插桩分为动态插桩和静态插桩。*基于编译插桩的 fuzzing* 就是静态插桩，静态插桩发生在编译之前，PREPROCESS 这个阶段；*基于 Qemu 插桩的 fuzzing* 是动态插桩，在程序运行的时候发生，也就是每个 INPUTEVAL 阶段。因此，静态插桩相较于动态插桩有更优的开销，而动态插桩则更加容易对 DLL 进行插桩。除了基于源码的插桩，还有基于二进制文件的插桩，即未知源码的插桩技术。常见的动态插桩工具有 DynInst、Dynamo、RIOPIN、Valgrind、QEMU 等。
 
-**实验效果：**基于编译插桩的 fuzzing 的速度要远高于基于 Qemu 动态插桩的 fuzzing。但是基于 Qemu 动态插 桩的 fuzzing 不需要获取程序的源码，可执行文件就可以。
+**实验效果：** 基于编译插桩的 fuzzing 的速度要远高于基于 Qemu 动态插桩的 fuzzing。但是基于 Qemu 动态插 桩的 fuzzing 不需要获取程序的源码，可执行文件就可以。
 
 
 

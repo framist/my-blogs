@@ -40,7 +40,7 @@ date: 2020-10-11
 
 ---
 
-## [cdcq](https://cdcq/githuh.io)
+## [cdcq](https://cdcq.github.io)
 
 `orz`
 

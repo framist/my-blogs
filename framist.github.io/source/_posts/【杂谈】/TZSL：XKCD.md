@@ -1,10 +1,11 @@
 ---
-title: TZSL：XKCD
+title: Collecting XKCD
 categories:
   - 杂项
 tags:
   - 杂项
-abbrlink: 40405
+abbrlink: Collecting-XKCD
+date: 2022-03-04
 ---
 
 XKCD 一些有趣的收集

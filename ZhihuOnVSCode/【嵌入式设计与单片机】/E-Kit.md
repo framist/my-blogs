@@ -1,22 +1,10 @@
----
-title: E-kit 一体化电子工具箱
-categories:
-  - 电子设计与嵌入式
-tags: stm32
-abbrlink: E-kit
-date: 2023-09-16 22:24:00
----
 
-<div align="center">
-  <img width="100" heigth="100" src="http://framist-bucket-openread.oss-cn-shanghai.aliyuncs.com/img/2023/09/16/20230916223825.png"><br/>
-  <!-- https://github.com/framist/E-kit -->
-  <a href="https://github.com/framist/E-kit"><i>E-kit 一体化电子工具箱 - GitHub</i></a>
-</div>
 
+![](http://framist-bucket-openread.oss-cn-shanghai.aliyuncs.com/img/2023/09/16/20230916223825.png)
 
 # E-kit
 
-E-kit 一体化电子工具箱，STM32 实现，示波器 + 函数发生器 + 幅频特性仪器...
+[E-kit 一体化电子工具箱](https://github.com/framist/E-ki)，STM32 实现，示波器 + 函数发生器 + 幅频特性仪器...
 
 ![请添加图片描述](http://framist-bucket-openread.oss-cn-shanghai.aliyuncs.com/img/d637541d1ea249efa4502b8dce0df959.png)
 

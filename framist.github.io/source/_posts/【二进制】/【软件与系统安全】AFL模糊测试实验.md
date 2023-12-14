@@ -289,7 +289,7 @@ afl-fuzz -Q  -i input -o output od -x @@
 
 **基本原理：** 插桩分为动态插桩和静态插桩。*基于编译插桩的 fuzzing* 就是静态插桩，静态插桩发生在编译之前，PREPROCESS 这个阶段；*基于 Qemu 插桩的 fuzzing* 是动态插桩，在程序运行的时候发生，也就是每个 INPUTEVAL 阶段。因此，静态插桩相较于动态插桩有更优的开销，而动态插桩则更加容易对 DLL 进行插桩。除了基于源码的插桩，还有基于二进制文件的插桩，即未知源码的插桩技术。常见的动态插桩工具有 DynInst、Dynamo、RIOPIN、Valgrind、QEMU 等。
 
-**实验效果：**基于编译插桩的 fuzzing 的速度要远高于基于 Qemu 动态插桩的 fuzzing。但是基于 Qemu 动态插 桩的 fuzzing 不需要获取程序的源码，可执行文件就可以。
+**实验效果：** 基于编译插桩的 fuzzing 的速度要远高于基于 Qemu 动态插桩的 fuzzing。但是基于 Qemu 动态插 桩的 fuzzing 不需要获取程序的源码，可执行文件就可以。
 
 
 

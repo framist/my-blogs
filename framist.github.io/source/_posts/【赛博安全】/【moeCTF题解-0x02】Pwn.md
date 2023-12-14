@@ -1,14 +1,13 @@
 ---
 title: 【moeCTF 题解 -0x02】Pwn
 categories:
-  - 计算机科学
-  - 网络安全
-  - CTF
-  - moeCTF
+  - 计算机
 tags:
+  - 网络安全
+  - moeCTF
   - CTF
 abbrlink: moeCTF-02
-date: 2020-10-09 00:00:00
+date: 2020-10-10 00:00:00
 ---
 
 # 【moeCTF 题解 -0x02】Pwn
@@ -33,15 +32,13 @@ pwn 好像距离日常生活有一点遥远呢，学起来都是一些全新的�
 
 > **【moeCTF 题解】总目录如下：**
 >
-> * [【moeCTF 题解 -0x00】序				（包括 Sign in）](https://framist.github.io/2020/10/09/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x00%E3%80%91%E5%BA%8F/)
->
-> * [【moeCTF 题解 -0x01】Reverse（包括 Android、IoT）](https://framist.github.io/2020/10/09/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x01%E3%80%91Reverse/)
-> * [【moeCTF 题解 -0x02】Pwn](https://framist.github.io/2020/10/09/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x02%E3%80%91Pwn/)
-> * [【moeCTF 题解 -0x03】Algorithm](https://framist.github.io/2020/10/12/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x03%E3%80%91Algorithm/)
-> * [【moeCTF 题解 -0x04】Crypto（包括 Classic Crypto）](https://framist.github.io/2020/10/12/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x04%E3%80%91Crypto/)
-> * [【moeCTF 题解 -0x05】Misc](https://framist.github.io/2020/10/15/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x05%E3%80%91Misc/)
-> * [【moeCTF 题解 -0x06】Web](https://framist.github.io/2020/10/25/%E3%80%90moeCTF%E9%A2%98%E8%A7%A3-0x06%E3%80%91Web/)
-
+> * [【moeCTF 题解 -0x00】序（包括 Sign in）](https://framist.github.io/post/moeCTF-00.html)
+> * [【moeCTF 题解 -0x01】Reverse（包括 Android、IoT）](ttps://framist.github.io/post/moeCTF-01.html)
+> * [【moeCTF 题解 -0x02】Pwn](ttps://framist.github.io/post/moeCTF-02.html)
+> * [【moeCTF 题解 -0x03】Algorithm](ttps://framist.github.io/post/moeCTF-03.html)
+> * [【moeCTF 题解 -0x04】Crypto（包括 Classic Crypto）](https://framist.github.io/post/moeCTF-04.html)
+> * [【moeCTF 题解 -0x05】Misc](ttps://framist.github.io/post/moeCTF-05.html)
+> * [【moeCTF 题解 -0x06】Web](ttps://framist.github.io/post/moeCTF-06.html)
 <br/>
 
 

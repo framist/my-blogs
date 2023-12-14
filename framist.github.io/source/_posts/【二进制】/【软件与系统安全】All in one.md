@@ -1,9 +1,24 @@
-#! https://zhuanlan.zhihu.com/p/657923917
+---
+title: 软件与系统安全 All in one
+categories:
+  - 计算机科学
+  - 网络安全
+  - 软件与系统安全
+tags:
+  - 二进制
+  - 软件与系统安全
+  - 模糊测试
+abbrlink: software-security-all-in-one
+date: 2023-09-23
+---
 
 ![Image](https://pic4.zhimg.com/80/v2-a8e3e7faf24593996366c66a77ba0a49.png)
 
-# 【软件与系统安全 All in one】笔记 + 期末复习 + 栈溢出利用的分析实验 + AFL 模糊测试实验 
+# 【软件与系统安全】笔记 + 期末复习 + 栈溢出利用的分析实验 + AFL 模糊测试实验 
 
+<!-- more -->
+
+> 同步发布于 [知乎](https://zhuanlan.zhihu.com/p/657923917)
 
 ## 关于课程
 

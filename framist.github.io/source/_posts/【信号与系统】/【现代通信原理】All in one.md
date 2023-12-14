@@ -1,9 +1,7 @@
 ---
 title: Notes on the principles of modern communication - All in one
 categories:
-  - 计算机科学
-  - 课业学习
-  - 现代通信原理
+  - 理学
 tags:
   - 现代通信原理
 abbrlink: notes-on-the-principles-of-modern-communication

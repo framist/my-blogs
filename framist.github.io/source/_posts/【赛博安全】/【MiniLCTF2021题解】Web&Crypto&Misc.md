@@ -1,12 +1,11 @@
 ---
 title: 【MiniLCTF2021 题解】Web&Crypto&Misc
 categories:
-  - 计算机科学
+  - 计算机
+tags:
   - 网络安全
   - CTF
   - moeCTF
-tags:
-  - CTF
 abbrlink: 9475
 date: 2021-10-4
 ---
