@@ -5,11 +5,11 @@ type: "about"
 comments: true
 ---
 
-[`Personal Home Page`](http://framist.top) > `Personal blog`
+[`Personal Home Page`](http://framist.top)[^1] > `Personal blog`
 
 ---
 
-*我是框架主义者，我信仰框架*
+*我是框架主义者，我信仰框架[^2]*
 
 *I am framist. In FRAME I trust.*
 
@@ -31,4 +31,6 @@ XDU  ·  XDSEC   · L team
 
 ---
 
-[About site building](https://framist.github.io/post/build-site-for-framist-top.html)
+[^1]: [About site building](https://framist.github.io/post/build-site-for-framist-top.html)
+
+[^2]: [一个备用的解释](https://framist.github.io/post/frame-2023.html)
