@@ -1375,17 +1375,116 @@ $$
 
 ![Image](https://pic4.zhimg.com/80/v2-04c461f6327fb597a5f7cfe07a68b5fc.png)
 
----
 
 **已知某单频调频波的振幅是 10V，瞬时频率为$f(t)=10^6+10^4cos2 \pi 10^3 t \mathrm{(Hz)}$，**
 
 **（1）此调频波的表达式**
 
-==TODO==
+> QwQ：
+> 
+> 根据题目条件，已知调频波的振幅为 10V，瞬时频率为 \( f(t) = 10^6 + 10^4 \cos(2\pi \times 10^3 t) \) Hz。要求其表达式，步骤如下：
+> 
+> **步骤 1：确定瞬时角频率**
+> 瞬时角频率 \( \omega(t) \) 是瞬时频率 \( f(t) \) 的两倍：
+> \[
+> \omega(t) = 2\pi f(t) = 2\pi \left[10^6 + 10^4 \cos(2\pi \times 10^3 t)\right] \, \text{rad/s}
+> \]
+> 
+> **步骤 2：计算相位函数 \( \phi(t) \)**
+> 相位 \( \phi(t) \) 是角频率对时间的积分：
+> \[
+> \phi(t) = \int_0^t \omega(\tau) \, d\tau + \phi_0
+> \]
+> 假设初始相位 \( \phi_0 = 0 \)，则：
+> \[
+> \phi(t) = \int_0^t \left[2\pi \times 10^6 + 2\pi \times 10^4 \cos(2\pi \times 10^3 \tau)\right] d\tau
+> \]
+> 
+> **分步积分：**
+> 1. **载波部分积分：**
+> \[
+> \int_0^t 2\pi \times 10^6 \, d\tau = 2\pi \times 10^6 \cdot t
+> \]
+> 
+> 1. **调制部分积分：**
+> 令 \( \theta = 2\pi \times 10^3 \tau \)，则 \( d\theta = 2\pi \times 10^3 \, d\tau \)，积分变为：
+> \[
+> \int_0^t 2\pi \times 10^4 \cos(2\pi \times 10^3 \tau) \, d\tau = 10 \cdot \sin(2\pi \times 10^3 t)
+> \]
+> 
+> 
+> **合并结果：**
+> \[
+> \phi(t) = 2\pi \times 10^6 \cdot t + 10 \cdot \sin(2\pi \times 10^3 t)
+> \]
+> 
+> **步骤 3：写出调频波表达式**
+> 调频波的一般形式为：
+> \[
+> u(t) = U_c \cos\left[\omega_c t + \phi_m \sin(\Omega t)\right]
+> \]
+> 其中：
+> - \( U_c = 10 \, \text{V} \)（振幅）
+> - \( \omega_c = 2\pi \times 10^6 \, \text{rad/s} \)（中心角频率）
+> - \( \phi_m = 10 \)（最大相偏，即调频系数 \( m_f \)）
+> - \( \Omega = 2\pi \times 10^3 \, \text{rad/s} \)（调制信号角频率）
+> 
+> 代入参数得：
+> \[
+> u(t) = 10 \cos\left[2\pi \times 10^6 t + 10 \sin(2\pi \times 10^3 t)\right]
+> \]
+> 
+> **最终答案**
+> 调频波的表达式为：
+> \[
+> \boxed{u(t) = 10 \cos\left(2\pi \times 10^6 t + 10 \sin(2\pi \times 10^3 t)\right)}
+> \]
 
 **（2）此调频波的最大频率偏移、调频指数和频带宽度**
+ 
+> Deepseek R1:
+> 
+> 已知某单频调频波的振幅是 10V，瞬时频率为$f(t)=10^6 + 10^4 \cos(2\pi \times 10^3 t) \
+> \text{Hz}$，
+> 
+> （1）此调频波的表达式：
+> 
+> 调频波的表达式可以通过对瞬时频率积分得到相位，然后代入振幅得到。瞬时频率$f(t)$的积分结果如下：
+> 
+> $$ \theta(t) = 2\pi \int_0^t f(t') \, dt' = 2\pi \int_0^t \left(10^6 +
+> 10^4 \cos(2\pi \times 10^3 t')\right) \, dt' $$
+> 
+> 积分分为两部分：
+> 
+> $$ \int_0^t 10^6 \, dt' = 10^6 t $$
+> 
+> $$ \int_0^t 10^4 \cos(2\pi \times 10^3 t') \, dt' = \frac{10^4}{2\pi
+> \times 10^3} \sin(2\pi \times 10^3 t) = \frac{10}{2\pi} \sin(2\pi
+> \times 10^3 t) $$
+> 
+> 因此，相位为：
+> 
+> $$ \theta(t) = 2\pi \times 10^6 t + 10 \sin(2\pi \times 10^3 t) $$
+> 
+> 调频波的表达式为：
+> 
+> $$ s(t) = 10 \cos\left(2\pi \times 10^6 t + 10 \sin(2\pi \times 10^3
+> t)\right) $$
+> 
+> （2）此调频波的最大频率偏移、调频指数和频带宽度：
+> 
+> - 最大频率偏移$\Delta f$：瞬时频率相对于载波频率的最大偏移量为$10^4 \ \text{Hz}$，即$\Delta f = 10 \ \text{kHz}$。
+> - 调频指数$\beta$：最大频率偏移与调制信号频率的比值，$\beta = \frac{\Delta f}{f_m} = \frac{10^4}{10^3} = 10$。
+> - 频带宽度：根据卡森公式，频带宽度为$2(\Delta f + f_m) = 2(10^4 + 10^3) = 22 \ \text{kHz}$。
+> 
+> 最终答案：
+> 
+> （1）此调频波的表达式 $\boxed{10 \cos\left(2\pi \times 10^6 t + 10 \sin 2\pi
+> \times 10^3 t\right)}$；
+> 
+> （2）最大频率偏移为$\boxed{10\ \text{kHz}}$，调频指数为$\boxed{10}$，频带宽度为$\boxed{22\
+> \text{kHz}}$。
 
-![Image](https://pic4.zhimg.com/80/v2-86aadd3120d289768f98ec52148ac030.png)
 
 ### 三角变换
 
