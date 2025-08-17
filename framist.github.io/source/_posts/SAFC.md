@@ -1,6 +1,6 @@
 ---
-title: SAFC
-abbrlink: c052600e
+title: SAFC —— 元平台、弱中心 —— 不只是评价导师
+abbrlink: SAFC
 categories:
   - 杂项
 date: 2024-07-18 14:32:41
@@ -8,6 +8,4 @@ tags:
   - SAFC
 ---
 
-# 这是什么？
-
-左边导航栏底部的 [🏛️ SAFC](https://framist.github.io/safc/) 是什么？
+见左边导航栏底部的 [🏛️ SAFC](https://framist.github.io/safc/) 
